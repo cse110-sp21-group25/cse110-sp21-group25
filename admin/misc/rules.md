@@ -2,10 +2,10 @@
 Term Spring 2021
 Creation 04/14/2021; Revised N/A
 
-1. Group Identification: Marinated Cuytio
-Instructor – Professor Powell and Mentor Deepak
-Team Name (Optional) – Marinated Cuyito
-Team member info:
+1. **Group Identification: Marinated Cuytio**
+    - Instructor – Professor Powell and Mentor Deepak
+    - Team Name (Optional) – Marinated Cuyito
+    - Team member info:
 
 | Name:       |Email:       | Phone: | 
 | ----------- | ----------- | -------|
@@ -22,13 +22,13 @@ Team member info:
 
 
 
-2. Primary Means of Communication and Expectations
+2. **Primary Means of Communication and Expectations**
     - All members will be expected to check Slack at least once a day and react to the message upon reading. Always communicate and notify the team as soon as possible.  
-3. Scheduling Meetings 
+3. **Scheduling Meetings** 
     - Team agreed to set a meeting time everytime an assignment is announced. 
-4. General Responsibilities for All Team Members
+4. **General Responsibilities for All Team Members**
     - This element of the team working agreement is the list of rules/agreements or the contract that all members agree to live by.
-5. Specific Team Member Responsibilities
+5. **Specific Team Member Responsibilities**
     - Messenger  -- Rotated based on week 
       - Attend lectures
       - Report any spontaneous due dates announced
@@ -54,10 +54,10 @@ Team member info:
       - General coding
     - Branding
       - Logo, video, designing aesthetics
-6. Conflict Resolution
+6. **Conflict Resolution**
   - If a team member is not meeting deadlines or doing their role, the team agrees to first have a private one on one talk with the individual. If the problem persists, a meeting will be held to decide how to handle the matter. 
-7. Expectations of Faculty and GTA’s
+7. **Expectations of Faculty and GTA’s**
   - If the issue is not resolved after the meeting, the team will take the matter to the mentor/Professor. 
-8. Team Signatures
+8. **Team Signatures**
 
 
