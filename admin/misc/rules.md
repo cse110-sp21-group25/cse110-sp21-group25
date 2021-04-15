@@ -45,7 +45,7 @@ Creation 04/14/2021; Revised N/A
       - Making sure test cases are being written
       - Prevent repo from being cluttered
       - In charge of looking over pull requests after the fact
-    - Planner (Jesse)
+    - Planner
       - Notify ahead of time of tasks that need to get done
       - Plan out meetings and structure of them
       - Create agenda before each meeting
