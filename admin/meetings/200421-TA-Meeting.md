@@ -3,7 +3,7 @@
 **Meeting Date/Time:** 20 April 2021, 5:30pm
 **Meeting Purpose:** Check in with Deepak (TA)  
 **Meeting Location:** https://ucsd.zoom.us/j/97927708709?pwd=NEhNV09WdHpjV1pzckZ6UHNGT3ZIQT09
-**Note Taker:** Jesse Wolf  
+**Note Taker:** Jesse Wolf (Some notes provided by Issac garcia as well)
 
 ## Attendees
 People who attended:
