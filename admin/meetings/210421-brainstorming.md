@@ -114,16 +114,16 @@ To start off this activity, the facilitator placed, **Bullet Journal**, as the c
 | Angel Llamas  |                                                       |
 | Issac Garcia  |                                                       |
 ---
-| TEAM          | Make Work Fun (BOTTOM)                                                                              |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| Jesse Wolf    | Could reward yourself after $x$ amounts of tasks completed </br> Doodles add some fun into the mix. |
-| Steven Nguyen |                                                                                                     |
-| Simon Liu     |                                                                                                     |
-| Grady Gabriel |                                                                                                     |
-| Kevin Wong    | Personalized                                                                                        |
-| Brian Wong    | Feeling of accomplishment                                                                           |
-| Angel Llamas  |                                                                                                     |
-| Issac Garcia  |                                                                                                     |
+| TEAM          | Make Work Fun (BOTTOM)                                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------- |
+| Jesse Wolf    | Could reward yourself after x amounts of tasks completed </br> Doodles add some fun into the mix. |
+| Steven Nguyen |                                                                                                   |
+| Simon Liu     |                                                                                                   |
+| Grady Gabriel |                                                                                                   |
+| Kevin Wong    | Personalized                                                                                      |
+| Brian Wong    | Feeling of accomplishment                                                                         |
+| Angel Llamas  |                                                                                                   |
+| Issac Garcia  |                                                                                                   |
 ---
 | TEAM          | Easy Set Up - (BOTTOM-LEFT)                                   |
 | ------------- | ------------------------------------------------------------- |
@@ -159,95 +159,46 @@ To start off this activity, the facilitator placed, **Bullet Journal**, as the c
 
 
  ## <u> 5 Why’s Activity </u>
-*Concept:* A '5 Why's' entails a stair
-TRY TO NOT LOOP AROUND OR GO BACKWARDS!
+*Concept:* A '5 Why's' Activity entailed a 5-tier Q&A process where the root problem is presented at the top tier. Such point, is considered as the 'Point of Entry' to pave the way for discussion and help traverse through the tiers. By addressing the Q&A (Why/Because), the team will traverse through such tiers until finally reaching the **Root Cause** of the problem.
 
-(deleted)
-Kevin - 
-	TOP - Pushed down
-Problem? Can’t get my work done.
-	Why? Poor time management
+Our facilitator, **Jesse Wolf** introduced the second activity, '5 Why's.' He led the team to attempt to think as if we were developing our *persona* for a prospective candidate that seeks to become more organized and maybe a solution for said individual could be a 'Bullet Journal.'
 
-Jesse:
-Start with the problem
-Determine the problem
-
-Brian: (Watched Video on BoJu)
-	Are we trying to solve a problem with the existing journals?
-
-Jesse: 
-	Boost productivity by utilizing bullet journal
-
-
-Simon Liu - Let’s make it more general….
-
-New TOP - Problem? My life is completely unorganized and a hot mess?
-	       Why? 
-Poor time management
-Taking on too much responsibility/tasks
-	       Kevin - Lack of motivation. 
-
-
-Brian - Should we use all 3
-
-Because: I have poor time management and I just don’t care - Voting
-
-
-Why? I don’t write anything down and my memory sucks so I forget a lot - Brian / Jesse
-
-Delete “memory sucks” - Jesse, can’t really fix that
-I don’t write anything down
-
-Because: I used to on sticky notes but I would lose them so cut out the middle man - Brian/Jesse
-
-Why? Did not have a system and just had stickers everywhere so they got lost - Jesse/Brian
-
-Brian - Could not keep track when they were created or due.
-
-Because: there are too many things going on and didn't want to spend the time to get organized. Didn’t believe in amortized cost (Jesse) - Kevin/Brian
-
-Comparison with array - Brian
-
-Why? Never seen the benefits of being organized. - Jesse
-
-Instead only seen what happens when you’re not organized - Brian
-Because: Trying to create own system  but it was poorly thought out and took too much time to start up - Simon/Jesse
-
-Why? I wanted a personalized way of staying organized that adapted to my own lifestyle/decisions - Brian
-
-Because: You think that there isn’t a solution already out there that could be adapted to my lifestyle/situation - Brian
-Already set up for you. Create the simple system and leave room to customize it. - Brian
-Make sure we keep that - Jesse
-
-Root Cause: You never heard of a Bullet Journal - Jesse
+### Warnings:
+**TRY TO NOT LOOP AROUND OR GO BACKWARDS!**
 
 
 
-Thinking to ourselves being kids:
-Why did you say this?
-Why did you write that?
 
-Have an example by the next time we meet:
-
-Analog/Digital - One of each
-
-Different type of bullet journals
-
-Amazon physical journal
-
-When do we want to meet again?
-Work due monday
+| Problem                                          | Why? #1                                                                                        | Because..#1                                         | Why? #2                     | Because..#2                                                                     | Why? #3                                                                                                               | Because..#3                                                                                                                      | Why? #4                                                                                              | Because..#4                                                                                               | Why? #5                                                                                     | Because #5                                                                                              | Root Cause                          |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| My life is completely unorganized and a hot mess | Poor time management </br> Taking on too much responsibilities/tasks  </br> Lack of motivation | I have a poor time management and I just don't care | I don't write anything down | I used to write on sticky notes but I would lose them so cut out the middle man | Didn't have a system and just had stickies everywhere so they got lost. Couldn't track when they were created or due. | Because there are too many thing going on and didn't want to spend the time to get organized. Didn't believed in amortized cost. | Never seen the benefits of being organized. Instead only seen what happens when you're not organized | You are trying to create your own system but it was poorly thought out and took too much time to start up | I wanted a personalized way of staying organized that adapted to my own lifestyle/decisions | You think that there isn't a solution already out there that could be adapted to my lifestyle/situation | You never heard of a Bullet Journal |
 
 
-Decide when to meet again - https://lettucemeet.com/l/ZvEJl - Everyone fill it out by tonight!
+## Corrections:
+Initially we had went with the **Problem** being, "Can't get my work done" </br> 
+**Why?** "Poor time management" </br>
+ - Simon suggested that we can make it more general
+ - This idea was scratched because not much development could be obtained from it. 
 
-Next time we will go over: Due more brainstorming and finish pros/cons
+Suggested for, Why? #3, I don’t write anything down and my memory sucks so I forget a lot.
+ - Jesse suggested to delete “memory sucks. Since, "we can’t really fix that."
+  
+## Flow:
+ - Back and forth suggestions on ideas to fill the blocks
+ - Brian posed the question: Are we trying to solve a problem with the existing concept of journals?
+ - Decided to use three ideas for Why? #1
+ - Formulated concrete ideas thinking and responding as a prospective candidate that could begin to use a 'Bullet Journal.'
+ - Reflection on how '5 Why's' was somewhat as ourselves being kids asking:
+   - Why did you say this?
+   - Our teacher asking: Why did you write that?
+ - Finally, we exchanged a few examples of *analog* vs *digital* bullet journals. 
 
-Jesse - Think about issues, note them on GitHub or Pick a reviewer
-
-Pros and Cons of Analog vs Digital
-
-
+## Ending remarks:
+ - Pick up next session discussing our bullet journal's findings
+   - Be ready to talk about your finding next meeting
+   - Pros and Cons of *analog* vs *digital*
+ - Deciding when to meet again (Since work is due on Monday)
+   - Decide to meet again through: https://lettucemeet.com/l/ZvEJl - Everyone fill it out by tonight!
 --- 
 
 ## Other Notes & Information
