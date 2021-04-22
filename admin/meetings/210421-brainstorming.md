@@ -8,7 +8,7 @@
 ## Attendees
 People who attended:
 - Jesse Wolf
-- Keving Wong
+- Kevin Wong
 - Grady Gabriel
 - Steven Nguyen
 - Issac Garcia
@@ -35,11 +35,6 @@ People who attended:
 
 
 --- 
-## Action Items
-| Done? | Item | Responsible | Due Date |
-| ---- | ---- | ---- | ---- |
-| | item | who | due_date |
-
 
 ## Other Notes & Information
 N/A
