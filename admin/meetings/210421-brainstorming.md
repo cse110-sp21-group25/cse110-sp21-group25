@@ -40,7 +40,7 @@
     - Discuss their similarities and differences.
     - Discuss their pros and cons.
 
-## Lotus Diagram Activity
+## <u> Lotus Diagram Activity </u>
 *Concept:* A 'Lotus Diagram,' is a tier-based diagram. Where the broadest idea is placed at its very center and as one traverses to its outer tiers, the ideas grow in specificity.
 
 Our facilitator, **Jesse Wolf**, set up this activity by creating a central 3x3 square which had 1 center block, and 8 outer blocks. He then created a 'frame' of *eight* 3x3 squares surrounding the central 3x3 square. (Refer to the *Miro* screenshots).
@@ -103,38 +103,49 @@ To start off this activity, the facilitator placed, **Bullet Journal**, as the c
 | Angel Llamas  |                                                                                                                |
 | Issac Garcia  |                                                                                                                |
 ---
-| TEAM          |     |
-| ------------- | --- |
-| Jesse Wolf    |     |
-| Steven Nguyen |     |
-| Simon Liu     |     |
-| Grady Gabriel |     |
-| Kevin Wong    |     |
-| Brian Wong    |     |
-| Angel Llamas  |     |
-| Issac Garcia  |     |
+| TEAM          | Fast (BOTTOM-RIGHT)                                   |
+| ------------- | ----------------------------------------------------- |
+| Jesse Wolf    | Save Time   </br> Easier to stick to since it is fast |
+| Steven Nguyen |                                                       |
+| Simon Liu     | Concise </br> Not overwhelming (no paragraphs)        |
+| Grady Gabriel |                                                       |
+| Kevin Wong    | Not tiring                                            |
+| Brian Wong    | Easy to digest information                            |
+| Angel Llamas  |                                                       |
+| Issac Garcia  |                                                       |
 ---
-| TEAM          |     |
-| ------------- | --- |
-| Jesse Wolf    |     |
-| Steven Nguyen |     |
-| Simon Liu     |     |
-| Grady Gabriel |     |
-| Kevin Wong    |     |
-| Brian Wong    |     |
-| Angel Llamas  |     |
-| Issac Garcia  |     |
+| TEAM          | Make Work Fun (BOTTOM)                                                                              |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| Jesse Wolf    | Could reward yourself after $x$ amounts of tasks completed </br> Doodles add some fun into the mix. |
+| Steven Nguyen |                                                                                                     |
+| Simon Liu     |                                                                                                     |
+| Grady Gabriel |                                                                                                     |
+| Kevin Wong    | Personalized                                                                                        |
+| Brian Wong    | Feeling of accomplishment                                                                           |
+| Angel Llamas  |                                                                                                     |
+| Issac Garcia  |                                                                                                     |
 ---
-| TEAM          |     |
-| ------------- | --- |
-| Jesse Wolf    |     |
-| Steven Nguyen |     |
-| Simon Liu     |     |
-| Grady Gabriel |     |
-| Kevin Wong    |     |
-| Brian Wong    |     |
-| Angel Llamas  |     |
-| Issac Garcia  |     |
+| TEAM          | Easy Set Up - (BOTTOM-LEFT)                                   |
+| ------------- | ------------------------------------------------------------- |
+| Jesse Wolf    | Not as much of a learning curve </br> Monthly and Yearly Page |
+| Steven Nguyen |                                                               |
+| Simon Liu     |                                                               |
+| Grady Gabriel |                                                               |
+| Kevin Wong    | On the internet                                               |
+| Brian Wong    | Bullets are already there, ready for you to jump in.          |
+| Angel Llamas  | Can be on the internet                                        |
+| Issac Garcia  |                                                               |
+---
+| TEAM          | Achieve Your Goals (LEFT)                            |
+| ------------- | ---------------------------------------------------- |
+| Jesse Wolf    | Makes it easier to follow through                    |
+| Steven Nguyen |                                                      |
+| Simon Liu     |                                                      |
+| Grady Gabriel |                                                      |
+| Kevin Wong    | Gets you started                                     |
+| Brian Wong    | Bullets are already there, ready for you to jump in. |
+| Angel Llamas  |                                                      |
+| Issac Garcia  |                                                      |
 ---
 <br/>
 <br/>
@@ -147,40 +158,8 @@ To start off this activity, the facilitator placed, **Bullet Journal**, as the c
 ---
 
 
-
----
-
-  
-Brian - 
-Jesse - 
-Jesse/Brian - Concise points makes it faster than writing everything down
-
-FAST - BOTTOM-RIGHT
-Brian - Easy to digest information
-Jesse - Save time
-Simon Liu - concise
-Kevin Wong - Not tiring
-Jesse Wolf - Easier to stick to it
-Simon Liu - Not overwhelming (no paragraphs)
-
-MAKE WORK FUN - BOTTOM
-Jesse Wolf - Could reward yourself after x amount of tasks completed
-Personalized
-Doodles add some fun into the mix - Jesse 
-
-Easy Setup - BOTTOM LEFT
-Jesse - Monthly and Yearly Page
-Jesse - Bullets are already there ready for you to jump in
-Brian/Jesse - Not as much of a learning curve
-Will link the cheat sheet by the creator of bullet journal
-Can be on the internet - Angel
-
-Achieve Goals - LEFT
-Kevin - Gets you started
-Jesse - Makes it easier to follow through
-
-
-5 - Why’s - Jesse
+ ## <u> 5 Why’s Activity </u>
+*Concept:* A '5 Why's' entails a stair
 TRY TO NOT LOOP AROUND OR GO BACKWARDS!
 
 (deleted)
