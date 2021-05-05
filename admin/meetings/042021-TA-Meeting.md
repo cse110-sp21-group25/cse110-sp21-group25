@@ -45,6 +45,6 @@ Low-fidelity Wireframe is important at our current point.
   - Issac volunteered to try it out and we decided that tomorrow will be a test run for him during our brainstorming session. We will reassess after that to see if he is comfortable continuing as the documentation role. 
 
 
-![Screenshot from Today](screenshots/200421-TA-Meeting.png)
+![Screenshot from Today](screenshots/042021-TA-Meeting.png)
 
 **Time Ended:** 6pm
