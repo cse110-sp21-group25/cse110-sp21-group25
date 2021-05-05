@@ -42,6 +42,6 @@ Overview:
 - Do we each need to submit each assignment on Canvas? Or just one of us from the group?
   - Group Assignments should be submitted by the leader or a single person and if it shows up as being submitted by everyone then you are good to go. Otherwise each of us should submit. 
 
-![Screenshot from Today](screenshots/130421-TA-Meeting.png)
+![Screenshot from Today](screenshots/041321-TA-Meeting.png)
 
 **Time Ended:** 6pm
