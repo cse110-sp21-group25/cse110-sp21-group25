@@ -22,7 +22,7 @@ People who attended:
     - Weekly and Monthly reminders might be a lot, maybe hide things so that it isn't directly always taking your view. 
     - Each little thing is a birdy chirping at you, how many should we really have in here should be more thought out to keep that mental load down.
   - Exclamation point is usually interpreted as important or danger. (Instead we have it as a help, maybe update it to be a question mark with the help button.)
-  - Settings is a typical icon. 
+  - Settings is a typical icon, don't know if it is in a typical position 
   - Need to update the time and dates. 
   - Navigational controls are kind of out of place. Think of mouse control/movement. They will be within the middle mostly but have to travel all the way over to the right to move to another days. Should maybe put the arrows and navigation near the date in the middle.
   - Mood tracking is nice but a little big. (maybe scale it down) Think of size as loudness of voice, keep things big that really need a loud voice. What jumps our out you the most. 
