@@ -13,7 +13,7 @@ People who attended:
 
 ---
 
-(Shortened Deepak to D for ease of rewriting it multiple times. Whenever you see `- D:` below it is preceding something that Deepak said.)
+(Shortened Deepak to D for ease of rewriting it multiple times. Whenever you see `D:` below it is preceding something that Deepak said.)
 
 Overall Plan:
 - Kind of like open discussion and each team comes along and shows off their work for other teams. Share feedback and ideas.
