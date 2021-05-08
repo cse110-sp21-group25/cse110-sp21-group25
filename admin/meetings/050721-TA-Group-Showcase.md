@@ -1,4 +1,4 @@
-# TA Large Meeting In Meeting Minutes
+# TA Group Showcase In Meeting Minutes
 ## Meeting Information
 **Meeting Date/Time:** 7 May 2021, 5:00pm  
 **Meeting Purpose:** Checkin with all of Deepak's Groups  
