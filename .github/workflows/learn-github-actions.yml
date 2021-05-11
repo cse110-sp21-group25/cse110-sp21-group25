@@ -8,8 +8,9 @@ jobs:
       - uses: actions/setup-node@v1
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: npm install semistandard -g
-      - run: semistandard
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: npm install snazzy -g
+      # Piping our semistandard output to snazzy to clean it up more for readability.
+      - run: semistandard --verbose | snazzy
       
       
       
