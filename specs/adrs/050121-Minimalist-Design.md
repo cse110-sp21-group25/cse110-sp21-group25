@@ -2,7 +2,7 @@
 
 * Status: Accepted
 * Deciders: Jesse Wolf, Steven Nguyen, Kevin Wong, Grady Gabriel, Issac Garcia, Angel Hernandez-Llamas, Brian Wong, Simon Liu
-* Date: 05/01/21
+* Date: 05-01-21
 
 Technical Story: [description | ticket/issue URL] <!-- optional -->
 
