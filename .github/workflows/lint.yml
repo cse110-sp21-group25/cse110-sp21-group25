@@ -1,16 +1,31 @@
-name: learn-github-actions
+name: Lint
 on: [push]
 jobs:
-  check-bats-version:
+  run-linter:
+    name: Run linters
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: npm install semistandard -g
-      - run: npm install snazzy -g
+      - name: Check out Git repo
+        uses: actions/checkout@v2
+        
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        
+      - name: Setup Linter (semistandard in our case so that we can use semicolons.)
+        run: npm install semistandard -g
+      
+      - name: Install Snazzy for cleaner output from semistandard
+        run: npm install snazzy -g
       # Piping our semistandard output to snazzy to clean it up more for readability.
-      - run: semistandard --verbose | snazzy
+      
+      - name: Run Linter fixing any errors it finds.
+        run: semistandard --fix | snazzy
+        
+      - name: Run Linter again printing out result
+        run: semistandard --verbose | snazzy
+        
+          
       
       
       
