@@ -1,68 +1,197 @@
-// script.js
+// <journal-entry> custom web component
+class JournalEntry extends HTMLElement {
+  constructor() {
+    super();
 
-window.logCheckpoints = true // set to true/false to add/remove checkpoint logs to clear room for your own debugging
+    // templated HTML content
+    const template = document.createElement('template');
 
+    template.innerHTML = `
+        <style>
+            .entry {
+                background-color: white;
+                border-radius: 6px;
+                list-style-type: none;
+                margin-bottom: 30px;
+                max-width: 700px;
+                padding: 20px;
+                width: 80%;
+            }
+            .entry-audio {
+                margin: 10px 0;
+                width: 95%;
+            }
+            .entry-content {
+                font-size: 20px;
+                margin: 10px 0;
+                text-indent: 30px;
+            }
+            .entry-date {
+                color: rgb(163, 163, 163);
+                font-size: 20px;
+                margin-top: 3px;
+                margin-bottom: 20px;
+            }
+            .entry-image {
+                height: 100%;
+                max-height: 350px;
+                max-width: 550px;
+            }
+            .entry-title {
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+        </style>
+        <article class="entry">
+            <h2 class="entry-title"></h2>
+            <p class="entry-date"></p>
+            <p class="entry-content"></p>
+        </article>
+        `;
 
-// script.js
+    // create a shadow root for this web component
+    this.attachShadow({ mode: 'open' })
+    // attach cloned content of template to shadow DOM 
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  /* TODO:
-   * 1. fetch json results from https://cse110lab6.herokuapp.com/entries
-   * 2. for each entry, create and append a custom HTML element 
-   *    using a web component called JournalEntry to a 
-   *    list of journal entries in inside <main></main>. 
-   *    
-   * Hint: don't forget to set the entry property inside JournalEntry to 
-   * the current entry for each journal-entry element.
+  /*
+   * `get` binds a property to a function that will be called when that property is looked up
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
    */
+  get entry() {
+    return this.getAttribute('entry');
+  }
 
-  let url = ""  // SET URL 
+  /*
+   * `set` binds an object property to a function to be called when there is an attempt to set that property
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
+   */
+  set entry(entry) {
+    /* 
+     * TODO: set the entry title, date, and content fields in this component
+     */
+    
+    // CODE GOES HERE
 
-  fetch(url)
-    .then( /* FILL IN RESPONSE HANDLING HERE */ )
-    .then(entries => {
-      entries.forEach((entry) => {
-       
-        let newPost;  
+    if (entry.image) {
+      let entryImage;
+      /*
+       * TODO: if the entry contains an image resource,
+       * 1. create an image element with the correct class
+       * 2. set the image src and alt attributes
+       * 3. append the image element to the appropriate location in this component
+       */
 
-
-        // CODE GOES HERE vvv
-        
-
-
+      // CODE GOES HERE vvv
 
 
 
 
 
-        // CODE GOES HERE ^^^
+      // CODE GOES HERE ^^^
+
+      /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+      try {
+        window.logCheckpoint('"entryImage"', imgExample, entryImage);
+      } catch(err) {
+        console.log('variable name changed: ', err);
+      }
+      /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+
+    }
+    if (entry.audio) {
+      let entryAudio;
+      /*
+       * TODO: if the entry contains an audio resource,
+       * 1. create an audio element with the correct class
+       * 2. set the audio src and enable audio controls
+       * 3. append the audio element to the appropriate location in this component
+       */
+
+      // CODE GOES HERE vvv
 
 
 
-        /* ------------- do not edit this code, it is for your debugging purposes ------------- */
-        try {
-          window.logCheckpoint('"newPost"', exampleNewPost, newPost);
-        } catch(err) {
-          console.log('variable name changed: ', err);
-        }
-        /* ------------- do not edit this code, it is for your debugging purposes ------------- */
-    })
-    logCheckpoints();
-  })
-  .catch(error => {
-    console.log(`%cresult of fetch is an error: \n"${error}"`, 'color: red');
-  });    
-   
-});
+
+
+
+      // CODE GOES HERE ^^^
+      
+
+      
+      /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+      try {
+        window.logCheckpoint('"entryAudio"', exampleAudio, entryAudio);
+      } catch(err) {
+        console.log('variable name changed: ', err);
+      }
+      /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+
+    }
+    this.setAttribute('entry', entry);
+
+    /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+    try {
+      window.logCheckpoint('"entry"', exampleEntry, entry);
+    } catch(err) {
+      console.log('variable name changed: ', err);
+    }
+    /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+  }
+
+}
+
+/*
+ * Define a custom element for the JournalEntry web component, 
+ * where 'journal-entry' is the string that represents this element.
+ * https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
+ */ 
+customElements.define('journal-entry', JournalEntry);
+
+/**
+ * JSON Format:
+ * image and audio will only sometimes be there
+ *
+ * {
+ *   title: 'foo',
+ *   date: 'foo',
+ *   content: 'foo',
+ *   image: {
+ *     src: 'foo.com/bar.jpg',
+ *     alt: 'foo'
+ *   },
+ *   audio: 'foo.com/bar.mp3'
+ * }
+ */
+
+
+
+
 
 
 
 /* ------------- do not edit this code, it is for your debugging purposes ------------- */
-function logCheckpoints() {
-  let errorStyle = 'color: red; font-weight: bold';
-  let successStyle = 'color: green; font-weight: bold';
-  let entries = [...document.getElementsByTagName('journal-entry')];
-  entries.length == 0 ? console.log('%cno journal entries have been rendered to the DOM', errorStyle) : console.log('%cDOM contains journal entries', successStyle);
+const exampleEntry = {
+  title: 'entry title',
+  date: 'mm/dd/yyyy',
+  content: 'some sentences of entry content',
+  audio: 'there may or may not be audio',
+  image: 'there may or may not be image'
 }
-const exampleNewPost = '<journal-entry entry="[object Object]">';
+const titleStyle = 'font-weight: bold; font-size: 16px; color: blue;';
+const contentStyle = 'font-weight: bold; font-size: 12px';
+const sectionBreak = '%c------------------------------------------------------------------------'
+const imgExample = '<img class="entry-image" src="path/to/image.jpg" alt="some alternate text"/>'
+const exampleAudio = '<audio class="entry-audio" src="https://url-for-source-audio.mp3" controls="">'
+
+window.logCheckpoint = (task, example, value) => {
+  if (!window.logCheckpoints) return;
+  console.log(`%cTask ${task}: `, titleStyle)
+  console.log(`%cyour ${task} should look like this: `, contentStyle)
+  console.log(example);
+  console.log(`%cyour ${task}: `, contentStyle);
+  console.log(value);
+  console.log(sectionBreak, contentStyle);
+}
 /* ------------- do not edit this code, it is for your debugging purposes ------------- */
