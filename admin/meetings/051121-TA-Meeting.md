@@ -20,7 +20,7 @@ People who attended:
 ## Deepak:
 - Deepak: Did we think about the whole shortcuts thing? 
   - Brian: Yes we thought about it and think that it will be super helpful especially for navigation and for searching so we will most likely be trying to implement something along those lines. 
-- Deepak: Any oni type bar like on the mac would be super useful.
+- Deepak: Any omnibar type search feature like on the mac would be super useful.
 - Deepak: Nothing really specific to add for the hifi.
 
 - Suggest that we start coding the application now. There are two ways to go about this.
