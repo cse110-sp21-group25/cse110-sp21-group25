@@ -19,8 +19,8 @@ jobs:
         run: npm install snazzy -g
       # Piping our semistandard output to snazzy to clean it up more for readability.
       
-      - name: Run Linter fixing any errors it finds.
-        run: semistandard --fix | snazzy
+#       - name: Run Linter fixing any errors it finds.
+#         run: semistandard --fix | snazzy
         
       - name: Run Linter again printing out result
         run: semistandard --verbose | snazzy
