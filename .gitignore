@@ -2,5 +2,3 @@
 
 # Node related files that not everyone needs.
 node_modules
-package-lock.json
-package.json
