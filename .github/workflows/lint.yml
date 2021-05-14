@@ -15,6 +15,6 @@ jobs:
       - name: Run our local setup command
         run: npm ci
         
-      - name: Run our lint check
-        run: npx lint-staged
-    
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx
+      
