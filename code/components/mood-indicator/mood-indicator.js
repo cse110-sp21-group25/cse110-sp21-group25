@@ -1,3 +1,5 @@
+/* global HTMLElement, $ */
+
 const template = document.createElement('template');
 template.innerHTML = `
   <style>
@@ -435,7 +437,7 @@ h1
 `;
 
 class MoodIndicator extends HTMLElement {
-  constructor() {
+  constructor () {
     super();
 
     this.showInfo = true;
@@ -445,57 +447,46 @@ class MoodIndicator extends HTMLElement {
     this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
   }
 
-// Toggle animation function for the mood emojis
-function() {
-    var sToggle = 1,si, i = 0, count = 0, mood, moods = ['bad', 'okay','great'];
+  // Toggle animation function for the mood emojis
+  function () {
+    let sToggle = 1; let si; let i = 0; let count = 0; let mood; const moods = ['bad', 'okay', 'great'];
 
-    function startAnimation()
-    {
-        si = setInterval(function()
-        { 
-            mood = moods[i];
-            $('#mood-'+mood).toggleClass('active');
+    function startAnimation () {
+      si = setInterval(function () {
+        mood = moods[i];
+        $('#mood-' + mood).toggleClass('active');
 
-            if( (count % 2) != 0 )
-            {
-                ++i;
-                if( count == 5 )
-                {
-                    count = -1;
-                    i = 0;
-                }
-            }
-            ++count;
-        },1500);
+        if ((count % 2) !== 0) {
+          ++i;
+          if (count === 5) {
+            count = -1;
+            i = 0;
+          }
+        }
+        ++count;
+      }, 1500);
     }
 
     startAnimation();
 
-    $('#play-pause').on('click',function()
-    {
-        if( sToggle )
-        {
-            sToggle = 0;
-            clearInterval(si);
-        }
-        else
-        {
-            sToggle = 1;
-            startAnimation();
-        }
-    });
-
-    $('#clear').on('click',function()
-    {
+    $('#play-pause').on('click', function () {
+      if (sToggle) {
+        sToggle = 0;
         clearInterval(si);
-        $('#play-pause, #clear').addClass('disabled');
-        $('.active').removeClass('active');
-        $('#play-pause').off('click');
-        $('#clear').off('click');
+      } else {
+        sToggle = 1;
+        startAnimation();
+      }
     });
 
-};
-
+    $('#clear').on('click', function () {
+      clearInterval(si);
+      $('#play-pause, #clear').addClass('disabled');
+      $('.active').removeClass('active');
+      $('#play-pause').off('click');
+      $('#clear').off('click');
+    });
+  }
 }
 
 window.customElements.define('mood-ind', MoodIndicator);
