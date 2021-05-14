@@ -3,7 +3,7 @@ class JournalEntry extends HTMLElement {
   constructor () {
     super()
 
-    asdfasdfas;
+    asdfasdfas
     // templated HTML content
     const template = document.createElement('template')
 
