@@ -1,7 +1,7 @@
 // <journal-entry> custom web component
 class JournalEntry extends HTMLElement {
   constructor () {
-    super();
+    super()
 
     // templated HTML content
     const template = document.createElement('template');
