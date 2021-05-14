@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v1
         
       - name: Run our local setup command
-        run: npm ci
+        run: npm install
         
       - name: Run ESLint
         run: eslint . --ext .js,.jsx,.ts,.tsx
