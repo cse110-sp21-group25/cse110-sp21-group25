@@ -1,3 +1,5 @@
+/* globals: HTMLElement, customElements */
+
 // <journal-entry> custom web component
 class JournalEntry extends HTMLElement {
   constructor () {
