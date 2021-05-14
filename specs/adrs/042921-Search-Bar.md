@@ -7,7 +7,6 @@
 ## Context and Problem Statement
 
 After using the bullet journal for some time, how will the users be able to quickly able to find a particular idea across their journals? If you have tons of entries it might be difficult to find something you were looking for.
-Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.
 
 ## Decision Drivers 
 
@@ -32,7 +31,7 @@ Chosen option: "Search by tags", because it is the best option that meets our cr
 
 * May compromise minimalistic approach 
 
-## Pros and Cons of the Options <!-- optional -->
+## Pros and Cons of the Options
 
 ### Search By Keyword
 query "birthday" | search for a keyword and all instances of it will pop up
