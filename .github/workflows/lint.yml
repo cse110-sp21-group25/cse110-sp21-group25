@@ -16,6 +16,9 @@ jobs:
         run: npm install
         
       - name: Run ESLint
-        uses: cse110-sp21-group25/action-eslint@v1
+        uses: cse110-sp21-group25/.github/workflows/eslint-check@v1
+        with:
+          eslint-config-path: "./.eslintrc.json"
+          repo-token: ${{secrets.GITHUB_TOKEN}}
 #         run: npx run eslint . --ext .js,.jsx
       
