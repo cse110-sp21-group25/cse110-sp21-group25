@@ -13,8 +13,9 @@ jobs:
         uses: actions/setup-node@v1
         
       - name: Run our local setup command
-        run: npm ci --no-audit --prefer-offline
+        run: npm install
         
       - name: Run ESLint
-        run: npx run eslint . --ext .js,.jsx
+        uses: cse110-sp21-group25/action-eslint@v1
+#         run: npx run eslint . --ext .js,.jsx
       
