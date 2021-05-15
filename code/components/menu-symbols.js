@@ -1,9 +1,11 @@
+/* global HTMLElement, customElements */
+
 class MenuSymbols extends HTMLElement {
-    constructor() {
-        super();
-  
-        const template = document.createElement('template');
-        template.innerHTML = `
+  constructor () {
+    super();
+
+    const template = document.createElement('template');
+    template.innerHTML = `
         <style>
    
    
@@ -197,17 +199,15 @@ class MenuSymbols extends HTMLElement {
             </nav>
         `;
 
-        this.showInfo = true;
+    this.showInfo = true;
 
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 
-    }
-    
-    myFunction() {
-        document.getElementById("menu").classList.toggle("show");
-    }
-
+  myFunction () {
+    document.getElementById('menu').classList.toggle('show');
+  }
 }
 
 customElements.define('menu-symbol', MenuSymbols);
