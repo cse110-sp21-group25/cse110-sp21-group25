@@ -2,3 +2,9 @@
 
 # Node related files that not everyone needs.
 node_modules
+
+# Husky folder that is regenerated using package.json scripts.
+.husky
+
+# ESLint files that we don't need on Github
+.eslintcache
