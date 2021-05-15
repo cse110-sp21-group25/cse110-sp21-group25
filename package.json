@@ -18,7 +18,8 @@
     "semistandard": "^16.0.0"
   },
   "scripts": {
-    "prepare": "husky install",
-    "setupHusky": "npx mrm lint-staged"
+    "lint": "eslint ./",
+    "husky-setup": "husky install && npx mrm lint-staged",
+    "prepare": "npm run husky-setup && husky install"
   }
 }
