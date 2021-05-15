@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -5,6 +6,9 @@
     <title>Bullet Journal</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="style.css">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
 
@@ -19,17 +23,24 @@
     </div>
 </div>  
     
+<div class="container">
+    <div id="title">
+        <h2> Title </h2>
+    </div>
+</div>
 
 
 <div class="container">
-    <div class="bottom-right">
-        <mood-ind name="Mood Indicator"></mood-ind>
+    <div class="bottom-right" id="mood-ind">
+        <h2>Mood</h2>
+        <!-- <mood-ind name="Mood Indicator"></mood-ind> -->
+        <!-- <script src="../components/mood-indicator/mood-indicator.js"></script> -->
     </div>
 </div>
 
 <div class="container">
     <div class="bottom-right" id="quote">
-        <p>"You miss 100% of the shots you dont't take" - Wayne Gretzky</p>
+        <p>"You miss 100% of the shots you dont't take" <br> - Wayne Gretzky</p>
     </div>
 </div>
 
@@ -48,13 +59,18 @@
 <div class="container">
     <div id="symbols">
         <h2>Symbols</h2>
+        <!-- <menu-symbol></menu-symbol>
+        <script src="../components/mood-indicator/menu-symbols.js"></script> -->
     </div>
 </div>
 
-<script src="../components/mood-indicator/mood-indicator.js"></script>
-
-
-
+<div class="container">
+    <div id="clock">
+        <!-- <h2>Clock</h2> -->
+        <clock-time></clock-time>
+        <script src="..\components\mood-indicator\clock.js"></script>
+    </div>
+</div>
 
 </body>
 </html>
