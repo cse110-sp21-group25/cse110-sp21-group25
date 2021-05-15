@@ -1,0 +1,11 @@
+{
+  "extends": ["semistandard", "standard-jsx"]
+
+  /* Globals that make ESLint able to not require globals at the top of each file. (Currently conflicting with our Github action though.)
+  "globals": {
+      "HTMLElement": "writable",
+      "$": "writable",
+      "customElements": "writable"
+  }
+  */
+}
