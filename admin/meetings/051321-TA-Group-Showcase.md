@@ -1,7 +1,7 @@
 # TA Group Showcase In Meeting Minutes
 ## Meeting Information
-**Meeting Date/Time:** 13 May 2021, 6:30pm  
-**Meeting Purpose:** Checkin with all of Deepak's Groups  
+**Meeting Date/Time:** 13 May 2021, 5:30pm  
+**Meeting Purpose:** Check-in with all of Deepak's Groups  
 **Meeting Location:** https://ucsd.zoom.us/j/97232602305?pwd=QnMzUVF5VDdubkxEdWM2NExvcXdCZz09  
 **Note Taker:** Jesse Wolf  
 
@@ -14,6 +14,8 @@ People who attended:
 - Simon Liu
 
 ---
+
+(Shortened Deepak to D for ease of rewriting it multiple times. Whenever you see `D:` below it is preceding something that Deepak said.)
 
 **Team 21**
 - Got the calendar started and the sidebar opens and closes functionally.
@@ -75,3 +77,7 @@ People who attended:
 -  D: People underestimate the power of simplicity. Keeping it simple is make it easier to understand for the user. 
 - D: If your features are being chosen by some scientific fact or study then make sure to include that in the ADR's and such. 
 - D: Go forward in steps so that we will have something to "ship" at the end.
+
+--- 
+
+**Time Ended:** 6:45pm
