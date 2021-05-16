@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+        "label": "Setup",
+        "type": "shell",
+        "command": "npm ci && echo Setup Complete",
+        "presentation": {
+            "reveal": "never",
+            "panel": "new",
+            "group": "develop",
+        },
+        "runOptions": { "runOn": "folderOpen" }
+        }
+    ]
+}
