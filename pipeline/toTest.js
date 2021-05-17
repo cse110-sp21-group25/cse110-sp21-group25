@@ -7,6 +7,7 @@ class JournalEntry extends HTMLElement {
 
     // templated HTML content
     const template = document.createElement('template');
+    // Test
 
     template.innerHTML = `
         <style>
