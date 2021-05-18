@@ -12,7 +12,7 @@ People who attended:
 - Angel Hernandez-Llamas
 - Kevin Wong
 - Brian Wong
-- Steven Ngyen
+- Steven Nguyen
 
 --- 
 
@@ -71,7 +71,7 @@ Demo Video can be found on YouTube [here](https://youtu.be/uF6xLZLlgkg) and also
 - Github Workflow action that checks the linting again anytime a push is made to a branch.
 - Pre-commit hook is working currently however dissemenation is a work in progress due to some folders not being tracked.
 
-[Video-demonstration](https://youtu.be/ftcBPvblmuo)
+[Pipeline-Video-demonstration](https://youtu.be/ftcBPvblmuo)
 
 Written breakdown can be found [here](./admin/cipipeline/phase1.md)
 
