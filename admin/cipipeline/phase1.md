@@ -1,4 +1,9 @@
 ## Checkpoint 1 Pipeline Status:
+
+![Phase 1 CI/CD Pipeline](phase1.png)
+
+- Phase1.mp4 on YouTube can be found [here](https://youtu.be/ftcBPvblmuo)
+
 ---
 ### Linting
 - We decided to use standard-js as our style guide. We wanted to make sure that semicolons were checked and so our ESLint is using semistandard which is all of standard-js with the one altered rule of requiring semicolons.
@@ -11,7 +16,7 @@
 - GitHub Workflow that runs everytime a push action is done. Currently only runs a final lint check and will not allow for merging of code into another branch if that test fails. 
 
 **Issues**
-- Ran into a lot of issues getting the linting working for absolutely everyone. Ended up including the package.json and package-lock.json files within the repo so that a quick `npm ci` command ran by everyone will set up their local environments completely. 
+- After a lot of small issues and working to find a way to make it easy to reproduce the local setup for everyone we ended up including the package.json and package-lock.json files within the repo so that a quick `npm ci` command ran by each person will set up their local environments completely. 
 - Started working on a autorun task from within VSCode to do the setup however ran into some problems getting it to work on OSX. This little feature is currently benched until the others can be fully implemented. 
 - Getting the pre-commit hook working has been way more complicated then anticipated. Tried for a long time getting the original pre-commit hook from within the .git/hooks folder working but switched to using husky to run the hook. This ended up adding even more unneeded complexity to the process even though it did work. Revised the pre-commit situation by getting the original .git/hooks/pre-commit working. Then due to the fact that the .git folder is not tracked dissemenating the hook was difficult. Developed a fix that is yet to be tested by the team but should solve this issue. 
 
@@ -27,5 +32,5 @@
 ---
 ### Documentation Generation
 - Discussed the notion of adding JSDocs throughout code with the programmers on the team so they would start adding JSDocs to their code as they worked on it.
-- Plan on adding some sort of check to make sure their exists some JSDocs comments for each function. 
-- Need to decide fully on where to generate this documentation. Planning on discussing this within our next meeting.
+- Need to decide fully on where to generate this documentation. Planning on discussing this within our next meeting. 
+- Plan to get this up and running within Sprint 2.
