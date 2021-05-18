@@ -73,9 +73,9 @@ Demo Video can be found on YouTube [here](https://youtu.be/uF6xLZLlgkg) and also
 
 [Pipeline-Video-demonstration](https://youtu.be/ftcBPvblmuo)
 
-Written breakdown can be found [here](./admin/cipipeline/phase1.md)
+Written breakdown can be found [here](/admin/cipipeline/phase1.md)
 
-![phase1-diagram](./admin/cipipeline/phase1.png)
+![phase1-diagram](/admin/cipipeline/phase1.png)
 
 
 #### Important Notes:
