@@ -1,0 +1,1 @@
+If you are not able to open the mp4 file for Team Status Video, you may visit this link:
