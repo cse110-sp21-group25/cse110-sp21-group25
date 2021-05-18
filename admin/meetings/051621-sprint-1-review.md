@@ -61,6 +61,8 @@ Demo Video can be found on YouTube [here](https://youtu.be/uF6xLZLlgkg) and also
 - Icons are stubbed out for now. Will update once we have the symbols figured out.
 - Also need to get the updated logo image from Issac when he gets back.
 
+![nav-bar-open](screenshots/sprint1/nav-bar-open.png)
+![nav-bar-expanded](screenshots/sprint1/nav-bar-expanded.png)
 
 
 **Jesse**
