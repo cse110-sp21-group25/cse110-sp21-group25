@@ -1,6 +1,6 @@
 # cse110-sp21-group25
 
-[Working Prototype](code/skeleton/index.html)
+[Working Prototype](https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html)
 
 [Team Page](admin/team.md)
 
