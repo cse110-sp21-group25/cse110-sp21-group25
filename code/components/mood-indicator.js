@@ -444,7 +444,7 @@ class MoodIndicator extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
+    // this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
   }
 
   // Toggle animation function for the mood emojis

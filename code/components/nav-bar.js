@@ -168,7 +168,7 @@ class navBar extends HTMLElement {
                 <navbar>
                     <!-- This is the Cujo area in red -->
                     <div class="header">
-                        <img src="" class="logo">
+                        <img src="../imgs/marinatedcuyitos.png" class="logo">
                         <div class="header-text">
                             CuJo
                         </div>
