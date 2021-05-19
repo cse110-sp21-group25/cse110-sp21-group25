@@ -1,4 +1,7 @@
 {
+  "name": "cujo-setup-package",
+  "version": "1.0.0",
+
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-config-standard": "^16.0.2",
