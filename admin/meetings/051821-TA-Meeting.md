@@ -30,7 +30,7 @@ People who attended:
 - This week: Try to integrate all the components into the skeleton and start thinking of testing.
 - Week 9: Have 1 full time person (maybe even 2) to add some high level testing and also have the code writers write some unit tests as well. Work on unit testing and using Cypress for end-to-end testing as well. 
 - This Thursday during our normal meeting: One of the other tutors will be coming for some more UI feedback. Have our current prototype and hi-fi side by side to show them both at the same time. 
-- "We've been in sink so I don't really have much for you."
+- Deepak:"We've been in sync so I don't really have much for you."
 - Finish integrating and start working on that one final app instead of working seperately. 
 
 ---
