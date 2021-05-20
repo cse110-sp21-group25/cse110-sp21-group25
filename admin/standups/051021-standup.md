@@ -12,7 +12,6 @@
 - (Simon) Nothing on this class
 - (Steven) I finished the lab for the class.
 
-
 #### What are you planning on working on today?
 - (Angel) Finish up tasks
 - (Brian) I'm planning on checking the assignments and working on the ADR documentation.

@@ -12,7 +12,6 @@
 - (Simon) **Out of office**
 - (Steven) 
 
-
 #### What are you planning on working on today?
 - (Angel) Attending lecture, going to Deepak's meeting
 - (Brian) I plan on attending lecture and the Deepak meeting. Along with this, I want to see if I can get some implementation of Planning Poker or some method of deciding what features/issues to work on ready for the team.

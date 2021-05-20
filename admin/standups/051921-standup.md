@@ -12,7 +12,6 @@
 - (Simon) I got back home, nothing for this class or other classes
 - (Steven) Went to deepaks meeting 
 
-
 #### What are you planning on working on today?
 - (Angel) The lab, and today's meeting
 - (Brian) I plan on working on the Lab and polishing up the skeleton a little bit.

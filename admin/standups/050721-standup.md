@@ -12,7 +12,6 @@
 - (Simon) I worked on parts of the lab for this class, then other classwork
 - (Steven) Looking over code pen and lab 
 
-
 #### What are you planning on working on today?
 - (Angel) Other classes
 - (Brian) I am planning on attending Deepak's all team meeting and maybe working on the high fidelity.

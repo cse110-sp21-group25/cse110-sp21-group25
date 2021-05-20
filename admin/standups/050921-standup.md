@@ -12,7 +12,6 @@
 - (Simon) Finished the lab
 - (Steven) 
 
-
 #### What are you planning on working on today?
 - (Angel) Not much, I'll rest
 - (Brian) I am not planning on working on the project today.

@@ -12,7 +12,6 @@
 - (Simon) 
 - (Steven) 
 
-
 #### What are you planning on working on today?
 - (Angel) 
 - (Brian)

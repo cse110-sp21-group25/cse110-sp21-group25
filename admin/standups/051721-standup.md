@@ -12,7 +12,6 @@
 - (Simon) Not much with this class, didn't have the chance to look at anything
 - (Steven) Attended both meetings for sprint and retrospective 
 
-
 #### What are you planning on working on today?
 - (Angel) Other classes
 - (Brian) I do not plan on working on anything in particular today.

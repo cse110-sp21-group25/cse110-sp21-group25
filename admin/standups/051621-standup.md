@@ -12,7 +12,6 @@
 - (Simon) **Out of office**
 - (Steven) Worked on Weekly/Monthly Tabs, Got them to work
 
-
 #### What are you planning on working on today?
 - (Angel) Make it so that the tags can be displayed from a JSON, the entries lab we did
 - (Brian) I plan on meeting with the group for the sprint review and the retrospection.
