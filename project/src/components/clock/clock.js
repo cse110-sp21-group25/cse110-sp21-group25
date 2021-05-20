@@ -5,7 +5,6 @@ class Clock extends HTMLElement {
     super();
 
     const template = document.createElement('template');
-
     this.showInfo = true;
 
     this.attachShadow({ mode: 'open' });
@@ -17,17 +16,6 @@ const myDate = new Date();
 const myDay = myDate.getDay();
 const myMonth = myDate.getMonth();
 
-// // get hour value.
-// let hours = myDate.getHours();
-// const ampm = hours >= 12 ? 'PM' : 'AM';
-// hours = hours % 12;
-// hours = hours || 12;
-// let minutes = myDate.getMinutes();
-// minutes = minutes < 10 ? '0' + minutes : minutes;
-// const myTime = hours + ' ' + ' : ' + minutes + ampm;
-// document.write(myTime);
-// document.write('<br/>');
-
 // Array of days.
 const weekday = ['Sunday', 'Monday', 'Tuesday',
   'Wednesday', 'Thursday', 'Friday', 'Saturday'
@@ -38,10 +26,8 @@ const month = ['January', 'Febuary', 'March', 'April',
   'November', 'December'
 ];
 
-const d = new Date();
+const datestring = (myDate.getDate());
 
-const datestring = (d.getDate());
-
-document.write(weekday[myDay] + ', ' + month[myMonth] + ' ' + datestring);
+document.write("<span style='color:black; font-size: 20px; font-weight: bold';>" + weekday[myDay] + ', ' + month[myMonth] + ' ' + datestring + '</span>');
 
 window.customElements.define('clock-time', Clock);

@@ -1,98 +1,61 @@
-/* global HTMLElement, $ */
-
-const template = document.createElement('template');
-template.innerHTML = `
-  <link rel="stylesheet" href="./components/mood-indicator/mood-indicator.css">
-  
-  <div class="mood-ind">
-    <div id="app-cover">
-    <h1>What's your mood today?</h1>
-    <div id="app">
-        <div class="mood" id="mood-bad">
-        <div class="face">
-            <div class="eyes-cover">
-            <div class="eye"></div>
-            <div class="eye"></div>
-            </div>
-            <div class="mouth"></div>
-        </div>
-        <div class="mood-name"> <span>bad</span></div>
-        </div>
-        
-        <div class="mood" id="mood-okay">
-        <div class="face">
-            <div class="eyes-cover">
-            <div class="eye"></div>
-            <div class="eye"></div>
-            </div>
-            <div class="mouth"></div>
-        </div>
-        <div class="mood-name"><span>okay</span></div>
-        </div>
-        
-    <div class="mood" id="mood-great">
-        <div class="face">
-            <div class="eyes-cover">
-            <div class="eye"></div>
-            <div class="eye"></div>
-            </div>
-            <div class="mouth"></div>
-        </div>
-        <div class="mood-name"><span>great</span></div>
-        </div>
-    </div>
-  </div>
-`;
+/* global HTMLElement */
 
 class MoodIndicator extends HTMLElement {
   constructor () {
     super();
-
     this.showInfo = true;
+
+    const template = document.createElement('template');
+    template.innerHTML = `
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./components/mood-indicator/mood-indicator.css">
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    
+    <div id="card">
+          <div id="desc" class="neutral">
+              How Are You Feeling Today?
+          </div>
+          <div id="icons">
+            <i class="far fa-frown" data-emo="bad" data-description="bad">bad</i>
+            <i class="far fa-meh" data-emo="okay" data-description="okay">ok</i>
+            <i class="far fa-smile-beam" data-emo="great" data-description="great">great</i>
+          </div>
+          // <div id="goober" class="">
+          // </div>
+        </div>
+        
+      </div>
+  `;
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    // this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
-  }
 
-  // Toggle animation function for the mood emojis
-  function () {
-    let sToggle = 1; let si; let i = 0; let count = 0; let mood; const moods = ['bad', 'okay', 'great'];
+    const card = this.shadowRoot.querySelector('#card');
+    const goober = this.shadowRoot.querySelector('#goober');
+    const icons = this.shadowRoot.querySelectorAll('.far');
+    const desc = this.shadowRoot.querySelector('#desc');
 
-    function startAnimation () {
-      si = setInterval(function () {
-        mood = moods[i];
-        $('#mood-' + mood).toggleClass('active');
+    const transDesc = (text) => {
+      desc.classList.add('fade');
+      setTimeout(() => {
+        desc.innerText = text;
+        desc.classList.remove('fade');
+      }, 250);
+    };
 
-        if ((count % 2) !== 0) {
-          ++i;
-          if (count === 5) {
-            count = -1;
-            i = 0;
-          }
-        }
-        ++count;
-      }, 1500);
-    }
-
-    startAnimation();
-
-    $('#play-pause').on('click', function () {
-      if (sToggle) {
-        sToggle = 0;
-        clearInterval(si);
-      } else {
-        sToggle = 1;
-        startAnimation();
+    card.addEventListener('click', function (e) {
+      if (e.target.tagName === 'I') {
+        goober.classList = '';
+        desc.classList = '';
+        goober.classList.add(e.target.getAttribute('data-emo'));
+        icons.forEach((item, index) => {
+          item.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        desc.classList = e.target.getAttribute('data-emo');
+        transDesc(e.target.getAttribute('data-description'));
       }
-    });
-
-    $('#clear').on('click', function () {
-      clearInterval(si);
-      $('#play-pause, #clear').addClass('disabled');
-      $('.active').removeClass('active');
-      $('#play-pause').off('click');
-      $('#clear').off('click');
     });
   }
 }
