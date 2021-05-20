@@ -1,7 +1,7 @@
 # Meeting Minutes
 ## Meeting Information
 **Meeting Date/Time:** 19 May 21, 5:00pm 
-**Meeting Purpose:** Housekeeping 
+**Meeting Purpose:** Sprint 2 Planning 
 **Meeting Location:** https://ucsd.zoom.us/j/5871983221
 **Note Taker:** 
 
