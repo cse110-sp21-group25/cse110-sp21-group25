@@ -16,7 +16,7 @@ class navBar extends HTMLElement {
                         <div class="header-text">
                             CuJo
                         </div>
-                        <img src="" class="focus-btn">
+                        <img src="../imgs/eye.svg" class="focus-btn">
                     </div>
                     <!---------------------------------->
 
@@ -32,7 +32,7 @@ class navBar extends HTMLElement {
 
                     <!-- Wraps the arrow img and tab text for formatting -->
                     <div class="navbar-tab yearly">
-                        <img src="" class="navbar-tab-arrow">
+                        <img src="../imgs/chevron-right.svg" class="navbar-tab-arrow">
                         <div class="navbar-tab-text">
                             Yearly
                         </div>
@@ -44,7 +44,7 @@ class navBar extends HTMLElement {
 
                     <!-- The rest of this section is a repeat of the yearly section -->
                     <div class="navbar-tab monthly">
-                        <img src="" class="navbar-tab-arrow">
+                        <img src="../imgs/chevron-right.svg" class="navbar-tab-arrow">
                         <div class="navbar-tab-text">
                             Monthly
                         </div>
@@ -52,15 +52,15 @@ class navBar extends HTMLElement {
                     <div class="navbar-tab-item-container monthly-item-container">
                     </div>
                     <div class="navbar-tab daily">
-                        <img src="" class="navbar-tab-arrow">
+                        <img src="../imgs/chevron-right.svg" class="navbar-tab-arrow">
                         <div class="navbar-tab-text">
                             Daily
                         </div>
                     </div>
                     <div class="navbar-tab-item-container daily-item-container">
                     </div>
-                    <a href='https://www.google.com/' target='_blank' class="navbar-tab goals">
-                        <img src="" class="navbar-tab-arrow">
+                    <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' class="navbar-tab goals">
+                        <img src="../imgs/chevron-right.svg" class="navbar-tab-arrow">
                         <div class="navbar-tab-text">
                             Goals
                         </div>
@@ -73,8 +73,8 @@ class navBar extends HTMLElement {
 
                     <!-- Container with the settings and information icons-->
                     <div class="navbar-symbols-container">
-                        <a href="https://www.google.com/" target="_blank" class="navbar-info"><img src="" class="navbar-info-icon"></a>
-                        <a href="https://www.google.com/" target="_blank" class="navbar-settings"><img src="" class="navbar-settings-icon"></a>
+                        <a href="https://www.google.com/" target="_blank" class="navbar-info"><img src="../imgs/help-icon.svg" class="navbar-info-icon"></a>
+                        <a href="https://www.google.com/" target="_blank" class="navbar-settings"><img src="../imgs/cog-solid.svg" class="navbar-settings-icon"></a>
                     </div>
                     <!------------------------------------------------------>
                 </navbar>
@@ -88,6 +88,12 @@ class navBar extends HTMLElement {
     const yearlyDrop = this.shadowRoot.querySelector('.yearly');
     const monthlyDrop = this.shadowRoot.querySelector('.monthly');
     const dailyDrop = this.shadowRoot.querySelector('.daily');
+    const focusIcon = this.shadowRoot.querySelector('.focus-btn');
+
+    let focusToggle = false;
+    let yearlyToggle = false;
+    let monthlyToggle = false;
+    let dailyToggle = false;
 
     // Removes the highlight from the individual tabs
     function removeHighlight () {
@@ -96,6 +102,17 @@ class navBar extends HTMLElement {
       dailyDrop.classList.remove('navbar-tab-highlighted');
     }
 
+    // Toggle the image on the focus button.
+    focusIcon.addEventListener('click', () => {
+      if (focusToggle) {
+        focusIcon.src = '../imgs/eye-slash-solid.svg';
+      } else {
+        focusIcon.src = '../imgs/eye.svg';
+      }
+
+      focusToggle = !focusToggle;
+    });
+
     // Adds the options under the year tab
     yearlyDrop.addEventListener('click', () => {
       const tabContainer = this.shadowRoot.querySelector('.yearly-item-container');
@@ -103,6 +120,14 @@ class navBar extends HTMLElement {
 
       // Removes the highlights from all of the tabs
       removeHighlight();
+
+      if (yearlyToggle) {
+        yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
+      } else {
+        yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+      }
+
+      yearlyToggle = !yearlyToggle;
 
       // Checks to see if the tab is already expanded or not.
       if (childLength > 0) {
@@ -124,6 +149,7 @@ class navBar extends HTMLElement {
           newArrow.classList.add('navbar-tab-arrow');
           newAnchor.classList.add('navbar-tab-item');
 
+          newArrow.src = '../imgs/chevron-right.svg';
           newAnchor.href = 'https://www.google.com/';
           newAnchor.target = '_blank';
           newAnchor.innerHTML = 'Option ' + (i + 1);
@@ -142,6 +168,14 @@ class navBar extends HTMLElement {
 
       // Removes the highlights from all of the tabs
       removeHighlight();
+
+      if (monthlyToggle) {
+        monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
+      } else {
+        monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+      }
+
+      monthlyToggle = !monthlyToggle;
 
       // Checks to see if the tab is already expanded or not.
       if (childLength > 0) {
@@ -163,6 +197,7 @@ class navBar extends HTMLElement {
           newArrow.classList.add('navbar-tab-arrow');
           newAnchor.classList.add('navbar-tab-item');
 
+          newArrow.src = '../imgs/chevron-right.svg';
           newAnchor.href = 'https://www.google.com/';
           newAnchor.target = '_blank';
           newAnchor.innerHTML = 'Option ' + (i + 1);
@@ -181,6 +216,14 @@ class navBar extends HTMLElement {
 
       // Removes the highlights from all of the tabs
       removeHighlight();
+
+      if (dailyToggle) {
+        dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
+      } else {
+        dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+      }
+
+      dailyToggle = !dailyToggle;
 
       // Checks to see if the tab is already expanded or not.
       if (childLength > 0) {
@@ -202,6 +245,7 @@ class navBar extends HTMLElement {
           newArrow.classList.add('navbar-tab-arrow');
           newAnchor.classList.add('navbar-tab-item');
 
+          newArrow.src = '../imgs/chevron-right.svg';
           newAnchor.href = 'https://www.google.com/';
           newAnchor.target = '_blank';
           newAnchor.innerHTML = 'Option ' + (i + 1);
