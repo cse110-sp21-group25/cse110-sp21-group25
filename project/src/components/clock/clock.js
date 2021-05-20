@@ -5,29 +5,42 @@ class Clock extends HTMLElement {
     super();
 
     const template = document.createElement('template');
-    this.showInfo = true;
+
+    template.innerHTML = `
+      <link rel="stylesheet" href="./components/clock/clock.css">
+
+      <div class="date-container">
+        <span class="date-text"></span>
+      </div>
+    `;
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    // Creates new Date object that has today's date (MM/DD/YY)
+    const myDate = new Date();
+    // Retrieve the current day as an index (0 - Sunday, 1 - Monday, etc.)
+    const currWeekDay = myDate.getDay();
+    // Retrieves the current month as an index (0 - Januray, 1 - February, etc.)
+    const currMonth = myDate.getMonth();
+
+    // Array of days using abbreviations.
+    const abbDays = ['Sun', 'Mon', 'Tues',
+      'Wed', 'Thurs', 'Fri', 'Sat'
+    ];
+
+    // Array of months using abbreviations.
+    const abbMonths = ['Jan', 'Feb', 'Mar', 'Apr',
+      'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct',
+      'Nov', 'Dec'
+    ];
+
+    // Gets the current day's date (not MM/DD/YY, only gets DD)
+    const todaysDate = (myDate.getDate());
+
+    // Edits the span tag to display the current date.
+    this.shadowRoot.querySelector('.date-text').innerHTML = `${abbDays[currWeekDay]}, ${abbMonths[currMonth]} ${todaysDate}`;
   }
 }
-
-const myDate = new Date();
-const myDay = myDate.getDay();
-const myMonth = myDate.getMonth();
-
-// Array of days.
-const weekday = ['Sunday', 'Monday', 'Tuesday',
-  'Wednesday', 'Thursday', 'Friday', 'Saturday'
-];
-
-const month = ['January', 'Febuary', 'March', 'April',
-  'May', 'June', 'July', 'August', 'September', 'October',
-  'November', 'December'
-];
-
-const datestring = (myDate.getDate());
-
-document.write("<span style='color:black; font-size: 20px; font-weight: bold';>" + weekday[myDay] + ', ' + month[myMonth] + ' ' + datestring + '</span>');
 
 window.customElements.define('clock-time', Clock);
