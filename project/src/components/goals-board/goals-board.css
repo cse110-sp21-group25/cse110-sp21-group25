@@ -1,0 +1,48 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.goals-board-container {
+    display: flex;
+    width: 15vw;
+    height: 45vh;
+    background: orange;
+    flex-direction: column;
+}
+
+.goals-button-container {
+    display: flex;
+    background-color: red;
+    height: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.checkbox-container {
+    margin: 0px 0px 0px 8%;
+}
+
+.goals-checklist {
+    height: 90%;
+    text-align: left;
+}
+
+.goalBtn {
+    width: 35%;
+    height: 20px;
+    background-color: #ffffff;
+    border: solid 0px;
+    border-radius: 12px;
+    color: #78909C;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.checkbox-desc {
+    margin: 0px 0px 0px 2%;
+}
+
+.selected {
+    color: white;
+    background-color: #78909c;
+}
