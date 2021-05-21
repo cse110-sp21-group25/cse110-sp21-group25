@@ -16,7 +16,7 @@ class goalsBoard extends HTMLElement {
                     <input type="button" class="goalBtn weeklyBtn" value="Weekly">
                     <input type="button" class="goalBtn monthlyBtn" value="Monthly">
                 </div>
-                <!-- Container for all of the goals (flexbox set to column)
+                <!-- Container for all of the goals (flexbox set to column) -->
                 <div class="goals-checklist">
                 </div>
               </div>
