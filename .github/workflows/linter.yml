@@ -61,6 +61,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
+          LINTER_RULES_PATH: ./project/config
           # DEFAULT_BRANCH: main
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           FILTER_REGEX_INCLUDE: ./src/**/*.js
