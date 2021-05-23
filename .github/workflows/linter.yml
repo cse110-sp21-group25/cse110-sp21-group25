@@ -49,9 +49,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
-          fetch-depth: 0
+          # fetch-depth: 0
           # Checkout whatever branch initiated the test
-          repository: ${{ steps.extract_branch.repository }}
+          ref: jsdoc
 
       ################################
       # Run Linter against code base #
