@@ -43,6 +43,8 @@ jobs:
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
+          # Checkout whatever branch initiated the test
+          ref: ${GITHUB_REF##*/}
 
       ################################
       # Run Linter against code base #
@@ -51,7 +53,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
-          # DEFAULT_BRANCH: jsdoc
+          DEFAULT_BRANCH: main
           # JAVASCRIPT_ES_CONFIG_FILE: ./project/package.json
           # FILTER_REGEX_INCLUDE: ./src/**/*.js
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
