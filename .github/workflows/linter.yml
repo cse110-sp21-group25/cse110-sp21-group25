@@ -51,7 +51,7 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
+          # DEFAULT_BRANCH: jsdoc
           # JAVASCRIPT_ES_CONFIG_FILE: ./project/package.json
           # FILTER_REGEX_INCLUDE: ./src/**/*.js
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
