@@ -53,5 +53,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
           # JAVASCRIPT_ES_CONFIG_FILE: ./project/package.json
-          FILTER_REGEX_INCLUDE: ./src/**/*.js
+          # FILTER_REGEX_INCLUDE: ./src/**/*.js
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
