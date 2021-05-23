@@ -18,7 +18,7 @@ on:
   # branches-ignore: [main]
   # Remove the line above to run when pushing to master
   pull_request:
-    branches: [staging]
+    branches: [staging, pipeline-testing, main]
 
 ###############
 # Set the Job #
