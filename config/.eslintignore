@@ -1,2 +1,0 @@
-# Ignore all of the JS files within node_modules when linting
-/node_modules/*.js

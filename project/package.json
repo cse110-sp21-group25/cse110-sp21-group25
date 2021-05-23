@@ -10,7 +10,7 @@
     "semistandard": "^16.0.0"
   },
   "scripts": {
-    "lint": "eslint -c '../config/package.json' ../",
+    "lint": "eslint -c ./package.json '**/*.js'",
     "hook-setup": "git config core.hooksPath .githooks",
     "prepare": "npm run hook-setup"
   },
@@ -19,5 +19,8 @@
       "semistandard",
       "standard-jsx"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "**/node_modules/*.js"
+  ]
 }
