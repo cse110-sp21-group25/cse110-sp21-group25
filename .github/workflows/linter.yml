@@ -36,6 +36,14 @@ jobs:
     ##################
     steps:
       ##########################
+      # Figure out the branch  #
+      ##########################
+      - name: Extract Branch Name
+        shell: bash
+        run: echo '##[set-output name=branch;]$(echo ${GITHUB_REF##*/})'
+        id: extract_branch
+
+      ##########################
       # Checkout the code base #
       ##########################
       - name: Checkout Code
@@ -44,7 +52,7 @@ jobs:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
           # Checkout whatever branch initiated the test
-          ref: echo ${GITHUB_REF##*/}
+          ref: ${{ steps.extract_branch.outputs.branch }}
 
       ################################
       # Run Linter against code base #
