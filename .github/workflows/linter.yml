@@ -64,5 +64,6 @@ jobs:
           DEFAULT_BRANCH: main
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
           IGNORE_GITIGNORED_FILES: true
-          FILTER_REGEX_INCLUDE: project/src/**/*.js
+          FILTER_REGEX_EXCLUDE: project/jsdocs/**
+          FILTER_REGEX_INCLUDE: project/**
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
