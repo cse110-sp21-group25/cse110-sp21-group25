@@ -1,0 +1,11 @@
+.bullet-editor-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bullet-creator-container {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,54 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden; /* makes the body non-scrollable (we will add scrolling to the sidebar and main content containers) */
+  margin: 0px; /* removes default style */
+  display: flex; /* enables flex content for its children */
+  box-sizing: border-box;
+}
+
+#goals {
+  background-color: pink;
+  height: 350px;
+  width: 15vw;
+  text-align: center;
+}
+
+.container #clock {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  width: 15%;
+  text-align: center;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.middle-column {
+  width: 55vw;
+}
+
+.right-column {
+  width: 30vw;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-space {
+  flex-grow: 2;
+}
+
+journal-entry {
+  flex-grow: 3;
+}

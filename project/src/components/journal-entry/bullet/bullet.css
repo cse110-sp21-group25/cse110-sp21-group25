@@ -1,0 +1,10 @@
+.bullet-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bullet-text {
+  margin: 0px 0px 0px 10px;
+}
