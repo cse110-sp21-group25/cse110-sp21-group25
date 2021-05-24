@@ -1,10 +1,14 @@
 name: Node Setup
 
-on: [push]
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [staging, pipeline-testing, main]
 
 jobs:
   eslint:
-    name: Run eslint
+    name: Run ESLint
     runs-on: ubuntu-latest
 
     steps:
