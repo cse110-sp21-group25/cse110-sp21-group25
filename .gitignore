@@ -3,5 +3,5 @@
 # Node related files that not everyone needs.
 /project/node_modules
 
-# ESLint files that we don't need on Github
-.eslintcache
+# Coverage Folder that is not needed on github
+/project/testing/coverage
