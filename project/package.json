@@ -21,7 +21,12 @@
     "extends": [
       "semistandard",
       "standard-jsx"
-    ]
+    ],
+    "globals": {
+      "HTMLElement": "writable",
+      "$": "writable",
+      "customElements": "writable"
+    }
   },
   "eslintIgnore": [
     "**/node_modules/*.js"

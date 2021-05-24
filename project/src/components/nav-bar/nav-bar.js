@@ -1,4 +1,3 @@
-/* global HTMLElement, customElements */
 
 class navBar extends HTMLElement {
   constructor () {
