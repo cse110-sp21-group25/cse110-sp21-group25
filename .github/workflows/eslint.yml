@@ -1,0 +1,22 @@
+name: Node Setup
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [staging, pipeline-testing, main]
+
+jobs:
+  eslint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        run: npm --prefix './project/' ci
+
+      - name: Run Lint Check
+        run: npm --prefix './project/' run lint
