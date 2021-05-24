@@ -3,7 +3,6 @@
 class navBar extends HTMLElement {
   constructor () {
     super();
-    asdfa;
 
     const template = document.createElement('template');
     template.innerHTML = `
