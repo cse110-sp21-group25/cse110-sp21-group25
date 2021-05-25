@@ -8,8 +8,8 @@ on:
   #   branches: [staging, pipeline-testing, main]
 
 jobs:
-  eslint:
-    name: Run ESLint
+  integration-testing:
+    name: Run ESLint and Unit Tests
     runs-on: ubuntu-latest
 
     steps:
