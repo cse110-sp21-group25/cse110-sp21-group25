@@ -15,6 +15,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
+      - name: Setup Node
+        run: npm --prefix './project/' ci
+
       - name: Generate JSDocs
         uses: npm --prefix './project/' run generate-docs
 
