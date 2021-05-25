@@ -1,0 +1,20 @@
+name: JSDocs Generation and Push to Docs repo
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+    branches: [staging, pipeline-testing, main]
+
+jobs:
+  jsdocs:
+    - name: Pushes to another repository (MarinatedCuyitosDocs)
+      uses: cpina/github-action-push-to-another-repository
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: "./project/jsdocs"
+        destination-github-username: "docs"
+        destination-repository-name: "MarinatedCuyitosDocs"
+        user-email: docs@cuyitos.net
+        target-branch: main
