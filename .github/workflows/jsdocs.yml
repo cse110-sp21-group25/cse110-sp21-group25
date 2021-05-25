@@ -1,10 +1,12 @@
-name: JSDocs Generation and Push to Docs repo
+name: JSDocs Generation and Push to CuJoDocumentation repo
 
 on:
-  push:
-    branches-ignore: [main]
+  # push:
+  #   branches-ignore: [main]
+  # Uncomment out the above if you would like this to also trigger on push.
   pull_request:
-    branches: [staging, pipeline-testing, main]
+    # Updates when pull request is made to staging or main. No real reason to do so otherwise.
+    branches: [staging, main]
 
 jobs:
   jsdocs:
