@@ -8,10 +8,16 @@ on:
 
 jobs:
   jsdocs:
-    name: JSDocs push to docs repo
+    name: JSDocs Generate and Push to Other Repo
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Generate JSDocs
+        uses: npm --prefix './project/' run generate-docs
+
       - name: Push to another repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
@@ -23,5 +29,6 @@ jobs:
           user-email: cujodocs@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
+
       - name: Test get variable exported by push-to-another-repository
         run: echo $DESTINATION_CLONED_DIRECTORY
