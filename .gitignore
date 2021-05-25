@@ -5,3 +5,6 @@
 
 # Coverage Folder that is not needed on github
 /project/testing/coverage
+
+# Don't actually need JSDoc folder since it will be pushed to other repo when built.
+/project/jsdocs

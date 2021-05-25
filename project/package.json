@@ -15,7 +15,7 @@
     "lint": "eslint ./src/**/*.js",
     "prettier": "prettier --write .",
     "test": "jest --coverage",
-    "generate-docs": "jsdoc -c ./config/jsdoc-config.json ../README.md",
+    "generate-docs": "jsdoc -c ./config/jsdoc-config.json",
     "hook-setup": "git config core.hooksPath ./project/config/.githooks",
     "prepare": "npm run hook-setup"
   },
