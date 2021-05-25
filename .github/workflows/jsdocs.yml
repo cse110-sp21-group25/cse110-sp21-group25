@@ -19,7 +19,7 @@ jobs:
         run: npm --prefix './project/' ci
 
       - name: Generate JSDocs
-        uses: npm --prefix './project/' run generate-docs
+        run: npm --prefix './project/' run generate-docs
 
       - name: Push to another repo
         uses: cpina/github-action-push-to-another-repository@main
