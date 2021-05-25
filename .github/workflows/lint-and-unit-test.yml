@@ -1,10 +1,11 @@
-name: Node Setup
+name: Lint and Unit Test
 
 on:
   push:
     branches-ignore: [main]
-  pull_request:
-    branches: [staging, pipeline-testing, main]
+  # Since this is already ran for every push, will already have run for the most recent pull request.
+  # pull_request:
+  #   branches: [staging, pipeline-testing, main]
 
 jobs:
   eslint:
@@ -20,3 +21,6 @@ jobs:
 
       - name: Run Lint Check
         run: npm --prefix './project/' run lint
+
+      - name: Run Tests
+        run: npm --prefix './project/' run test
