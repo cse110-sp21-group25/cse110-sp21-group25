@@ -3,7 +3,7 @@
 **Meeting Date/Time:** 19 May 21, 5:00pm 
 **Meeting Purpose:** Sprint 2 Planning 
 **Meeting Location:** https://ucsd.zoom.us/j/5871983221
-**Note Taker:** 
+**Note Taker:** Issac Garcia
 
 ## Attendees
 **People who attended:**
@@ -32,7 +32,7 @@
 - Catchup up Simon and Issac in their respective roles. Could split up to make it easier.
 
 #### Old Business
-- "We are on sync" - TA 
+- "We are in sync" - Deepak's Input - TA 
 - Everything is on path, CI/CD Pipelines
 - GitHub logistics
 
