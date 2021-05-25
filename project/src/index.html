@@ -26,9 +26,37 @@
     <script src="./components/journal-entry/journal-entry.js"></script>
     <script src="./components/menu-symbols/menu-symbols.js"></script>
     <script src="./components/clock/clock.js"></script>
-    <script src="./components/app-wrapper/app-wrapper.js"></script>
+    <script src="./components/entry-editor/dropdown-menu/dropdown-menu.js"></script>
     <script src="./components/entry-editor/entry-item-creator/entry-item-creator.js"></script>
 
-    <app-wrapper></app-wrapper>
+    <div class="app-wrapper">
+      <div class="column left-column">
+        <nav-bar></nav-bar>
+      </div>
+      <div class="column middle-column">
+        <journal-entry></journal-entry>
+        <entry-editor>
+          <entry-item-creator></entry-item-creator>
+        </entry-editor>
+        <div class="middle-space"></div>
+        <menu-symbols></menu-symbols>
+      </div>
+      <div class="column right-column">
+        <!-- <h2>Clock</h2>  -->
+        <clock-time></clock-time>
+
+        <div id="goals">
+          <h2>Goals</h2>
+        </div>
+
+        <!-- <h2>Mood</h2> -->
+        <mood-ind name="Mood Indicator"></mood-ind>
+
+        <p>
+          "You miss 100% of the shots you dont't take" <br />
+          - Wayne Gretzky
+        </p>
+      </div>
+    </div>
   </body>
 </html>

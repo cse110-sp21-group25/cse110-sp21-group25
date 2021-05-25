@@ -9,3 +9,32 @@
   display: flex;
   flex-direction: row;
 }
+
+.bullet-text {
+  width: 100px;
+  border: solid 2px blue;
+  word-wrap: break-word;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.entry-del-btn {
+  width: 30px;
+  height: 30px;
+  visibility: hidden;
+}
+
+.symbol-display {
+  border: solid 1px grey;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+dropdown-menu {
+  position: absolute;
+  margin-top: 30px;
+  visibility: hidden;
+}
