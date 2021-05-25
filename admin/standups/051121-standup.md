@@ -12,7 +12,6 @@
 - (Simon) Investigate the CI/CD pipeline with Jesse
 - (Steven) Finished pull request for notes, thinking about weekly/ monthly goals implementation 
 
-
 #### What are you planning on working on today?
 - (Angel) A bit on other classes, and on the above mentioned features
 - (Brian) Might work on a CodePen.

@@ -12,7 +12,6 @@
 - (Simon) Work on the lab
 - (Steven) Work on Lab
 
-
 #### What are you planning on working on today?
 - (Angel) Other classes
 - (Brian) I am planning on continuing to work on the high fidelity design. Specifically, I need to finish the new revisions on the rest of the pages.

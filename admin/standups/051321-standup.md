@@ -12,7 +12,6 @@
 - (Simon) Go over linting with Jesse and helping with setup on local repository, worked on the lab
 - (Steven) I worked on lab for this class.
 
-
 #### What are you planning on working on today?
 - (Angel) Studying for a Quiz tomorrow
 - (Brian) I plan on finishing up the lab and studying for a different class.

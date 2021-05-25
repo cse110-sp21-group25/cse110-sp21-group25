@@ -12,7 +12,6 @@
 - (Simon) I went to Deepak's group meeting, met with Jesse and helped with the pre-commit hooks and auto linting for CI/CD pipeline, worked on other classes
 - (Steven) 
 
-
 #### What are you planning on working on today?
 - (Angel) Doing the quiz
 - (Brian) I plan on finishing up my midterm and working on the navbar.

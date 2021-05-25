@@ -12,7 +12,6 @@
 - (Simon) **Out of office**
 - (Steven) 
 
-
 #### What are you planning on working on today?
 - (Angel) 
 - (Brian) I am planning on working the lab and the navbar.

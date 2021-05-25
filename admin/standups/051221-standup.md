@@ -12,7 +12,6 @@
 - (Simon) Read over the introduction to github actions doc, met with Deepak
 - (Steven) Primarily worked on other classes, and work
 
-
 #### What are you planning on working on today?
 - (Angel) Finish up the HW for that class, and work on the lab
 - (Brian) I'm planning on working on the lab today and maybe converting the navbar into a web component.
