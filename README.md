@@ -8,7 +8,7 @@
 
 ---
 
-## GitHub Information:
+## GitHub Information
 
 ![Our GitHub Structure](./admin/cipipeline/github-flow.png)
 
@@ -21,7 +21,7 @@ Important GitHub Rules: (For helpful screenshots see [GitHub Guide (Coming Soon)
 
 ---
 
-## Folder Structure (Given to us via Canvas):
+## Folder Structure (Given to us via Canvas)
 
 - Overarching Decisions - we will eventually capture these as an ADR in markdown (Links to an external site.)(/specs/adrs will contain an individual document per major decision. There will be some initial ones that have to do with general project plan and approach, but more may be added as the project goes on. The main point of this capture is to explain why choices are made. As brainstorming may have your team settle on choices quickly capturing them in a document may be better than just mental consensus)
 - User Centered Thinking Documents - we will produce personas (Links to an external site.), user stories (Links to an external site.), and potentially use cases. (Links to an external site.) (/specs/users will contain this but user stories chosen will also be represented as issues to work on)
