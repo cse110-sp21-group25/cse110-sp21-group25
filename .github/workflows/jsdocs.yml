@@ -24,6 +24,7 @@ jobs:
         run: npm --prefix './project/' run generate-docs
 
       - name: Push to another repo
+        # https://github.com/marketplace/actions/push-directory-to-another-repository is the action being used to do this.
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_DOCS_GITHUB }}
