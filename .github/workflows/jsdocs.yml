@@ -18,9 +18,9 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           source-directory: "./project/jsdocs"
-          destination-github-username: "docs"
-          destination-repository-name: "MarinatedCuyitosDocs"
-          user-email: docs@cuyitos.net
+          destination-github-username: "CuJoDocs"
+          destination-repository-name: "CuJoDocumentation"
+          user-email: cujodocs@gmail.com
           commit-message: See ORIGIN_COMMIT from $GITHUB_REF
           target-branch: main
       - name: Test get variable exported by push-to-another-repository
