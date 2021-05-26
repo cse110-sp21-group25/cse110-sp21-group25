@@ -8,7 +8,7 @@ navbar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #D8E3E7;
+    background: #f1f5f6;
     height: 100vh;
     width: 15vw;
     max-width: 400px;
@@ -19,12 +19,11 @@ navbar {
 .header {
     display: flex;
     width: 100%;
-    background-color: red;
     padding: 6px 0px;
     text-align: center;
     align-items: center;
     justify-content: space-between;
-    /*border-bottom: #a2d6dd solid;*/
+    background-color: #a3e0e8;
 }
 /* ---------------------------------------- */
 
@@ -32,9 +31,7 @@ navbar {
     position: relative;
     height: 30px;
     width: 30px;
-    border-radius: 100%;
     margin: 0px 0px 0px 2%;
-    background: blue;
     text-align: center;
 }
 
@@ -54,7 +51,6 @@ navbar {
     width: 30px;
     border-radius: 100%;
     margin: 0px 4% 0px 0px;
-    background: blue;
     text-align: center;
 }
 
@@ -63,7 +59,6 @@ navbar {
     display: flex;
     font-size: 20px;
     width: 100%;
-    background: orange;
     padding: 4px 0px;
 }
 /* ---------------------------------------------------------- */
@@ -82,18 +77,25 @@ navbar {
 }
 
 .navbar-tab-arrow {
-    background: green;
     min-width: 15px;
     height: 15px;
-    margin: 0px 0px 0px 4%;
+    margin: 0px 0px 0px 2%;
 }
 
 .navbar-tab-text {
-    margin: 0px 0px 0px 4%;
+    margin: 0px 0px 0px 2%;
 }
 
 /* Highlights the tab that is selected */
-.yearly:active, .monthly:active, 
+.yearly:hover, .monthly:hover, .navbar-tab-lvl2:hover,
+.daily:hover, .goals:hover {
+    background: #bdc0c0;
+    border-radius: 10px;
+}
+/* ----------------------------------- */
+
+/* Highlights the tab when hovering over it */
+.yearly:active, .monthly:active, .navbar-tab-lvl2:active,
 .daily:active, .goals:active, .navbar-tab-highlighted {
     background: #A3E0E8;
     border-radius: 10px;
@@ -131,9 +133,8 @@ navbar {
 /* Bottom container for the symbols */
 .navbar-symbols-container > a {
     display: inline-block;
-    min-width: 20px;
-    height: 20px;
-    background: purple;
+    min-width: 36px;
+    height: 36px;
 }
 
 /* -------------------------------- */
@@ -145,9 +146,9 @@ navbar {
 /* ----------------------------------------------------- */
 
 .navbar-info {
-    margin: 0px 0px 0px 8%;
+    margin: 0px 0px 0px 4%;
 }
 
 .navbar-settings {
-    margin: 0px 8% 0px 0px;
+    margin: 0px 4% 0px 0px;
 }
