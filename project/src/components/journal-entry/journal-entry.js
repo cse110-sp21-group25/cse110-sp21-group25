@@ -32,21 +32,59 @@ class JournalEntry extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+    this.shadowRoot.addEventListener('click', () => {
+      const entryEditor = document.querySelector('entry-editor');
+      const itemCreators = entryEditor.shadowRoot.querySelectorAll('entry-item-creator');
+
+      entryEditor.style.visibility = 'visible';
+      this.style.visibility = 'hidden';
+
+      itemCreators.forEach(element => {
+        if (element.shadowRoot.querySelector('.bullet-text').innerHTML !== '') {
+          element.shadowRoot.querySelector('.entry-del-btn').style.visibility = 'visible';
+        }
+      });
+    });
   }
 
-  addBullet (content) {
-    const newBull = document.createElement('bullet-item');
-
-    newBull.img = content.img;
-    newBull.text = content.text;
-
-    this.shadowRoot.querySelector('.entry-content').appendChild(newBull);
+  updateContent (content) {
+    this.updateTitle(content.title);
+    this.addItems(content.items);
   }
 
-  addBullets (bulletList) {
-    for (let i = 0; i < bulletList.length; i++) {
-      this.addBullet(bulletList[i]);
+  addItem (content) {
+    const newItem = document.createElement('bullet-item');
+
+    newItem.img = content.symbol;
+    newItem.text = content.text;
+
+    this.shadowRoot.querySelector('.entry-content').appendChild(newItem);
+  }
+
+  addItems (itemList) {
+    // console.log('Adding items');
+    // console.log('Item List: ' + itemList);
+
+    if (this.removeItems(this.shadowRoot.querySelector('.entry-content').children > 0)) {
+      this.removeItems();
     }
+
+    for (let i = 0; i < itemList.length; i++) {
+      this.addItem(itemList[i]);
+    }
+  }
+
+  removeItems () {
+    const entryContent = this.shadowRoot.querySelector('.entry-content');
+
+    while (entryContent.firstChild) {
+      entryContent.removeChild(entryContent.firstChild);
+    }
+  }
+
+  updateTitle (newTitle) {
+    this.shadowRoot.querySelector('.entry-title').innerHTML = newTitle;
   }
 }
 

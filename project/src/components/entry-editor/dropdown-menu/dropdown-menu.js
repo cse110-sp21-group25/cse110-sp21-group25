@@ -32,7 +32,7 @@ class DropDownMenu extends HTMLElement {
     name.innerHTML = content.name;
 
     container.addEventListener('click', (event) => {
-      const creators = document.querySelector('entry-editor').querySelectorAll('entry-item-creator');
+      const creators = document.querySelector('entry-editor').shadowRoot.querySelectorAll('entry-item-creator');
       const targetEle = this;
 
       creators.forEach(element => {
@@ -49,6 +49,10 @@ class DropDownMenu extends HTMLElement {
     container.appendChild(symbol);
     container.appendChild(name);
     this.shadowRoot.querySelector('.bullet-selection-input').appendChild(container);
+  }
+
+  function () {
+    console.log('hello');
   }
 
   initSymbols (symbols) {

@@ -27,6 +27,7 @@
     <script src="./components/menu-symbols/menu-symbols.js"></script>
     <script src="./components/clock/clock.js"></script>
     <script src="./components/entry-editor/dropdown-menu/dropdown-menu.js"></script>
+    <script src="./components/entry-editor/entry-editor.js"></script>
     <script src="./components/entry-editor/entry-item-creator/entry-item-creator.js"></script>
 
     <div class="app-wrapper">
@@ -34,10 +35,10 @@
         <nav-bar></nav-bar>
       </div>
       <div class="column middle-column">
-        <journal-entry></journal-entry>
-        <entry-editor>
-          <entry-item-creator></entry-item-creator>
-        </entry-editor>
+        <div class="entry-container">
+          <journal-entry></journal-entry>
+          <entry-editor></entry-editor>
+        </div>
         <div class="middle-space"></div>
         <menu-symbols></menu-symbols>
       </div>

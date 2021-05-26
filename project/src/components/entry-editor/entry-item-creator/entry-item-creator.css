@@ -8,15 +8,17 @@
 .bullet-creator-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .bullet-text {
   width: 100px;
-  border: solid 2px blue;
+  border: solid 1px blue;
   word-wrap: break-word;
   align-items: center;
   padding-top: 4px;
   padding-bottom: 4px;
+  margin-left: 8px;
 }
 
 .entry-del-btn {
@@ -27,8 +29,9 @@
 
 .symbol-display {
   border: solid 1px grey;
-  width: 30px;
-  height: 30px;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
   background-repeat: no-repeat;
   background-position: center;
 }

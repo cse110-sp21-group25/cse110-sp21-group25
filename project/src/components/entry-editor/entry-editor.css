@@ -14,3 +14,22 @@
   display: flex;
   flex-direction: row;
 }
+
+.editor-title {
+  border: solid 1px purple;
+  width: 200px;
+}
+
+.editor-title {
+  margin-left: 8px;
+  word-wrap: break-word;
+  align-items: center;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.editor-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
