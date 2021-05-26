@@ -1,0 +1,40 @@
+name: JSDocs Generation and Push to CuJoDocumentation repo
+
+on:
+  # push:
+  #   branches-ignore: [main]
+  # Uncomment out the above if you would like this to also trigger on push.
+  pull_request:
+    # Updates when pull request is made to staging or main. No real reason to do so otherwise.
+    branches: [staging, main, pipeline-testing]
+
+jobs:
+  jsdocs:
+    name: JSDocs Generate and Push to Other Repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        run: npm --prefix './project/' ci
+
+      - name: Generate JSDocs
+        run: npm --prefix './project/' run generate-docs
+
+      - name: Push to another repo
+        # https://github.com/marketplace/actions/push-directory-to-another-repository is the action being used to do this.
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_DOCS_GITHUB }}
+        with:
+          source-directory: "./project/jsdocs"
+          destination-github-username: "CuJoDocs"
+          destination-repository-name: "CuJoDocumentation"
+          user-email: cujodocs@gmail.com
+          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
+          target-branch: main
+
+      - name: Test get variable exported by push-to-another-repository
+        run: echo $DESTINATION_CLONED_DIRECTORY

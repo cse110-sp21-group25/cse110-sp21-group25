@@ -1,10 +1,10 @@
 .DS_Store
 
 # Node related files that not everyone needs.
-node_modules
+/project/node_modules
 
-# Husky folder that is regenerated using package.json scripts.
-.husky
+# Coverage Folder that is not needed on github
+/project/testing/coverage
 
-# ESLint files that we don't need on Github
-.eslintcache
+# Don't actually need JSDoc folder since it will be pushed to other repo when built.
+/project/jsdocs
