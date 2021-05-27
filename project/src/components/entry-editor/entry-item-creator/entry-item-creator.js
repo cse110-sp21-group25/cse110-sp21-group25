@@ -75,7 +75,7 @@ class EntryItemCreator extends HTMLElement {
       const creators = document.querySelector('entry-editor').shadowRoot.querySelectorAll('entry-item-creator');
       const targetID = this.getAttribute('itemID');
 
-      creators.forEach(element => {
+      creators.forEach((element) => {
         if (element.getAttribute('itemID') === targetID) {
           entryEditor.querySelector('.editor-content-area').removeChild(element);
         }
