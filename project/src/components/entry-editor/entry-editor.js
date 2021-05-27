@@ -120,7 +120,7 @@ class EntryEditor extends HTMLElement {
     /**
      * Encode the entry-item-creators content into a JSON
      */
-    items.forEach(element => {
+    items.forEach((element) => {
       const symbol = element.shadowRoot.querySelector('.symbol-display');
       const itemText = element.shadowRoot.querySelector('.bullet-text');
 
