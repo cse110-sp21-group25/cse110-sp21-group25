@@ -115,7 +115,7 @@ class EntryEditor extends HTMLElement {
     /**
      * If the editor-title div in the entry-editor is empty, keep the original title.
      */
-    if (title.innerHTML !== '') {this._content.title = title.innerHTML;}
+    if (title.innerHTML !== '') { this._content.title = title.innerHTML; }
 
     /**
      * Encode the entry-item-creators content into a JSON

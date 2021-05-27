@@ -86,7 +86,7 @@ class goalsBoard extends HTMLElement {
 
     /**
        * Removes all the current goals being displayed in the goals-checkList div
-       * @param {<div>} checkList - link to the goals-checklist div
+       * @param {div} checkList - link to the goals-checklist div
        */
     function removeGoals (checkList) {
       // Loops through all of the goals in checkList and removes them all

@@ -73,7 +73,7 @@ class JournalEntry extends HTMLElement {
 
   /**
    * Takes an array of entries and adds all of them to the entry-content div
-   * @param {array of JSON objs} itemList - Array with all of the entries content stored as a JSON
+   * @param {JSON_Array} itemList - Array with all of the entries content stored as a JSON
    * JSON's format: { symbol: 'path to img', text: 'Bullet's text' }
    */
   addItems (itemList) {

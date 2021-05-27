@@ -82,7 +82,7 @@ class DropDownMenu extends HTMLElement {
   /**
    * Takes in a list of JSON objects with the format { imgSrc: 'filepath', name: 'what the symbol represents' }
    * and adds them to the bullet-selection-input div.
-   * @param {JSON Array} symbols - array of all the symbols (bullets) to be added to the dropdown
+   * @param {JSON_Array} symbols - array of all the symbols (bullets) to be added to the dropdown
    */
   initSymbols (symbols) {
     symbols.forEach((element) => this.addSelection(element));
