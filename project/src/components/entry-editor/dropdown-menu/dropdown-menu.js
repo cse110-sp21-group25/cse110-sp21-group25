@@ -85,7 +85,7 @@ class DropDownMenu extends HTMLElement {
    * @param {JSON Array} symbols - array of all the symbols (bullets) to be added to the dropdown
    */
   initSymbols (symbols) {
-    symbols.forEach(element => this.addSelection(element));
+    symbols.forEach((element) => this.addSelection(element));
   }
 }
 
