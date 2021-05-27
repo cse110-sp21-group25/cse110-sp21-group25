@@ -3,7 +3,6 @@
 class EntryItemCreator extends HTMLElement {
   constructor () {
     super();
-    this.ID = 0;
 
     const template = document.createElement('template');
     template.innerHTML = `
@@ -22,8 +21,7 @@ class EntryItemCreator extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    // this.shadowRoot.querySelector('.symbol-display').style.backgroundImage = 'url(../imgs/task-incompl.svg)';
-    this.shadowRoot.querySelector('.symbol-display').style.backgroundImage = 'url(../imgs/task-compl.svg)';
+    this.changeSym(this.getAttribute('symbol'));
 
     this.shadowRoot.querySelector('.symbol-display').addEventListener('click', (event) => {
       const dropdown = this.shadowRoot.querySelector('dropdown-menu');
@@ -37,7 +35,8 @@ class EntryItemCreator extends HTMLElement {
       if (bullTxt.innerHTML !== '') {
         delBtn.style.visibility = 'visible';
         const newCreator = document.createElement('entry-item-creator');
-        newCreator.ID = this.ID + 1;
+        newCreator.itemID = 'item' + (parseInt(this.itemID.substr(4)) + 1).toString();
+        newCreator.symbol = '../imgs/task-incompl.svg';
 
         document.querySelector('entry-editor').shadowRoot.querySelector('.editor-content-area').appendChild(newCreator);
       }
@@ -46,14 +45,31 @@ class EntryItemCreator extends HTMLElement {
     this.shadowRoot.querySelector('.entry-del-btn').addEventListener('click', (event) => {
       const entryEditor = document.querySelector('entry-editor').shadowRoot;
       const creators = document.querySelector('entry-editor').shadowRoot.querySelectorAll('entry-item-creator');
-      const targetID = this.ID;
+      const targetID = this.getAttribute('itemID');
 
       creators.forEach(element => {
-        if (element.ID === targetID) {
+        if (element.getAttribute('itemID') === targetID) {
           entryEditor.querySelector('.editor-content-area').removeChild(element);
         }
       });
     });
+  }
+
+  get itemID () {
+    return this.getAttribute('itemID');
+  }
+
+  set itemID (newID) {
+    this.setAttribute('itemID', newID);
+  }
+
+  get symbol () {
+    return this.getAttribute('symbol');
+  }
+
+  set symbol (newSym) {
+    this.setAttribute('symbol', newSym);
+    this.changeSym(newSym);
   }
 
   changeSym (path) {

@@ -15,7 +15,17 @@ class DropDownMenu extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    const symbols = [{ imgSrc: '../imgs/chevron-down-solid.svg', name: 'shenron down' }, { imgSrc: '../imgs/cog-solid.svg', name: 'gear' }];
+    const symbols = [
+      { imgSrc: '../imgs/task-incompl.svg', name: 'Task Incomplete' },
+      { imgSrc: '../imgs/task-compl.svg', name: 'Task Complete' },
+      { imgSrc: '../imgs/task-migrated.svg', name: 'Task Migrated' },
+      { imgSrc: '../imgs/task-scheduled.svg', name: 'Task Scheduled' },
+      { imgSrc: '../imgs/event.svg', name: 'Event' },
+      { imgSrc: '../imgs/priority.svg', name: 'Priority' },
+      { imgSrc: '../imgs/inspiration.svg', name: 'Inspiration' },
+      { imgSrc: '../imgs/notes.svg', name: 'Notes' },
+      { imgSrc: '../imgs/exploration.svg', name: 'Exploration' }
+    ];
     this.initSymbols(symbols);
   }
 
@@ -40,10 +50,6 @@ class DropDownMenu extends HTMLElement {
           element.changeSym(event.currentTarget.querySelector('.bullet-img').src);
         }
       });
-
-      // document.querySelector('app-wrapper')
-      //   .query('entry-item-creator')
-      //   .changeSym(event.currentTarget.querySelector('.bullet-img').src);
     });
 
     container.appendChild(symbol);

@@ -7,11 +7,9 @@
 </style>
 <g id="Layer_1_1_">
 </g>
-<g id="Circle">
-	<circle class="st0" cx="32" cy="32" r="24"/>
-	
-		<rect x="27.7" y="-10.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.2428 32.029)" class="st0" width="8.6" height="84.9"/>
-	
-		<rect x="-10.5" y="27.6" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -13.2192 31.9604)" class="st0" width="84.9" height="8.6"/>
+<g id="Layer_2_1_">
+	<rect x="36" y="21" transform="matrix(0.5 -0.866 0.866 0.5 -22.0652 57.7791)" class="st0" width="6" height="54"/>
+	<circle class="st0" cx="17" cy="32" r="17"/>
+	<rect x="12.1" y="13.1" transform="matrix(0.866 -0.5 0.5 0.866 -2.8073 21.716)" class="st0" width="54" height="6"/>
 </g>
 </svg>

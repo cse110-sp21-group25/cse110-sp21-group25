@@ -9,7 +9,7 @@ class Bullet extends HTMLElement {
             <link rel="stylesheet" href="./components/journal-entry/bullet/bullet.css">
   
             <div class="bullet-container">
-              <img src="" class="bullet-img" width="16px" height="16px"><span class="bullet-text"></span>
+              <img src="" class="bullet-img" width="20px" height="20px"><span class="bullet-text"></span>
             </div>
            `;
 
