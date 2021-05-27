@@ -1,0 +1,30 @@
+.bullet-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-width: 115px;
+  height: 20px;
+  padding-right: 4px;
+  background: #f1f5f6;
+  border: solid 1px grey;
+}
+
+.bullet-img {
+  width: 20px;
+  height: 20px;
+}
+
+.bullet-selection-input {
+  display: flex;
+  flex-direction: column;
+  border: solid 2px black;
+}
+
+.bullet-name {
+  margin-left: 10px;
+}

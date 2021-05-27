@@ -1,0 +1,17 @@
+.entry-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.entry-header,
+.entry-body-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.entry-tags-container {
+  display: flex;
+  flex-direction: row;
+}

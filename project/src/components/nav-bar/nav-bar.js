@@ -58,12 +58,6 @@ class navBar extends HTMLElement {
                     </div>
                     <div class="navbar-tab-item-container daily-item-container">
                     </div>
-                    <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank' class="navbar-tab goals">
-                        <img src="../imgs/chevron-right.svg" class="navbar-tab-arrow">
-                        <div class="navbar-tab-text">
-                            Goals
-                        </div>
-                    </a>
                     <!--------------------------------------------------------------->
 
                     <!-- Empty space div for keeping the format-->
