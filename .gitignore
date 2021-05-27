@@ -8,3 +8,5 @@
 
 # Don't actually need JSDoc folder since it will be pushed to other repo when built.
 /project/jsdocs
+
+node_modules
