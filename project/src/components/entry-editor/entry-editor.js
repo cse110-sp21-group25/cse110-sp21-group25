@@ -162,7 +162,7 @@ class EntryEditor extends HTMLElement {
   hideDropDowns (selected) {
     const creators = this.shadowRoot.querySelectorAll('entry-item-creator');
 
-    creators.forEach(element => {
+    creators.forEach((element) => {
       if (element.shadowRoot.querySelector('dropdown-menu') !== selected) {
         element.shadowRoot.querySelector('dropdown-menu').style.visibility = 'hidden';
       }
