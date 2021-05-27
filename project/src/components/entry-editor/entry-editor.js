@@ -44,7 +44,7 @@ class EntryEditor extends HTMLElement {
        * otherwise they won't disappear. (This is because they are no longer inheritting
        * from their parent)
        */
-      itemCreators.forEach(element => {
+      itemCreators.forEach((element) => {
         element.shadowRoot.querySelector('dropdown-menu').style.visibility = 'hidden';
         element.shadowRoot.querySelector('.entry-del-btn').style.visibility = 'hidden';
       });
