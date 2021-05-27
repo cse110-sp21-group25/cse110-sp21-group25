@@ -1,12 +1,10 @@
 .DS_Store
 
 # Node related files that not everyone needs.
-/project/node_modules
+node_modules
 
 # Coverage Folder that is not needed on github
-/project/testing/coverage
+coverage
 
 # Don't actually need JSDoc folder since it will be pushed to other repo when built.
-/project/jsdocs
-
-node_modules
+jsdocs
