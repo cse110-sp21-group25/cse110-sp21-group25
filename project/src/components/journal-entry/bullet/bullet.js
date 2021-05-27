@@ -17,18 +17,30 @@ class Bullet extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
+  /**
+   * Getter for the .bullet-image src
+   */
   get img () {
     return this.shadowRoot.querySelector('.bullet-img').src;
   }
 
+  /**
+   * Setter for the .bullet-image src
+   */
   set img (newImg) {
     this.shadowRoot.querySelector('.bullet-img').src = newImg;
   }
 
+  /**
+   * Getter for the .bullet-text innerHTML
+   */
   get text () {
     return this.shadowRoot.querySelector('.bullet-text').innerHTML;
   }
 
+  /**
+   * Stter for the .bullet-text innerHTML
+   */
   set text (newText) {
     this.shadowRoot.querySelector('.bullet-text').innerHTML = newText;
   }

@@ -154,6 +154,20 @@ class EntryEditor extends HTMLElement {
     });
     this._content.items = [];
   }
+
+  /**
+   * Hides all of the dropdown menus except for the one found in the parameter selected
+   * @param {dropdown-menu} selected - This is the dropdown-menu that should not be toggled.
+   */
+  hideDropDowns (selected) {
+    const creators = this.shadowRoot.querySelectorAll('entry-item-creator');
+
+    creators.forEach(element => {
+      if (element.shadowRoot.querySelector('dropdown-menu') !== selected) {
+        element.shadowRoot.querySelector('dropdown-menu').style.visibility = 'hidden';
+      }
+    });
+  }
 }
 
 customElements.define('entry-editor', EntryEditor);
