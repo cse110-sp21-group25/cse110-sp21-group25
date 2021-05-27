@@ -8,6 +8,7 @@ class goalsBoard extends HTMLElement {
     const template = document.createElement('template');
     template.innerHTML = `
               <link rel="stylesheet" href="./components/goals-board/goals-board.css">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
 
               <!-- Container for the entire component (orange bg, flexbox set to column) -->
               <div class="goals-board-container">
@@ -21,6 +22,7 @@ class goalsBoard extends HTMLElement {
                 </div>
               </div>
            `;
+
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
