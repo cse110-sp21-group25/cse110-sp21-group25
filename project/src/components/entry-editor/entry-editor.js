@@ -89,7 +89,7 @@ class EntryEditor extends HTMLElement {
     /**
      * Creating the new entry-item-creators based on the bullet-items components found in journal-entry
      */
-    items.forEach(element => {
+    items.forEach((element) => {
       const newCreator = document.createElement('entry-item-creator');
       const lastCreator = this.querySelector('.editor-content-area');
 
