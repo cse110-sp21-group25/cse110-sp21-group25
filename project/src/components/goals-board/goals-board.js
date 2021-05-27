@@ -23,7 +23,6 @@ class goalsBoard extends HTMLElement {
               </div>
            `;
 
-
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
