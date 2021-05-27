@@ -67,7 +67,7 @@ class DropDownMenu extends HTMLElement {
       const creators = document.querySelector('entry-editor').shadowRoot.querySelectorAll('entry-item-creator');
       const targetEle = this;
 
-      creators.forEach(element => {
+      creators.forEach((element) => {
         if (element.shadowRoot.querySelector('dropdown-menu') === targetEle) {
           element.changeSym(event.currentTarget.querySelector('.bullet-img').src);
         }
