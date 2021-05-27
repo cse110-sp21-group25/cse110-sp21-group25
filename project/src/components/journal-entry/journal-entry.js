@@ -53,7 +53,7 @@ class JournalEntry extends HTMLElement {
        * This is done so that the last entry-item-creator that generates the other entry-item-creators
        * doesn't have the delete button showing.
        */
-      itemCreators.forEach(element => {
+      itemCreators.forEach((element) => {
         if (element.shadowRoot.querySelector('.bullet-text').innerHTML !== '') {
           element.shadowRoot.querySelector('.entry-del-btn').style.visibility = 'visible';
         }
