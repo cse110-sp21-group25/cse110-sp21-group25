@@ -29,7 +29,8 @@
       "$": "writable",
       "customElements": "writable",
       "test": "writable",
-      "expect": "writable"
+      "expect": "writable",
+      "Event": "writable"
     }
   },
   "eslintIgnore": [
