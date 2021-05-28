@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** DropDownMenu Web Component */
 class DropDownMenu extends HTMLElement {
   constructor () {
     super();

@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** Entry Editor Web Component */
 class EntryEditor extends HTMLElement {
   constructor () {
     super();

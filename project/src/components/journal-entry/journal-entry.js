@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** JournalEntry Web Component */
 class JournalEntry extends HTMLElement {
   constructor () {
     super();
