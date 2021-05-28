@@ -1,5 +1,3 @@
-/* global HTMLElement, Event */
-
 /** Goals Board Web Component */
 class goalsBoard extends HTMLElement {
   constructor () {
@@ -85,9 +83,9 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-       * Removes all the current goals being displayed in the goals-checkList div
-       * @param {<div>} checkList - link to the goals-checklist div
-       */
+     * Removes all the current goals being displayed in the goals-checkList div
+     * @param {div} checkList - link to the goals-checklist div
+     */
     function removeGoals (checkList) {
       // Loops through all of the goals in checkList and removes them all
       while (checkList.children.length > 0) {

@@ -1,4 +1,4 @@
-
+/** NavBar Web Component */
 class navBar extends HTMLElement {
   constructor () {
     super();

@@ -1,5 +1,4 @@
-/* global HTMLElement */
-
+/** MoodIndicator Web Component */
 class MoodIndicator extends HTMLElement {
   constructor () {
     super();

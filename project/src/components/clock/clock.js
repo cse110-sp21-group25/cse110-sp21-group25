@@ -1,5 +1,4 @@
-/* global HTMLElement */
-
+/** Clock Web Component */
 class Clock extends HTMLElement {
   constructor () {
     super();
