@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** MenuSymbols Web Component */
 class MenuSymbols extends HTMLElement {
   constructor () {
     super();
