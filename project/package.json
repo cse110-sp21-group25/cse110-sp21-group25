@@ -38,6 +38,7 @@
       "customElements": "writable",
       "test": "writable",
       "expect": "writable",
+      "Event": "writable",
       "describe": "writable",
       "beforeAll": "writable",
       "afterAll": "writable",
