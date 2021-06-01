@@ -13,7 +13,6 @@
 
   // Navigate to page
   await page.goto('http://127.0.0.1:8080');
-  // await page.goto('https://www.google.com');
 
   // Disable both JavaScript and CSS coverage
   const [jsCoverage, cssCoverage] = await Promise.all([
@@ -26,7 +25,7 @@
 // -------------------------------------------DO NOT ALTER ABOVE-------------------------------------------------------
 // Please do not alter any of the code above. Is required to generate test coverage.
 
-describe('Testing Main Page', () => {
+describe('Testing Nav Bar', () => {
   beforeAll(async () => {
     await page.goto('http://127.0.0.1:8080');
     /**
