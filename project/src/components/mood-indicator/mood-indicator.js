@@ -27,24 +27,13 @@ class MoodIndicator extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    const card = this.shadowRoot.querySelector('#card > #icons');
-    const desc = this.shadowRoot.querySelector('#card > #desc');
-
-    card.addEventListener('click', function (e) {
-      if (e.target.getAttribute('alt') === 'bad') {
-        transDesc('BAD');
-        desc.style.backgroundColor = '#E74C3C';
-        enlargeBad();
-      } else if (e.target.getAttribute('alt') === 'meh') {
-        transDesc('OKAY');
-        desc.style.backgroundColor = '#CCCCCC';
-        enlargeMeh();
-      } else if (e.target.getAttribute('alt') === 'great') {
-        transDesc('GREAT');
-        desc.style.backgroundColor = '#44EF89';
-        enlargeGreat();
-      }
-    });
+    const transDesc = (text) => {
+      desc.classList.add('fade');
+      setTimeout(() => {
+        desc.innerText = text;
+        desc.classList.remove('fade');
+      }, 150);
+    };
 
     const badEmo = this.shadowRoot.querySelector('img.bad');
     const mehEmo = this.shadowRoot.querySelector('img.meh');
@@ -66,13 +55,24 @@ class MoodIndicator extends HTMLElement {
       mehEmo.remove();
     }
 
-    const transDesc = (text) => {
-      desc.classList.add('fade');
-      setTimeout(() => {
-        desc.innerText = text;
-        desc.classList.remove('fade');
-      }, 150);
-    };
+    const card = this.shadowRoot.querySelector('#card > #icons');
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+
+    card.addEventListener('click', function (e) {
+      if (e.target.getAttribute('alt') === 'bad') {
+        transDesc('BAD');
+        desc.style.backgroundColor = '#E74C3C';
+        enlargeBad();
+      } else if (e.target.getAttribute('alt') === 'meh') {
+        transDesc('OKAY');
+        desc.style.backgroundColor = '#CCCCCC';
+        enlargeMeh();
+      } else if (e.target.getAttribute('alt') === 'great') {
+        transDesc('GREAT');
+        desc.style.backgroundColor = '#44EF89';
+        enlargeGreat();
+      }
+    });
   }
 }
 
