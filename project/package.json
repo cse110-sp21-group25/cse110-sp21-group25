@@ -7,17 +7,25 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
+    "http-server": "^0.12.3",
     "jest": "^26.6.3",
+    "jest-puppeteer": "^5.0.4",
     "jsdoc": "^3.6.7",
+    "nyc": "^15.1.0",
+    "puppeteer": "^9.1.1",
+    "puppeteer-to-istanbul": "^1.4.0",
     "semistandard": "^16.0.0"
   },
   "scripts": {
-    "lint": "eslint ./src/**/*.js",
-    "prettier": "prettier --write .",
-    "test": "jest --coverage",
+    "clean": "git clean -fXd -e \\!node_modules -e \\!node_modules/**/*",
+    "coverage": "nyc report --reporter=text --cwd ./testing/coverage/ --report-dir ./coverage-html",
     "generate-docs": "jsdoc -c ./config/jsdoc-config.json",
     "hook-setup": "git config core.hooksPath ./project/config/.githooks",
-    "prepare": "npm run hook-setup"
+    "lint": "eslint ./src/**/*.js",
+    "prepare": "npm run hook-setup",
+    "prettier": "prettier --write .",
+    "start-server": "npx http-server ./src",
+    "test": "npm run clean && jest --coverage && npm run coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -30,15 +38,27 @@
       "customElements": "writable",
       "test": "writable",
       "expect": "writable",
-      "Event": "writable"
+      "Event": "writable",
+      "describe": "writable",
+      "beforeAll": "writable",
+      "afterAll": "writable",
+      "page": "writable",
+      "it": "writable",
+      "await": "writable",
+      "before": "writable",
+      "after": "writable"
     }
   },
   "eslintIgnore": [
-    "**/node_modules/*.js"
+    "**/node_modules/*.js",
+    "jest-puppeteer.config.js"
   ],
   "jest": {
-    "coverageDirectory": "./testing/coverage",
-    "coverageProvider": "v8",
-    "testEnvironment": "node"
+    "preset": "jest-puppeteer",
+    "testMatch": [
+      "**/testing/**/*.test.js"
+    ],
+    "coverageDirectory": "./testing/coverage/jest-coverage",
+    "verbose": true
   }
 }
