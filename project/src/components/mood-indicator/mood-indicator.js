@@ -75,4 +75,5 @@ class MoodIndicator extends HTMLElement {
     };
   }
 }
+
 customElements.define('mood-ind', MoodIndicator);
