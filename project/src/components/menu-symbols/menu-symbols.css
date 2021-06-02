@@ -1,24 +1,13 @@
 #menuToggle {
-  position: relative;
   display: block;
-  bottom: 0;
-  left: 15px;
+  position: absolute;
+  bottom: 10px;
+  left: 16vw;
 
   z-index: 1;
 
   -webkit-user-select: none;
   user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: tomato;
 }
 
 #menuToggle input {
@@ -37,9 +26,6 @@
   -webkit-touch-callout: none;
 }
 
-/*
-         * Just a quick hamburger
-         */
 #menuToggle span {
   display: block;
   width: 33px;
@@ -66,38 +52,29 @@
   transform-origin: 0% 100%;
 }
 
-/* 
-         * Transform all the slices of hamburger
-         * into a crossmark.
-         */
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-/*
-         * But let's hide the middle one.
-         */
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
-         * Ohyeah and the last one should go the other direction
-         */
 #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
 #menu {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 40px;
   color: black;
+  background-color: #f1f5f6;
   border: 1px solid black;
-  width: 400px;
+  width: 540px;
   height: 150px;
   padding: 20px;
   border-radius: 5px;
@@ -106,18 +83,10 @@
   line-height: 50px;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
   transform-origin: 0% 0%;
   transform: translate(-300%, 0);
-
-  /* // transition-duration: 0.1s; */
-  /* // transition-timing-function: cubic-bezier(0, 1, 0.5, 1); */
 }
 
-/*
-         * And let's slide it in from the left
-         */
 #menuToggle input:checked ~ ul {
   transform: none;
 }
@@ -128,6 +97,7 @@ table tr th {
   text-align: left;
 }
 
-i {
-  padding-right: 10px;
+img{
+  width: 15px;
+  padding-right: 5px;
 }
