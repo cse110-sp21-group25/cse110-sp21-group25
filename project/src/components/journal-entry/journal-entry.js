@@ -109,7 +109,7 @@ class JournalEntry extends HTMLElement {
           if (hasListener.indexOf(element) === -1) {
             hasListener.push(element);
             // Allow option list when right click
-            element.addEventListener('contextmenu', e => {
+            element.addEventListener('contextmenu', (e) => {
               hasListener.push(element);
               e.preventDefault();
               console.log('right click');
