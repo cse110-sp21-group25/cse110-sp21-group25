@@ -20,6 +20,7 @@
     />
   </head>
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.7.0/main.min.js"></script>
     <script src="./components/journal-entry/bullet/bullet.js"></script>
     <script src="./components/nav-bar/nav-bar.js"></script>
     <script src="./components/mood-indicator/mood-indicator.js"></script>
@@ -30,6 +31,7 @@
     <script src="./components/entry-editor/entry-editor.js"></script>
     <script src="./components/goals-board/goals-board.js"></script>
     <script src="./components/entry-editor/entry-item-creator/entry-item-creator.js"></script>
+    <script src="./components/calendar/calendar.js"></script>
 
     <div class="app-wrapper">
       <div class="column left-column">
@@ -37,7 +39,9 @@
       </div>
       <div class="column middle-column">
         <div class="entry-container">
-          <journal-entry></journal-entry>
+          <my-calendar></my-calendar>
+
+          <!-- <journal-entry></journal-entry> -->
         </div>
         <div class="middle-space"></div>
         <menu-symbols></menu-symbols>

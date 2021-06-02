@@ -46,7 +46,8 @@
       "it": "writable",
       "await": "writable",
       "before": "writable",
-      "after": "writable"
+      "after": "writable",
+      "FullCalendar": "writable"
     }
   },
   "eslintIgnore": [
@@ -60,5 +61,8 @@
     ],
     "coverageDirectory": "./testing/coverage/jest-coverage",
     "verbose": true
+  },
+  "dependencies": {
+    "fullcalendar": "^5.7.0"
   }
 }
