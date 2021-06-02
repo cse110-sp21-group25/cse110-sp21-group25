@@ -65,7 +65,7 @@ class JournalEntry extends HTMLElement {
       outClick.style.display = 'none';
     });
 
-    this.shadowRoot.querySelectorAll('.menu > li').forEach(item => {
+    this.shadowRoot.querySelectorAll('.menu > li').forEach((item) => {
       item.addEventListener('click', () => {
         const bullets = this.shadowRoot.querySelectorAll('article > ul > li');
         window.alert(item.getAttribute('id'));
@@ -109,7 +109,7 @@ class JournalEntry extends HTMLElement {
           if (hasListener.indexOf(element) === -1) {
             hasListener.push(element);
             // Allow option list when right click
-            element.addEventListener('contextmenu', e => {
+            element.addEventListener('contextmenu', (e) => {
               hasListener.push(element);
               e.preventDefault();
               console.log('right click');
@@ -130,7 +130,7 @@ class JournalEntry extends HTMLElement {
              */
         optionList.addEventListener('change', (event) => {
           const bullets = document.querySelector('journal-entry').shadowRoot.querySelectorAll('article > ul > li');
-          bullets.forEach(element => {
+          bullets.forEach((element) => {
             if (element.classList.contains('selected')) {
               console.log(element);
               element.className = event.target.value;
