@@ -65,7 +65,7 @@ class JournalEntry extends HTMLElement {
       outClick.style.display = 'none';
     });
 
-    this.shadowRoot.querySelectorAll('.menu > li').forEach(item => {
+    this.shadowRoot.querySelectorAll('.menu > li').forEach((item) => {
       item.addEventListener('click', () => {
         const bullets = this.shadowRoot.querySelectorAll('article > ul > li');
         window.alert(item.getAttribute('id'));
