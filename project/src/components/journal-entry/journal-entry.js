@@ -130,7 +130,7 @@ class JournalEntry extends HTMLElement {
              */
         optionList.addEventListener('change', (event) => {
           const bullets = document.querySelector('journal-entry').shadowRoot.querySelectorAll('article > ul > li');
-          bullets.forEach(element => {
+          bullets.forEach((element) => {
             if (element.classList.contains('selected')) {
               console.log(element);
               element.className = event.target.value;
