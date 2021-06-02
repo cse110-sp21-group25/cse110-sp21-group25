@@ -518,27 +518,13 @@ class QuoteGenerator extends HTMLElement {
       '“Life is like riding a bicycle. In order to maintain balance you must keep moving.” – Albert Einstein',
       '“No matter where life takes me, find me with a smile.” – Mac Miller',
       '“There is no mountain I cant climb. No tower too high. No plane that I can’t learn how to fly.” – Eminem',
-      '“If you aren’t sincere with it, you shouldn’t say anything at all.” – Dr. Dre'
+      '“If you aren’t sincere with it, you shouldn’t say anything at all.” – Dr. Dre',
+      '"You miss 100% of the shots you don\'t take." - Wayne Gretzky'
     ];
 
     const randomNumber = Math.floor(Math.random() * quotes.length);
 
     this.shadowRoot.querySelector('.quoteGenius').innerHTML = quotes[randomNumber];
-
-    // // set to 0 for testing purposes, need to update
-    // const prevDate = 0;
-
-    // const myDate = new Date();
-    // console.log(quotes.length);
-
-    // const currDate = myDate.getDate();
-
-    // if (currDate !== prevDate) {
-    //   console.log('hi');
-    //   const randomNumber = Math.floor(Math.random() * quotes.length);
-
-    //   this.shadowRoot.querySelector('.quoteGenius').innerHTML = quotes[randomNumber];
-    // }
   }
 }
 
