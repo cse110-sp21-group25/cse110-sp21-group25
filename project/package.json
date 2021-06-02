@@ -47,7 +47,9 @@
       "await": "writable",
       "before": "writable",
       "after": "writable",
-      "FullCalendar": "writable"
+      "FullCalendar": "writable",
+      "alert": "writable",
+      "prompt": "writable"
     }
   },
   "eslintIgnore": [
