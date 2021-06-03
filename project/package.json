@@ -41,6 +41,7 @@
       "Event": "writable",
       "describe": "writable",
       "beforeAll": "writable",
+      "beforeEach": "writable",
       "afterAll": "writable",
       "page": "writable",
       "it": "writable",
