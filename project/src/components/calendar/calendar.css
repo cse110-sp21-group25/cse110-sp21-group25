@@ -1,20 +1,64 @@
   html, body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
   }
    
   #calendar {
-    max-width: 98%;
+    display: none;
+    position: absolute;
+    padding-left: 20px;
+    width: 100%;
     margin: 40px auto;
   }
 
-  .fc-right .fc-prev-button, .fc-right .fc-next-button{
-    background-color: #b1d583;
-    background-image: none;
+  .fc, .fc *, .fc ::before, .fc ::after {
+    box-sizing: inherit;
+  }
+
+  .fc-view-container {
+    width: 2px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #78909C;
+  }
+
+  .fc .fc-toolbar.fc-header-toolbar {
+    background: none;
+    border-color: none;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    /* background: #d8e3e7; */
+  }
+
+  .fc .fc-button-primary {
+    border-style: hidden;
+    color: #78909c;
+    color: var(--fc-button-text-color, #78909c);
+    background-color: #d8e3e7;
+    background-color: var(--fc-button-bg-color, #d8e3e7);
+    border-color: var(--fc-button-border-color, #d8e3e7);
+    border-radius: 15px;
+  }
+
+  .fc .fc-button-primary:disabled {
+    border-style: hidden;
+    color: #78909c;
+    color: var(--fc-button-text-color, #78909c);
+    background-color: #d8e3e7;
+    background-color: var(--fc-button-bg-color, #d8e3e7);
+    border-color: var(--fc-button-border-color, #d8e3e7);
+  }
+
+  .fc .fc-daygrid-day.fc-day-today {
+    background-color: rgba(216, 227, 231, 1);
+    background-color: var(--fc-today-bg-color, rgba(216, 227, 231, 1));
   }
   
   div .fc-license-message{
     visibility: hidden;
   }
+
+  
