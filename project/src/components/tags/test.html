@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
       <meta charset="utf-8" />
-  
+
       <title>Web Component Showcase</title>
       <meta name="description" content="Web Component Showcase" />
     </head>
@@ -11,8 +11,7 @@
     <body>
   
       <script type="module" src="tags.js"></script>
-      <script type="module" src="bttn.js"></script>
-      <script type="module" src="loader.js"></script>
+
   
   
       <style>
@@ -28,7 +27,7 @@
       </style>
     
       <input id= 'color-picker' type="color"  value='#C0C0C0'>
-      <input id='add-textfield' name="textfield" type="text" placeholder="Enter your tag"><button id = "add-tag" type = "submit" onclick="if(this.getRootNode().getElementById('add-textfield').value != ''){const newTag = document.createElement('tag-bujo');newTag.tag = [this.getRootNode().getElementById('add-textfield').value,this.getRootNode().getElementById('color-picker').value];const summon = document.getElementById('tag-holder');summon.appendChild(newTag);this.getRootNode().getElementById('add-textfield').value = '';}">+</button>
+      <input id='add-textfield' name="textfield" type="text" placeholder="Enter your tag"><button id = "add-tag" type = "submit">+</button>
   
   
     </body>
