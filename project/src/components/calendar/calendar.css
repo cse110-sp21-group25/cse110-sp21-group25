@@ -5,8 +5,8 @@
   }
    
   #calendar {
-    display: none;
-    position: absolute;
+    display: block;
+    /* position: absolute; */
     padding-left: 20px;
     width: 100%;
     margin: 40px auto;
@@ -61,4 +61,3 @@
     visibility: hidden;
   }
 
-  
