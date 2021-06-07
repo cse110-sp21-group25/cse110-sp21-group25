@@ -206,21 +206,6 @@ describe('Testing Nav Bar Component', () => {
     });
 
     expect(focusIconBeforeClick).toMatch(/eye.svg/);
-
-    /**
-     * Test for image to be updated once clicked. Either it takes too long for the image to update or something else is wrong right now.
-     * TODO: Figure out what is wrong.
-    await page.evaluate(() => {
-      return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.header > img.focus-btn').click();
-    });
-
-    // Test the img after clicking.
-    const focusIconAfterClick = await page.evaluate(() => {
-      return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.header > img.focus-btn').src;
-    });
-
-    expect(focusIconAfterClick).toMatch(/eye-slash-solid.svg/);
-    */
   });
 
   test('Test9: Check Nav-Bar Information button holds the correct image', async () => {
