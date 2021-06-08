@@ -43,34 +43,22 @@ class MoodIndicator extends HTMLElement {
 
     function enlargeBad () {
       badEmo.style.transform = 'scale(1.5)';
-      // mehEmo.remove();
-      // greatEmo.remove();
     }
     function enlargeMeh () {
       mehEmo.style.transform = 'scale(1.5)';
-      // badEmo.remove();
-      // greatEmo.remove();
     }
     function enlargeGreat () {
       greatEmo.style.transform = 'scale(1.5)';
-      // badEmo.remove();
-      // mehEmo.remove();
     }
 
     function smallBad () {
       badEmo.style.transform = 'scale(1)';
-      // mehEmo.remove();
-      // greatEmo.remove();
     }
     function smallMeh () {
       mehEmo.style.transform = 'scale(1)';
-      // badEmo.remove();
-      // greatEmo.remove();
     }
     function smallGreat () {
       greatEmo.style.transform = 'scale(1)';
-      // badEmo.remove();
-      // mehEmo.remove();
     }
 
     const card = this.shadowRoot.querySelector('#card > #icons');
