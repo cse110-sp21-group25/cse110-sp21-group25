@@ -2,7 +2,7 @@ let storage = localStorage.getItem('storage');
 
 /**
  * Checks to see if the storage variable exists in localStorage. If does not, this if statement
- * creates the basic structure of the JSON storage. If the storage variable does exist, the if 
+ * creates the basic structure of the JSON storage. If the storage variable does exist, the if
  * statement will parse the stringified JSON variable.
  */
 if (storage === null) {
@@ -51,7 +51,7 @@ function getWeek (date) {
 /**
  * Function that saves the storage variable to localStorage
  */
-function saveStorage() {
+function saveStorage () {
   localStorage.setItem('storage', JSON.stringify(storage));
 }
 
