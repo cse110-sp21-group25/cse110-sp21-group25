@@ -47,7 +47,8 @@
       "it": "writable",
       "await": "writable",
       "before": "writable",
-      "after": "writable"
+      "after": "writable",
+      "localStorage": "writable"
     }
   },
   "eslintIgnore": [
