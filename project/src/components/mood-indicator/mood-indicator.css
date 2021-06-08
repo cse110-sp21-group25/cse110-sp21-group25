@@ -14,6 +14,12 @@ img{
   width: 15%;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  color: black;
+}
+
 #icons {
   display: flex;
   justify-content: space-around;
@@ -47,3 +53,16 @@ img:hover{
 #desc.fade {
   transform: translateY(-80px);
 }
+
+/* #card > #arrow-up {
+  position: absolute;
+  top: 1032px;
+  left: 73.7%;
+  width: 0; 
+	height: 0; 
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	
+	border-bottom: 25px solid tomato;
+} */
+

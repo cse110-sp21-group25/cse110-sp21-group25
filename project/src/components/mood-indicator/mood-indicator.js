@@ -20,6 +20,8 @@ class MoodIndicator extends HTMLElement {
         <img src="../imgs/great-emo.png" class="great" alt="great">
       </div>
 
+      <div id="arrow-up">
+      </div>
     </div>
     
   `;
@@ -41,18 +43,34 @@ class MoodIndicator extends HTMLElement {
 
     function enlargeBad () {
       badEmo.style.transform = 'scale(1.5)';
-      mehEmo.remove();
-      greatEmo.remove();
+      // mehEmo.remove();
+      // greatEmo.remove();
     }
     function enlargeMeh () {
       mehEmo.style.transform = 'scale(1.5)';
-      badEmo.remove();
-      greatEmo.remove();
+      // badEmo.remove();
+      // greatEmo.remove();
     }
     function enlargeGreat () {
       greatEmo.style.transform = 'scale(1.5)';
-      badEmo.remove();
-      mehEmo.remove();
+      // badEmo.remove();
+      // mehEmo.remove();
+    }
+
+    function smallBad () {
+      badEmo.style.transform = 'scale(1)';
+      // mehEmo.remove();
+      // greatEmo.remove();
+    }
+    function smallMeh () {
+      mehEmo.style.transform = 'scale(1)';
+      // badEmo.remove();
+      // greatEmo.remove();
+    }
+    function smallGreat () {
+      greatEmo.style.transform = 'scale(1)';
+      // badEmo.remove();
+      // mehEmo.remove();
     }
 
     const card = this.shadowRoot.querySelector('#card > #icons');
@@ -63,14 +81,20 @@ class MoodIndicator extends HTMLElement {
         transDesc('BAD');
         desc.style.backgroundColor = '#E74C3C';
         enlargeBad();
+        smallMeh();
+        smallGreat();
       } else if (e.target.getAttribute('alt') === 'meh') {
         transDesc('OKAY');
         desc.style.backgroundColor = '#CCCCCC';
         enlargeMeh();
+        smallBad();
+        smallGreat();
       } else if (e.target.getAttribute('alt') === 'great') {
         transDesc('GREAT');
         desc.style.backgroundColor = '#44EF89';
         enlargeGreat();
+        smallBad();
+        smallMeh();
       }
     });
   }
