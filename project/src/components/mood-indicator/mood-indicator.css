@@ -14,6 +14,12 @@ img{
   width: 15%;
 }
 
+hr {
+  display: block;
+  height: 1px;
+  color: black;
+}
+
 #icons {
   display: flex;
   justify-content: space-around;
