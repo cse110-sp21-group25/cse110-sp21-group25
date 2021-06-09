@@ -2,33 +2,58 @@
   font-family: "Quicksand", sans-serif;
 }
 
+.editable {
+  background: white;
+  cursor: text;
+}
+
 .goals-board-container {
   display: flex;
-  width: 15vw;
+  width: 13vw;
   height: 45vh;
   background: #d8e3e7;
   flex-direction: column;
   border-radius: 20px;
+  padding: 20px;
 }
 
 .goals-button-container {
   display: flex;
   background-color: #d8e3e7;
   height: 13%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-radius: 20px;
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-.checkbox-container {
-  margin: 0px 0px 0px 8%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 10px;
+  width: 96%;
 }
 
 .goals-checklist {
   height: 90%;
   text-align: left;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.goals-board-footer-default {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.goals-board-footer-edit {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  top: 30px;
 }
 
 .goalBtn {
@@ -48,7 +73,11 @@
 }
 
 .checkbox-desc {
+  display: inline-block;
   margin: 0px 0px 0px 2%;
+  min-width: 50%;
+  max-width: 85%;
+  word-wrap: break-word;
 }
 
 input[type="checkbox"] {
@@ -59,7 +88,6 @@ input[type="checkbox"] {
   height: 17px;
   width: 17px;
   position: relative;
-  top: 5px;
   border-radius: 2px;
 }
 
