@@ -34,16 +34,16 @@ class goalsBoard extends HTMLElement {
     const monthlyGoals = [{ text: 'Order lightbulbs', checked: true, parent: checkList }, { text: 'Finish project', checked: false, parent: checkList }];
 
     /**
-       * Adds 1 goal to the goals-checklist div.
-       * @param {JSON} content - JSON that contains 3 properties (check below for more info)
-       * content's JSON format
-       * - text: the goal's message
-       * - checked: determines if checkbox should be checked
-       * - parent (constant) - direct link to goals-checklist div
-       *
-       * @example
-       * // addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
-       */
+    * Adds 1 goal to the goals-checklist div.
+    * @param {JSON} content - JSON that contains 3 properties (check below for more info)
+    * content's JSON format
+    * - text: the goal's message
+    * - checked: determines if checkbox should be checked
+    * - parent (constant) - direct link to goals-checklist div
+    *
+    * @example
+    * // addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
+    */
     function addGoal (content) {
       // Create all of the html elements
       const newContainer = document.createElement('div');
@@ -66,16 +66,16 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-       * Adds all the goals found in the goalList parameter into the goals-checklist div
-       * @param {JSON[]} goalList - array of JSON elements
-       * JSON format
-       * - text: the goal's message
-       * - checked: determines if checkbox should be checked
-       * - parent (constant) - direct link to goals-checklist div
-       *
-       * @example
-       * // addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
-       */
+    * Adds all the goals found in the goalList parameter into the goals-checklist div
+    * @param {JSON[]} goalList - array of JSON elements
+    * JSON format
+    * - text: the goal's message
+    * - checked: determines if checkbox should be checked
+    * - parent (constant) - direct link to goals-checklist div
+    *
+    * @example
+    * // addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
+    */
     function addGoals (goalList) {
       for (let i = 0; i < goalList.length; i++) {
         addGoal(goalList[i]);
@@ -83,9 +83,9 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-     * Removes all the current goals being displayed in the goals-checkList div
-     * @param {div} checkList - link to the goals-checklist div
-     */
+    * Removes all the current goals being displayed in the goals-checkList div
+    * @param {div} checkList - link to the goals-checklist div
+    */
     function removeGoals (checkList) {
       // Loops through all of the goals in checkList and removes them all
       while (checkList.children.length > 0) {
@@ -94,17 +94,17 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-       * Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
-       */
+    * Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
+    */
     function unSelect () {
       weeklyBtn.classList.remove('selected');
       monthlyBtn.classList.remove('selected');
     }
 
     /**
-       * EventListener for the weekly button to toggle colors and update the goals-checklist div to feature
-       * all of the weekly goals.
-       */
+    * EventListener for the weekly button to toggle colors and update the goals-checklist div to feature
+    * all of the weekly goals.
+    */
     weeklyBtn.addEventListener('click', () => {
       unSelect();
       weeklyBtn.classList.add('selected');
@@ -113,9 +113,9 @@ class goalsBoard extends HTMLElement {
     });
 
     /**
-       * EventListener for the monthly button to toggle colors and update the goals-checklist div to feature
-       * all of the monthly goals.
-       */
+    * EventListener for the monthly button to toggle colors and update the goals-checklist div to feature
+    * all of the monthly goals.
+    */
     monthlyBtn.addEventListener('click', () => {
       unSelect();
       monthlyBtn.classList.add('selected');

@@ -16,11 +16,27 @@ class Clock extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    // Creates new Date object that has today's date (MM/DD/YY)
+    /**
+     * Creates new Date object that has today's date (MM/DD/YY).
+     */
     const myDate = new Date();
-    // Retrieve the current day as an index (0 - Sunday, 1 - Monday, etc.)
+
+    /**
+     * Retrive the current day as an index.
+     *
+     *  i.e: 0 -> Sunday
+     *       1 -> Monday
+     *       ...
+     */
     const currWeekDay = myDate.getDay();
-    // Retrieves the current month as an index (0 - Januray, 1 - February, etc.)
+
+    /**
+     * Retrives the current month as an index.
+     *
+     *  i.e: 0 -> January
+     *       1 -> February
+     *       ...
+     */
     const currMonth = myDate.getMonth();
 
     // Array of days using abbreviations.

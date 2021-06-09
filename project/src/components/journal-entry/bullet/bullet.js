@@ -39,7 +39,7 @@ class Bullet extends HTMLElement {
   }
 
   /**
-   * Stter for the .bullet-text innerHTML
+   * Setter for the .bullet-text innerHTML
    */
   set text (newText) {
     this.shadowRoot.querySelector('.bullet-text').innerHTML = newText;

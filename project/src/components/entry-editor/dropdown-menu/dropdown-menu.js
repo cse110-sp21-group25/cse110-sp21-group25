@@ -37,10 +37,12 @@ class DropDownMenu extends HTMLElement {
   /**
    * Helper function that generates a single option in the dropdown menu.
    * The HTML structure is as follows:
-   * <div class="item-container">
+   * ```
+   *  <div class="item-container">
    *  <img src="img filepath" class="bullet-img">
    *  <span class="bullet-name">(content.name)<span>
-   * </div>
+   *  </div>
+   * ```
    * This is then appended to the bullet-selection-input div.
    * The item-container also has an event listener to update the symbol-display div
    * found in the entry-item-creator to that of the selection.
