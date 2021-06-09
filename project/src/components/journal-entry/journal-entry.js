@@ -169,13 +169,11 @@ class JournalEntry extends HTMLElement {
 
     // Eventlistener that will save the article after 500 ms of no inputs
     this.shadowRoot.querySelector('article').addEventListener('input', () => {
-      console.log('Change content');
       this.processChange();
     });
 
     // Eventlistener that will save the entry-title after 500 ms of no inputs
     this.shadowRoot.querySelector('.entry-header').addEventListener('input', () => {
-      console.log('Change title');
       this.processChange();
     });
 
@@ -211,7 +209,6 @@ class JournalEntry extends HTMLElement {
    */
   validateEntry () {
     if (!entryExists(viewedDate)) {
-      console.log('Adding date!');
       const date = decodeDateInfoElement(this);
       console.log(date);
       createEntry(date);

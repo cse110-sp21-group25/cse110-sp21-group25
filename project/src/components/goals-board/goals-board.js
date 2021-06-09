@@ -325,7 +325,6 @@ class goalsBoard extends HTMLElement {
    * Loads timing
    */
   loadGoals () {
-    console.log('Loading goals');
     let weeklyGoals = [];
     let monthlyGoals = [];
     if (!entryExists(viewedDate)) {
