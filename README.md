@@ -21,7 +21,7 @@
 
 ## Onboarding
 
-- Please visit the wiki for the full onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding-Setup)
+- Please visit the wiki for the full onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding)
 
 ---
 
@@ -43,7 +43,7 @@ Step 3) Write JSDoc comments in your code. [Handy Guide](https://devhints.io/jsd
 
 Step 4) If you have worked on the project that day please update the respective issue with details of your progress. This will help not only you keep track of what you've worked on but also the team to be aware of anything that is currently in work and what progress has been made.
 
-Step 5). When creating a pull request please be careful that you are merging to the correct branch, consult above image if you are not completely sure. Also see the GitHub Guide for some helpful screenshots on how to initiate a pull request.
+Step 5) When creating a pull request please be careful that you are merging to the correct branch, consult above image if you are not completely sure. Also see the GitHub Guide for some helpful screenshots on how to initiate a pull request.
 
 Step 6) Once you have created the pull request please make sure that your issue has been updated and that it closes once the merge is completed.
 
