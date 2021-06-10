@@ -104,9 +104,9 @@ function createEntry (date) {
     storage[date.year][date.month].GOALS = [];
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ' - ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
-    storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
+    storage[date.year][date.month][date.day].content = '<ul class="bujo"><li class="todo"><span>Write here</span></li></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
     storage[date.year][date.month][date.day].tags = [];
   } else if (!Object.hasOwnProperty.call(storage[date.year], date.month)) {
@@ -117,18 +117,18 @@ function createEntry (date) {
     storage[date.year][date.month].GOALS = [];
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ' - ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
-    storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
+    storage[date.year][date.month][date.day].content = '<ul class="bujo"><li class="todo"><span>Write here</span></li></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
     storage[date.year][date.month][date.day].tags = [];
   } else if (!Object.hasOwnProperty.call(storage[date.year][date.month], date.day)) {
     console.log('From day');
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ' - ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
-    storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
+    storage[date.year][date.month][date.day].content = '<ul class="bujo"><li class="todo"><span>Write here</span></li></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
     storage[date.year][date.month][date.day].tags = [];
   }
