@@ -26,53 +26,106 @@ class MoodIndicator extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 
-    const transDesc = (text) => {
-      desc.classList.add('fade');
-      setTimeout(() => {
-        desc.innerText = text;
-        desc.classList.remove('fade');
-      }, 150);
-    };
+  connectedCallback () {
+    const card = this.shadowRoot.querySelector('#card > #icons');
 
+    card.addEventListener('click', function (e) {
+      if (e.target.getAttribute('alt') === 'bad') {
+        document.querySelector('mood-ind').selectBad();
+      } else if (e.target.getAttribute('alt') === 'meh') {
+        document.querySelector('mood-ind').selectOkay();
+      } else if (e.target.getAttribute('alt') === 'great') {
+        document.querySelector('mood-ind').selectGreat();
+      }
+    });
+
+    this.updateFace();
+  }
+
+  updateFace () {
+    if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== undefined
+      || storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== 'EMPTY') {
+        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'BAD')
+          this.selectBad();
+
+        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'OKAY')
+          this.selectOkay();
+
+        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'GREAT')
+          this.selectGreat();
+    }
+  }
+
+  transDesc (text) {
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+
+    desc.classList.add('fade');
+    setTimeout(() => {
+      desc.innerText = text;
+      desc.classList.remove('fade');
+    }, 150);
+  };
+
+  selectBad () {
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+    storage[viewedDate.year][viewedDate.month][viewedDate.day].mood = 'BAD';
+    saveStorage();
+
+    this.transDesc('BAD');
+    desc.style.backgroundColor = '#E74C3C';
+    this.enlargeBad();
+  }
+
+  selectOkay () {
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+    storage[viewedDate.year][viewedDate.month][viewedDate.day].mood = 'OKAY';
+    saveStorage();
+
+    this.transDesc('OKAY');
+    desc.style.backgroundColor = '#CCCCCC';
+    this.enlargeMeh();
+  }
+
+  selectGreat () {
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+    storage[viewedDate.year][viewedDate.month][viewedDate.day].mood = 'GREAT';
+    saveStorage();
+
+    this.transDesc('GREAT');
+    desc.style.backgroundColor = '#44EF89';
+    this.enlargeGreat();
+  }
+
+  enlargeBad () {
     const badEmo = this.shadowRoot.querySelector('img.bad');
     const mehEmo = this.shadowRoot.querySelector('img.meh');
     const greatEmo = this.shadowRoot.querySelector('img.great');
 
-    function enlargeBad () {
-      badEmo.style.transform = 'scale(1.5)';
-      mehEmo.remove();
-      greatEmo.remove();
-    }
-    function enlargeMeh () {
-      mehEmo.style.transform = 'scale(1.5)';
-      badEmo.remove();
-      greatEmo.remove();
-    }
-    function enlargeGreat () {
-      greatEmo.style.transform = 'scale(1.5)';
-      badEmo.remove();
-      mehEmo.remove();
-    }
+    badEmo.style.transform = 'scale(1.5)';
+    mehEmo.remove();
+    greatEmo.remove();
+  }
 
-    const card = this.shadowRoot.querySelector('#card > #icons');
-    const desc = this.shadowRoot.querySelector('#card > #desc');
+  enlargeMeh () {
+    const badEmo = this.shadowRoot.querySelector('img.bad');
+    const mehEmo = this.shadowRoot.querySelector('img.meh');
+    const greatEmo = this.shadowRoot.querySelector('img.great');
 
-    card.addEventListener('click', function (e) {
-      if (e.target.getAttribute('alt') === 'bad') {
-        transDesc('BAD');
-        desc.style.backgroundColor = '#E74C3C';
-        enlargeBad();
-      } else if (e.target.getAttribute('alt') === 'meh') {
-        transDesc('OKAY');
-        desc.style.backgroundColor = '#CCCCCC';
-        enlargeMeh();
-      } else if (e.target.getAttribute('alt') === 'great') {
-        transDesc('GREAT');
-        desc.style.backgroundColor = '#44EF89';
-        enlargeGreat();
-      }
-    });
+    mehEmo.style.transform = 'scale(1.5)';
+    badEmo.remove();
+    greatEmo.remove();
+  }
+
+  enlargeGreat () {
+    const badEmo = this.shadowRoot.querySelector('img.bad');
+    const mehEmo = this.shadowRoot.querySelector('img.meh');
+    const greatEmo = this.shadowRoot.querySelector('img.great');
+
+    greatEmo.style.transform = 'scale(1.5)';
+    badEmo.remove();
+    mehEmo.remove();
   }
 }
 

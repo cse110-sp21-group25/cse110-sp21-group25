@@ -10,7 +10,7 @@
   color: #333;
 }
 
-img{
+img {
   width: 15%;
 }
 
@@ -28,18 +28,18 @@ img{
   transform-origin: center;
 }
 
-img:hover{
+img:hover {
   transform: scale(1.5);
 }
 
-#desc{
+#desc {
   transition: all 0.1s ease-in;
   padding: 22px 0 22px 0;
   font-size: 20px;
   text-align: center;
   color: white;
   background-color: #126e82;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 20px;
 }
