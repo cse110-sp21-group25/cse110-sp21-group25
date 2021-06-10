@@ -119,6 +119,8 @@ class JournalEntry extends HTMLElement {
 
               element.classList.add('selected');
             });
+
+
           }
         });
 
@@ -141,7 +143,7 @@ class JournalEntry extends HTMLElement {
             }
           });
 
-          document.querySelector('journal-entry').shadowRoot.querySelector('.menu').style.visibility = 'hidden';
+          menu.classList.remove('show');
           document.querySelector('journal-entry').saveEntry();
         });
       }

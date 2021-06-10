@@ -238,7 +238,7 @@ class navBar extends HTMLElement {
 
   generateDailyDates () {
     const dailyDrop = this.shadowRoot.querySelector('.daily');
-    const months = ['JANUARY', 'FEBURARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+    const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
       'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
     const dateObj = new Date();
     const viewedDateObj = new Date(Date.parse(viewedDate.year + ' ' + viewedDate.month + ' ' + viewedDate.day));
