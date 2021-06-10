@@ -335,6 +335,10 @@ class goalsBoard extends HTMLElement {
     }
     const isoWeek = storage[viewedDate.year][viewedDate.month][viewedDate.day].WEEK;
 
+    if( isoWeek === undefined ) {
+      document.querySelector('journal-entry').validateEntry();
+    }
+
     if (storage[viewedDate.year].ISOWEEKS[isoWeek] !== undefined) {
       weeklyGoals = storage[viewedDate.year].ISOWEEKS[isoWeek];
     }

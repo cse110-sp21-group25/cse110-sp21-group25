@@ -48,6 +48,7 @@ class MoodIndicator extends HTMLElement {
   }
 
   updateFace () {
+    this.deselectFace();
     if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== undefined ||
       storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== 'EMPTY') {
       if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'BAD') { this.selectBad(); }
@@ -66,6 +67,16 @@ class MoodIndicator extends HTMLElement {
       desc.innerText = text;
       desc.classList.remove('fade');
     }, 150);
+  }
+
+  deselectFace () {
+    const desc = this.shadowRoot.querySelector('#card > #desc');
+
+    this.transDesc('How Are You Feeling Today?');
+    desc.style.backgroundColor = '#126e82';
+    this.smallBad();
+    this.smallMeh();
+    this.smallGreat();
   }
 
   selectBad () {
