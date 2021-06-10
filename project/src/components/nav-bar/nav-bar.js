@@ -77,7 +77,9 @@ class navBar extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    // The DOM needs to be loaded before attempting to use querySelectors.
+    /**
+     * The DOM needs to be loaded before attempting to use querySelectors.
+     */
     const yearlyDrop = this.shadowRoot.querySelector('.yearly');
     const monthlyDrop = this.shadowRoot.querySelector('.monthly');
     const dailyDrop = this.shadowRoot.querySelector('.daily');
@@ -88,14 +90,22 @@ class navBar extends HTMLElement {
     let monthlyToggle = false;
     let dailyToggle = false;
 
-    // Removes the highlight from the individual tabs
+    /**
+     * Removes the highlight from the individual tabs
+     * @name removeHighlight
+     * @function
+     * @memberOf navBar
+     * @instance
+     */
     function removeHighlight () {
       yearlyDrop.classList.remove('navbar-tab-highlighted');
       monthlyDrop.classList.remove('navbar-tab-highlighted');
       dailyDrop.classList.remove('navbar-tab-highlighted');
     }
 
-    // Toggle the image on the focus button.
+    /**
+     * Toggle the image on the focus button.
+     */
     focusIcon.addEventListener('click', () => {
       if (focusToggle) {
         focusIcon.src = '../imgs/eye-slash-solid.svg';
@@ -106,12 +116,16 @@ class navBar extends HTMLElement {
       focusToggle = !focusToggle;
     });
 
-    // Adds the options under the year tab
+    /**
+     * Adds the options under the year tab
+     */
     yearlyDrop.addEventListener('click', () => {
       const tabContainer = this.shadowRoot.querySelector('.yearly-item-container');
       const childLength = tabContainer.children.length;
 
-      // Removes the highlights from all of the tabs
+      /**
+       * Removes the highlights from all of the tabs
+       */
       removeHighlight();
 
       if (yearlyToggle) {
@@ -122,17 +136,25 @@ class navBar extends HTMLElement {
 
       yearlyToggle = !yearlyToggle;
 
-      // Checks to see if the tab is already expanded or not.
+      /**
+       * Checks to see if the tab is already expanded or not.
+       */
       if (childLength > 0) {
-        // Removes the options if the tab is already expanded
+        /**
+         * Removes the options if the tab is already expanded
+         */
         while (tabContainer.firstChild !== null) {
           tabContainer.removeChild(tabContainer.lastChild);
         }
       } else {
-        // Highlights the currently selected tab.
+        /**
+         * Highlights the currently selected tab.
+         */
         yearlyDrop.classList.add('navbar-tab-highlighted');
 
-        // Add the options to the flex box to align the items.
+        /**
+         * Add the options to the flex box to align the items.
+         */
         for (let i = 0; i < 5; i++) {
           const newContainer = document.createElement('div');
           const newArrow = document.createElement('img');
@@ -154,12 +176,16 @@ class navBar extends HTMLElement {
       }
     });
 
-    // Adds the options under the month tab
+    /**
+     * Adds the options under the month tab
+     */
     monthlyDrop.addEventListener('click', () => {
       const tabContainer = this.shadowRoot.querySelector('.monthly-item-container');
       const childLength = tabContainer.children.length;
 
-      // Removes the highlights from all of the tabs
+      /**
+       * Removes the highlights from all of the tabs
+       */
       removeHighlight();
 
       if (monthlyToggle) {
@@ -170,17 +196,25 @@ class navBar extends HTMLElement {
 
       monthlyToggle = !monthlyToggle;
 
-      // Checks to see if the tab is already expanded or not.
+      /**
+       * Checks to see if the tab is already expanded or not.
+       */
       if (childLength > 0) {
         while (tabContainer.firstChild !== null) {
-          // Removes the options if the tab is already expanded
+          /**
+           * Removes the options if the tab is already expanded
+           */
           tabContainer.removeChild(tabContainer.lastChild);
         }
       } else {
-        // Highlights the currently selected tab.
+        /**
+         * Highlights the currently selected tab.
+         */
         monthlyDrop.classList.add('navbar-tab-highlighted');
 
-        // Add the options to the flex box to align the items.
+        /**
+         * Add the options to the flex box to align the items.
+         */
         for (let i = 0; i < 5; i++) {
           const newContainer = document.createElement('div');
           const newArrow = document.createElement('img');
@@ -202,12 +236,16 @@ class navBar extends HTMLElement {
       }
     });
 
-    // Adds the options under the daily tab
+    /**
+     * Adds the options under the daily tab
+     */
     dailyDrop.addEventListener('click', () => {
       const tabContainer = this.shadowRoot.querySelector('.daily-item-container');
       const childLength = tabContainer.children.length;
 
-      // Removes the highlights from all of the tabs
+      /**
+       * Removes the highlights from all of the tabs
+       */
       removeHighlight();
 
       if (dailyToggle) {
@@ -218,17 +256,25 @@ class navBar extends HTMLElement {
 
       dailyToggle = !dailyToggle;
 
-      // Checks to see if the tab is already expanded or not.
+      /**
+       * Checks to see if the tab is already expanded or not.
+       */
       if (childLength > 0) {
-        // Removes the options if the tab is already expanded
+        /**
+         * Removes the options if the tab is already expanded
+         */
         while (tabContainer.firstChild !== null) {
           tabContainer.removeChild(tabContainer.lastChild);
         }
       } else {
-        // Highlights the currently selected tab.
+        /**
+         * Highlights the currently selected tab.
+         */
         dailyDrop.classList.add('navbar-tab-highlighted');
 
-        // Add the options to the flex box to align the items.
+        /**
+         * Add the options to the flex box to align the items.
+         */
         for (let i = 0; i < 5; i++) {
           const newContainer = document.createElement('div');
           const newArrow = document.createElement('img');

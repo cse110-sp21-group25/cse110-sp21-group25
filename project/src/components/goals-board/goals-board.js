@@ -34,15 +34,17 @@ class goalsBoard extends HTMLElement {
     const monthlyGoals = [{ text: 'Order lightbulbs', checked: true, parent: checkList }, { text: 'Finish project', checked: false, parent: checkList }];
 
     /**
-    * Adds 1 goal to the goals-checklist div.
+    * @function
+    * @summary Adds 1 goal to the goals-checklist div.
     * @param {JSON} content - JSON that contains 3 properties (check below for more info)
     * content's JSON format
     * - text: the goal's message
     * - checked: determines if checkbox should be checked
     * - parent (constant) - direct link to goals-checklist div
-    *
     * @example
-    * // addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
+    *  addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
+    * @memberOf goalsBoard
+    * @instance
     */
     function addGoal (content) {
       // Create all of the html elements
@@ -66,7 +68,8 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-    * Adds all the goals found in the goalList parameter into the goals-checklist div
+     * @function
+     * @summary Adds all the goals found in the goalList parameter into the goals-checklist div
     * @param {JSON[]} goalList - array of JSON elements
     * JSON format
     * - text: the goal's message
@@ -74,7 +77,9 @@ class goalsBoard extends HTMLElement {
     * - parent (constant) - direct link to goals-checklist div
     *
     * @example
-    * // addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
+    *  addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
+    * @memberOf goalsBoard
+    * @instance
     */
     function addGoals (goalList) {
       for (let i = 0; i < goalList.length; i++) {
@@ -83,8 +88,11 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-    * Removes all the current goals being displayed in the goals-checkList div
+     * @function
+    * @summary Removes all the current goals being displayed in the goals-checkList div
     * @param {div} checkList - link to the goals-checklist div
+    * @memberOf goalsBoard
+    * @instance
     */
     function removeGoals (checkList) {
       // Loops through all of the goals in checkList and removes them all
@@ -94,7 +102,10 @@ class goalsBoard extends HTMLElement {
     }
 
     /**
-    * Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
+     * @function
+    *  @summary Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
+    *  @memberOf goalsBoard
+    *  @instance
     */
     function unSelect () {
       weeklyBtn.classList.remove('selected');

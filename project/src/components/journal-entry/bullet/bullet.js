@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** Bullet */
 class Bullet extends HTMLElement {
   constructor () {
     super();
@@ -19,6 +18,10 @@ class Bullet extends HTMLElement {
 
   /**
    * Getter for the .bullet-image src
+   * @name get img
+   * @function
+   * @memberOf Bullet
+   * @instance
    */
   get img () {
     return this.shadowRoot.querySelector('.bullet-img').src;
@@ -26,6 +29,11 @@ class Bullet extends HTMLElement {
 
   /**
    * Setter for the .bullet-image src
+   * @name set img
+   * @param {any} newImg - new image for the src
+   * @function
+   * @memberOf Bullet
+   * @instance
    */
   set img (newImg) {
     this.shadowRoot.querySelector('.bullet-img').src = newImg;
@@ -33,6 +41,10 @@ class Bullet extends HTMLElement {
 
   /**
    * Getter for the .bullet-text innerHTML
+   * @name get text
+   * @function
+   * @memberOf Bullet
+   * @instance
    */
   get text () {
     return this.shadowRoot.querySelector('.bullet-text').innerHTML;
@@ -40,6 +52,11 @@ class Bullet extends HTMLElement {
 
   /**
    * Setter for the .bullet-text innerHTML
+   * @name set text
+   * @param {any} newText - innerHTML for next bullet
+   * @function
+   * @memberOf Bullet
+   * @instance
    */
   set text (newText) {
     this.shadowRoot.querySelector('.bullet-text').innerHTML = newText;

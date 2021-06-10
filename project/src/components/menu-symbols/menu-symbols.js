@@ -53,11 +53,11 @@ class MenuSymbols extends HTMLElement {
   }
 
   /**
-   * Gets the element with id 'menu' and toggles between the 'show; class.
+   * Gets the element with id 'menu' and toggles between the 'show' class.
    * This enables the menu icon at the bottom to show and hide the key
    * for the different types of bullets.
    */
-  myFunction () {
+  showMenu () {
     document.getElementById('menu').classList.toggle('show');
   }
 }

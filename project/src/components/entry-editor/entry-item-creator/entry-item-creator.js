@@ -1,5 +1,4 @@
-/* global HTMLElement, customElements */
-
+/** Entry Item Creator */
 class EntryItemCreator extends HTMLElement {
   constructor () {
     super();
@@ -84,29 +83,38 @@ class EntryItemCreator extends HTMLElement {
   }
 
   /**
-   * Getter for itemID
+   * Member: Getter for itemID
+   * @function
+   * @memberOf EntryItemCreator
    */
   get itemID () {
     return this.getAttribute('itemID');
   }
 
   /**
-   * Setter for itemID
+   * Member: Setter for itemID
+   * @function
+   * @memberOf EntryItemCreator
+   * @param {string} newID - Sets the ID for a certain item.
    */
   set itemID (newID) {
     this.setAttribute('itemID', newID);
   }
 
   /**
-   * Getter for symbol
+   * Member: Getter for symbol
+   * @function
+   * @memberOf EntryItemCreator
    */
   get symbol () {
     return this.getAttribute('symbol');
   }
 
   /**
-   * Setter for symbol
-   * It also updates the img displayed by div.symbol-display
+   * Member: Setter for symbol
+   * @function
+   * @memberOf EntryItemCreator
+   * @param {string} newSym - Updates the img displayed by div.symbol-display.
    */
   set symbol (newSym) {
     this.setAttribute('symbol', newSym);

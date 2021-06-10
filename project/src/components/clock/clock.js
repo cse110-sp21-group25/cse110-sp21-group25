@@ -39,21 +39,29 @@ class Clock extends HTMLElement {
      */
     const currMonth = myDate.getMonth();
 
-    // Array of days using abbreviations.
+    /**
+     * Array of days using abbreviations.
+     */
     const abbDays = ['Sun', 'Mon', 'Tues',
       'Wed', 'Thurs', 'Fri', 'Sat'
     ];
 
-    // Array of months using abbreviations.
+    /**
+     * Array of months using abbreviations.
+     */
     const abbMonths = ['Jan', 'Feb', 'Mar', 'Apr',
       'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct',
       'Nov', 'Dec'
     ];
 
-    // Gets the current day's date (not MM/DD/YY, only gets DD)
+    /**
+     * Gets the current day's date (not MM/DD/YY, only gets DD).
+     */
     const todaysDate = (myDate.getDate());
 
-    // Edits the span tag to display the current date.
+    /**
+     * Edits the span tag to display the current date.
+     */
     this.shadowRoot.querySelector('.date-text').innerHTML = `${abbDays[currWeekDay]}, ${abbMonths[currMonth]} ${todaysDate}`;
   }
 }
