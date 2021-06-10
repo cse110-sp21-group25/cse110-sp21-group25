@@ -5,45 +5,33 @@ class MenuSymbols extends HTMLElement {
 
     const template = document.createElement('template');
     template.innerHTML = `
-            <link rel="stylesheet" href="./components/menu-symbols/menu-symbols.css">
+    <link rel="stylesheet" href="./components/menu-symbols/menu-symbols.css">
 
-            <nav role="navigation">
-            <div id="menuToggle">
-                <!--
-                A fake / hidden checkbox is used as click reciever,
-                so you can use the :checked selector on it.
-                -->
-                <input type="checkbox" />
-                
-                <!--
-                Some spans to act as a hamburger.
-                
-                They are acting like a real hamburger,
-                not that McDonalds stuff.
-                -->
-                <span></span>
-                <span></span>
-                <span></span>
-                
-                
-                <ul id="menu">
-                <table>
-                <tr>
-                    <th><i class="fa fa-home"></i>Task Incomplete</th>
-                    <th><i class="fa fa-search"></i>Task Complete</th>
-                </tr>
-                <tr>
-                    <th><i class="fa fa-cloud"></i>Task Migrated</th>
-                    <th><i class="fa fa-trash"></i>Task Scheduled</th>
-                </tr>
-                <tr>
-                    <th><i class="fa fa-cloud"></i>Events</th>
-                    <th><i class="fa fa-trash"></i>Priority</th>
-                </tr>
-                </table>
-                </ul>
-            </div>
-            </nav>
+    <div class="q-mark">
+      <img src="../imgs/question-mark.svg" id="toggle">
+    </div>
+    
+    <div class="toggle-menu">
+      <ul id="menu">
+        <table>
+        <tr>
+          <th><img src="../imgs/task-incompl.svg">Task Incomplete</th>
+          <th><img src="../imgs/task-scheduled.svg">Task Scheduled</th>
+          <th><img src="../imgs/inspiration.svg">Inspiration</th>
+        </tr>
+        <tr>
+          <th><img src="../imgs/task-compl.svg">Task Complete</th>
+          <th><img src="../imgs/event.svg">Event</th>
+          <th><img src="../imgs/notes.svg">Notes</th>
+        </tr>
+        <tr>
+          <th><img src="../imgs/task-migrated.svg">Task Migrated</th>
+          <th><img src="../imgs/priority.svg">Priority</th>
+          <th><img src="../imgs/exploration.svg">Exploration</th>
+        </tr>
+        </table>
+      </ul>
+    </div>
         `;
 
     this.showInfo = true;
@@ -51,7 +39,6 @@ class MenuSymbols extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-
   /**
    * Gets the element with id 'menu' and toggles between the 'show' class.
    * This enables the menu icon at the bottom to show and hide the key
@@ -59,6 +46,28 @@ class MenuSymbols extends HTMLElement {
    */
   showMenu () {
     document.getElementById('menu').classList.toggle('show');
+    const menuButton = this.shadowRoot.querySelector('.q-mark > img');
+    const menuDesc = this.shadowRoot.querySelector('#menu');
+
+    function enlargeButton () {
+      menuButton.style.width = '45px';
+      menuButton.style.height = '45px';
+    }
+
+    function smallerButton () {
+      menuButton.style.width = '35px';
+      menuButton.style.height = '35px';
+    }
+
+    menuButton.addEventListener('click', () => {
+      if (menuDesc.style.display === '') {
+        menuDesc.style.display = 'block';
+        enlargeButton();
+      } else {
+        menuDesc.style.display = '';
+        smallerButton();
+      }
+    });
   }
 }
 

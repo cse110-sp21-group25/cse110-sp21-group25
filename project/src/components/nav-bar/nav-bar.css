@@ -1,154 +1,162 @@
 /* Setting the font-family for all elements */
 * {
-    font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 /* ---------------------------------------- */
 
 navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #f1f5f6;
-    height: 100vh;
-    width: 15vw;
-    max-width: 400px;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f1f5f6;
+  height: 100vh;
+  width: 15vw;
+  max-width: 400px;
+  margin: 0;
 }
 
 /* CuJo header section */
 .header {
-    display: flex;
-    width: 100%;
-    padding: 6px 0px;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #a3e0e8;
+  display: flex;
+  width: 100%;
+  padding: 6px 0px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #a3e0e8;
 }
 /* ---------------------------------------- */
 
 .logo {
-    position: relative;
-    height: 30px;
-    width: 30px;
-    margin: 0px 0px 0px 2%;
-    text-align: center;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  margin: 0px 0px 0px 2%;
+  text-align: center;
 }
 
 .header-text {
-    position: relative;
-    text-align: center;
-    margin: 0px 0px 0px 3%;
-    font-size: 24px;
-    font-weight: 600;
-    flex-grow: 3;
-    text-align: left;
+  position: relative;
+  text-align: center;
+  margin: 0px 0px 0px 3%;
+  font-size: 24px;
+  font-weight: 600;
+  flex-grow: 3;
+  text-align: left;
 }
 
 .focus-btn {
-    position: relative;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    margin: 0px 4% 0px 0px;
-    text-align: center;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  margin: 0px 4% 0px 0px;
+  text-align: center;
 }
 
 /* Styling the entire orange section for the index subheader */
 .index-container {
-    display: flex;
-    font-size: 20px;
-    width: 100%;
-    padding: 4px 0px;
+  display: flex;
+  font-size: 20px;
+  width: 100%;
+  padding: 4px 0px;
 }
 /* ---------------------------------------------------------- */
 
 .index-text {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0px 0px 0px 3%;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0px 0px 0px 3%;
 }
 
 .navbar-tab {
-    display: flex;
-    width: 100%;
-    padding: 4px 0px;
-    align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 4px 0px;
+  align-items: center;
 }
 
 .navbar-tab-arrow {
-    min-width: 15px;
-    height: 15px;
-    margin: 0px 0px 0px 2%;
+  min-width: 15px;
+  height: 15px;
+  margin: 0px 0px 0px 2%;
 }
 
 .navbar-tab-text {
-    margin: 0px 0px 0px 2%;
+  margin: 0px 0px 0px 2%;
 }
 
 /* Highlights the tab that is selected */
-.yearly:hover, .monthly:hover, .navbar-tab-lvl2:hover,
-.daily:hover, .goals:hover {
-    background: #bdc0c0;
-    border-radius: 10px;
+.yearly:hover,
+.monthly:hover,
+.navbar-tab-lvl2:hover,
+.daily:hover,
+.goals:hover {
+  background: #bdc0c0;
+  border-radius: 10px;
 }
 /* ----------------------------------- */
 
 /* Highlights the tab when hovering over it */
-.yearly:active, .monthly:active, .navbar-tab-lvl2:active,
-.daily:active, .goals:active, .navbar-tab-highlighted {
-    background: #A3E0E8;
-    border-radius: 10px;
+.yearly:active,
+.monthly:active,
+.navbar-tab-lvl2:active,
+.daily:active,
+.goals:active,
+.navbar-tab-highlighted {
+  background: #a3e0e8;
+  border-radius: 10px;
 }
 /* ----------------------------------- */
 
 .navbar-tab-item-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-tab-item {
-    margin: 0px 0px 0px 4%;
-    text-decoration: none;
-    color: black;
+  margin: 0px 0px 0px 4%;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar-tab-lvl2 {
-    display: flex;
-    margin: 0px 0px 0px 9%;
+  display: flex;
+  margin: 0px 0px 0px 9%;
+  align-items: center;
 }
 
 .goals {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .navbar-symbols-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0px 0px 3% 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0px 0px 3% 0px;
 }
 
 /* Bottom container for the symbols */
 .navbar-symbols-container > a {
-    display: inline-block;
-    min-width: 36px;
-    height: 36px;
+  display: inline-block;
+  min-width: 36px;
+  height: 36px;
 }
 
 /* -------------------------------- */
 
 /* Empty space inbetween Goals and the symbols container */
 .navbar-empty-space {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 /* ----------------------------------------------------- */
 
 .navbar-info {
-    margin: 0px 0px 0px 4%;
+  margin: 0px 0px 0px 4%;
 }
 
 .navbar-settings {
-    margin: 0px 4% 0px 0px;
+  margin: 0px 4% 0px 0px;
 }

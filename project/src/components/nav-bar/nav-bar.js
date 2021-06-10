@@ -86,22 +86,6 @@ class navBar extends HTMLElement {
     const focusIcon = this.shadowRoot.querySelector('.focus-btn');
 
     let focusToggle = false;
-    let yearlyToggle = false;
-    let monthlyToggle = false;
-    let dailyToggle = false;
-
-    /**
-     * Removes the highlight from the individual tabs
-     * @name removeHighlight
-     * @function
-     * @memberOf navBar
-     * @instance
-     */
-    function removeHighlight () {
-      yearlyDrop.classList.remove('navbar-tab-highlighted');
-      monthlyDrop.classList.remove('navbar-tab-highlighted');
-      dailyDrop.classList.remove('navbar-tab-highlighted');
-    }
 
     /**
      * Toggle the image on the focus button.
@@ -116,185 +100,232 @@ class navBar extends HTMLElement {
       focusToggle = !focusToggle;
     });
 
-    /**
-     * Adds the options under the year tab
-     */
-    yearlyDrop.addEventListener('click', () => {
-      const tabContainer = this.shadowRoot.querySelector('.yearly-item-container');
-      const childLength = tabContainer.children.length;
+    // Adds the options under the year tab on click
+    yearlyDrop.addEventListener('click', () => this.generateYearlyDates());
 
-      /**
-       * Removes the highlights from all of the tabs
-       */
-      removeHighlight();
+    // Adds the options under the month tab on click
+    monthlyDrop.addEventListener('click', () => this.generateMonthlyDates());
 
-      if (yearlyToggle) {
-        yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
-      } else {
-        yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+    // Adds the options under the daily tab on click
+    dailyDrop.addEventListener('click', () => this.generateDailyDates());
+  }
+
+  /**
+   * Removes the highlight from the individual tabs
+   * @name removeHighlight
+   * @function
+   * @memberOf navBar
+   * @instance
+   */
+  removeHighlight () {
+    const yearlyDrop = this.shadowRoot.querySelector('.yearly');
+    const monthlyDrop = this.shadowRoot.querySelector('.monthly');
+    const dailyDrop = this.shadowRoot.querySelector('.daily');
+
+    yearlyDrop.classList.remove('navbar-tab-highlighted');
+    monthlyDrop.classList.remove('navbar-tab-highlighted');
+    dailyDrop.classList.remove('navbar-tab-highlighted');
+  }
+
+  // Adds the options under the year tab
+  generateYearlyDates () {
+    const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+      'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+    let currYearOffset = -2;
+
+    const yearlyDrop = this.shadowRoot.querySelector('.yearly');
+    const tabContainer = this.shadowRoot.querySelector('.yearly-item-container');
+    const childLength = tabContainer.children.length;
+
+    // Removes the highlights from all of the tabs
+    this.removeHighlight();
+
+    this.closeContainers();
+
+    // Checks to see if the tab is already expanded or not.
+    if (childLength === 0) {
+      this.closeContainers();
+      // Highlights the currently selected tab.
+      yearlyDrop.classList.add('navbar-tab-highlighted');
+
+      let dateStr;
+
+      // Add the options to the flex box to align the items.
+      for (let i = 0; i < 5; i++) {
+        dateStr = parseInt(viewedDate.year) + currYearOffset + '-' + months[0] + '-1';
+        const newContainer = document.createElement('div');
+        const newArrow = document.createElement('img');
+        const newSpan = document.createElement('span');
+
+        newContainer.classList.add('navbar-tab-lvl2');
+        newArrow.classList.add('navbar-tab-arrow');
+        newSpan.classList.add('navbar-tab-item');
+
+        newArrow.src = '../imgs/chevron-right.svg';
+        newSpan.innerHTML = parseInt(viewedDate.year) + currYearOffset;
+        newContainer.setAttribute('date', dateStr);
+
+        newContainer.addEventListener('click', () => {
+          viewedDate = decodeDateInfo(newContainer.getAttribute('date'));
+          document.querySelector('journal-entry').setAttribute('date', (viewedDate.year + '-' + viewedDate.month + '-' + viewedDate.day));
+          document.querySelector('journal-entry').validateEntry();
+          document.querySelector('journal-entry').loadEntry();
+        });
+
+        newContainer.appendChild(newArrow);
+        newContainer.appendChild(newSpan);
+        tabContainer.appendChild(newContainer);
+
+        currYearOffset++;
       }
 
-      yearlyToggle = !yearlyToggle;
+      yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+    }
+  }
 
-      /**
-       * Checks to see if the tab is already expanded or not.
-       */
-      if (childLength > 0) {
-        /**
-         * Removes the options if the tab is already expanded
-         */
-        while (tabContainer.firstChild !== null) {
-          tabContainer.removeChild(tabContainer.lastChild);
-        }
-      } else {
-        /**
-         * Highlights the currently selected tab.
-         */
-        yearlyDrop.classList.add('navbar-tab-highlighted');
+  // Adds the options under the month tab
+  generateMonthlyDates () {
+    const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+      'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
 
-        /**
-         * Add the options to the flex box to align the items.
-         */
-        for (let i = 0; i < 5; i++) {
-          const newContainer = document.createElement('div');
-          const newArrow = document.createElement('img');
-          const newAnchor = document.createElement('a');
+    const monthlyDrop = this.shadowRoot.querySelector('.monthly');
+    const tabContainer = this.shadowRoot.querySelector('.monthly-item-container');
+    const childLength = tabContainer.children.length;
 
-          newContainer.classList.add('navbar-tab-lvl2');
-          newArrow.classList.add('navbar-tab-arrow');
-          newAnchor.classList.add('navbar-tab-item');
+    // Removes the highlights from all of the tabs
+    this.removeHighlight();
 
-          newArrow.src = '../imgs/chevron-right.svg';
-          newAnchor.href = 'https://www.google.com/';
-          newAnchor.target = '_blank';
-          newAnchor.innerHTML = 'Option ' + (i + 1);
+    this.closeContainers();
 
-          newContainer.appendChild(newArrow);
-          newContainer.appendChild(newAnchor);
-          tabContainer.appendChild(newContainer);
-        }
-      }
-    });
+    // Checks to see if the tab is already expanded or not.
+    if (childLength === 0) {
+      this.closeContainers();
+      // Highlights the currently selected tab.
+      monthlyDrop.classList.add('navbar-tab-highlighted');
 
-    /**
-     * Adds the options under the month tab
-     */
-    monthlyDrop.addEventListener('click', () => {
-      const tabContainer = this.shadowRoot.querySelector('.monthly-item-container');
-      const childLength = tabContainer.children.length;
+      let dateStr;
 
-      /**
-       * Removes the highlights from all of the tabs
-       */
-      removeHighlight();
+      // Add the options to the flex box to align the items.
+      for (let i = 0; i < 12; i++) {
+        dateStr = viewedDate.year + '-' + months[i] + '-1';
+        const newContainer = document.createElement('div');
+        const newArrow = document.createElement('img');
+        const newSpan = document.createElement('span');
 
-      if (monthlyToggle) {
-        monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
-      } else {
-        monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+        newContainer.classList.add('navbar-tab-lvl2');
+        newArrow.classList.add('navbar-tab-arrow');
+        newSpan.classList.add('navbar-tab-item');
+
+        newArrow.src = '../imgs/chevron-right.svg';
+        newSpan.innerHTML = this.capitalizeFirstLetter(months[i].toLowerCase());
+        newContainer.setAttribute('date', dateStr);
+
+        newContainer.addEventListener('click', () => {
+          viewedDate = decodeDateInfo(newContainer.getAttribute('date'));
+          document.querySelector('journal-entry').setAttribute('date', (viewedDate.year + '-' + viewedDate.month + '-' + viewedDate.day));
+          document.querySelector('journal-entry').validateEntry();
+          document.querySelector('journal-entry').loadEntry();
+        });
+
+        newContainer.appendChild(newArrow);
+        newContainer.appendChild(newSpan);
+        tabContainer.appendChild(newContainer);
       }
 
-      monthlyToggle = !monthlyToggle;
+      monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+    }
+  }
 
-      /**
-       * Checks to see if the tab is already expanded or not.
-       */
-      if (childLength > 0) {
-        while (tabContainer.firstChild !== null) {
-          /**
-           * Removes the options if the tab is already expanded
-           */
-          tabContainer.removeChild(tabContainer.lastChild);
-        }
-      } else {
-        /**
-         * Highlights the currently selected tab.
-         */
-        monthlyDrop.classList.add('navbar-tab-highlighted');
+  generateDailyDates () {
+    const dailyDrop = this.shadowRoot.querySelector('.daily');
+    const months = ['JANUARY', 'FEBURARY', 'MARCH', 'APRIL', 'MAY', 'JUNE',
+      'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER'];
+    const dateObj = new Date();
+    const viewedDateObj = new Date(Date.parse(viewedDate.year + ' ' + viewedDate.month + ' ' + viewedDate.day));
+    const dateInMS = viewedDateObj.getTime();
+    const timeZoneOffset = viewedDateObj.getTimezoneOffset() * 60000;
+    const dayOffSet = 86400000;
+    let currOffset = dayOffSet * (-3);
+    const localTime = dateInMS + timeZoneOffset;
+    const tabContainer = this.shadowRoot.querySelector('.daily-item-container');
+    const childLength = tabContainer.children.length;
 
-        /**
-         * Add the options to the flex box to align the items.
-         */
-        for (let i = 0; i < 5; i++) {
-          const newContainer = document.createElement('div');
-          const newArrow = document.createElement('img');
-          const newAnchor = document.createElement('a');
+    // Removes the highlights from all of the tabs
+    this.removeHighlight();
 
-          newContainer.classList.add('navbar-tab-lvl2');
-          newArrow.classList.add('navbar-tab-arrow');
-          newAnchor.classList.add('navbar-tab-item');
+    let dateStr;
 
-          newArrow.src = '../imgs/chevron-right.svg';
-          newAnchor.href = 'https://www.google.com/';
-          newAnchor.target = '_blank';
-          newAnchor.innerHTML = 'Option ' + (i + 1);
+    this.closeContainers();
 
-          newContainer.appendChild(newArrow);
-          newContainer.appendChild(newAnchor);
-          tabContainer.appendChild(newContainer);
-        }
+    // Checks to see if the tab is already expanded or not.
+    if (childLength === 0) {
+      this.closeContainers();
+      // Highlights the currently selected tab.
+      dailyDrop.classList.add('navbar-tab-highlighted');
+
+      // Add the options to the flex box to align the items.
+      for (let i = 0; i < 7; i++) {
+        dateObj.setTime(localTime + currOffset);
+        dateStr = dateObj.getFullYear() + '-' + months[dateObj.getMonth()] + '-' + dateObj.getDate();
+        const newContainer = document.createElement('div');
+        const newArrow = document.createElement('img');
+        const newSpan = document.createElement('span');
+
+        newContainer.classList.add('navbar-tab-lvl2');
+        newArrow.classList.add('navbar-tab-arrow');
+        newSpan.classList.add('navbar-tab-item');
+
+        newArrow.src = '../imgs/chevron-right.svg';
+        newSpan.innerHTML = this.capitalizeFirstLetter(months[dateObj.getMonth()].toLowerCase()) + ' ' + dateObj.getDate() + ' ' + dateObj.getFullYear();
+        newContainer.setAttribute('date', dateStr);
+
+        newContainer.addEventListener('click', () => {
+          viewedDate = decodeDateInfo(newContainer.getAttribute('date'));
+          document.querySelector('journal-entry').setAttribute('date', (viewedDate.year + '-' + viewedDate.month + '-' + viewedDate.day));
+          document.querySelector('journal-entry').validateEntry();
+          document.querySelector('journal-entry').loadEntry();
+        });
+
+        newContainer.appendChild(newArrow);
+        newContainer.appendChild(newSpan);
+        tabContainer.appendChild(newContainer);
+
+        currOffset += dayOffSet;
       }
-    });
 
-    /**
-     * Adds the options under the daily tab
-     */
-    dailyDrop.addEventListener('click', () => {
-      const tabContainer = this.shadowRoot.querySelector('.daily-item-container');
-      const childLength = tabContainer.children.length;
+      dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
+    }
+  }
 
-      /**
-       * Removes the highlights from all of the tabs
-       */
-      removeHighlight();
+  // From https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+  capitalizeFirstLetter (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
-      if (dailyToggle) {
-        dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
-      } else {
-        dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-down-solid.svg';
-      }
+  closeContainers () {
+    const dailyDrop = this.shadowRoot.querySelector('.daily');
+    const monthlyDrop = this.shadowRoot.querySelector('.monthly');
+    const yearlyDrop = this.shadowRoot.querySelector('.yearly');
 
-      dailyToggle = !dailyToggle;
+    const yearlyContainer = this.shadowRoot.querySelector('.yearly-item-container');
+    const monthlyContainer = this.shadowRoot.querySelector('.monthly-item-container');
+    const dailyContainer = this.shadowRoot.querySelector('.daily-item-container');
 
-      /**
-       * Checks to see if the tab is already expanded or not.
-       */
-      if (childLength > 0) {
-        /**
-         * Removes the options if the tab is already expanded
-         */
-        while (tabContainer.firstChild !== null) {
-          tabContainer.removeChild(tabContainer.lastChild);
-        }
-      } else {
-        /**
-         * Highlights the currently selected tab.
-         */
-        dailyDrop.classList.add('navbar-tab-highlighted');
+    while (yearlyContainer.firstChild !== null ||
+      monthlyContainer.firstChild !== null ||
+      dailyContainer.firstChild !== null
+    ) {
+      // Removes the options if the tab is already expanded
+      if (yearlyContainer.firstChild !== null) { yearlyContainer.removeChild(yearlyContainer.lastChild); }
 
-        /**
-         * Add the options to the flex box to align the items.
-         */
-        for (let i = 0; i < 5; i++) {
-          const newContainer = document.createElement('div');
-          const newArrow = document.createElement('img');
-          const newAnchor = document.createElement('a');
+      if (monthlyContainer.firstChild !== null) { monthlyContainer.removeChild(monthlyContainer.lastChild); }
 
-          newContainer.classList.add('navbar-tab-lvl2');
-          newArrow.classList.add('navbar-tab-arrow');
-          newAnchor.classList.add('navbar-tab-item');
+      if (dailyContainer.firstChild !== null) { dailyContainer.removeChild(dailyContainer.lastChild); }
+    }
 
-          newArrow.src = '../imgs/chevron-right.svg';
-          newAnchor.href = 'https://www.google.com/';
-          newAnchor.target = '_blank';
-          newAnchor.innerHTML = 'Option ' + (i + 1);
-
-          newContainer.appendChild(newArrow);
-          newContainer.appendChild(newAnchor);
-          tabContainer.appendChild(newContainer);
-        }
-      }
-    });
+    dailyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
+    monthlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
+    yearlyDrop.querySelector('.navbar-tab-arrow').src = '../imgs/chevron-right.svg';
   }
 }
 
