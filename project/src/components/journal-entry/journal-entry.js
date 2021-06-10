@@ -19,20 +19,9 @@ class JournalEntry extends HTMLElement {
 
   
   
-      <style>
-      input[type="text"] {
-        width: 10%;
-        height: 2.5%;
-        padding-right: 1%;
-    }
-    input[type="submit"] {
-        height: 2.5%;
-        width: 1%;
-    }
-      </style>
+
     
-      <input id= 'color-picker' type="color"  value='#C0C0C0'>
-      <input id='add-textfield' name="textfield" type="text" placeholder="Enter your tag"><button id = "add-tag" type = "submit">+</button>
+      <add-holder></add-holder>
                     <div class="search-icon">Search</div>
                 </div>
                 

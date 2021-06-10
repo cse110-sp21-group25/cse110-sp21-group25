@@ -1,0 +1,14 @@
+.row{
+    display:flex;
+}
+#color-picker {
+    flex: 1;
+}
+
+#add-textfield{
+    flex: 1;
+}
+
+#add-tag{
+    flex: 1;
+}
