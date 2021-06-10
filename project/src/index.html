@@ -18,8 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.css"
+    />
   </head>
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.7.0/main.min.js"></script>
     <script src="./components/journal-entry/bullet/bullet.js"></script>
     <script src="./components/nav-bar/nav-bar.js"></script>
     <script src="./components/mood-indicator/mood-indicator.js"></script>
@@ -29,6 +34,20 @@
     <script src="./components/goals-board/goals-board.js"></script>
     <script src="./components/quote-generator/quote-generator.js"></script>
     <script src="./storage.js"></script>
+    <script src="./components/entry-editor/entry-item-creator/entry-item-creator.js"></script>
+    <script src="./components/calendar/calendar.js"></script>
+
+    <script>
+      function myFunction() {
+        let mainFrameOne = document.getElementById("journal");
+        let mainFrameTwo = document.getElementById("calendar");
+
+        journal.style.display =
+          journal.style.display == "none" ? "block" : "none";
+        calendar.style.visibility =
+          calendar.style.visibility == "hidden" ? "visible" : "hidden";
+      }
+    </script>
 
     <div class="app-wrapper">
       <div class="column left-column">
@@ -36,7 +55,10 @@
       </div>
       <div class="column middle-column">
         <div class="entry-container">
-          <journal-entry></journal-entry>
+          <div id="journal"><journal-entry></journal-entry></div>
+          <div id="calendar" style="visibility: hidden">
+            <my-calendar></my-calendar>
+          </div>
         </div>
         <div class="middle-space"></div>
         <menu-symbols></menu-symbols>
@@ -44,8 +66,19 @@
       <div class="column right-column">
         <clock-time></clock-time>
         <goals-board></goals-board>
+
+        <button onclick="myFunction()">Calendar</button>
+
         <mood-ind name="Mood Indicator"></mood-ind>
+        <<<<<<< HEAD
         <quote-gen></quote-gen>
+        =======
+
+        <p>
+          "You miss 100% of the shots you don't take" <br />
+          - Wayne Gretzky
+        </p>
+        >>>>>>> calendar
       </div>
     </div>
   </body>

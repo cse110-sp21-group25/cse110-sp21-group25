@@ -55,7 +55,10 @@
       "createEntry": "writable",
       "updateViewedDate": "writable",
       "entryExists": "writable",
-      "saveStorage": "writable"
+      "saveStorage": "writable",
+      "FullCalendar": "writable",
+      "alert": "writable",
+      "prompt": "writable"
     }
   },
   "eslintIgnore": [
@@ -69,5 +72,8 @@
     ],
     "coverageDirectory": "./testing/coverage/jest-coverage",
     "verbose": true
+  },
+  "dependencies": {
+    "fullcalendar": "^5.7.0"
   }
 }
