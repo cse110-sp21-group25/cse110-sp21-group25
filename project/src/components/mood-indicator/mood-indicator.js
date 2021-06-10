@@ -45,16 +45,13 @@ class MoodIndicator extends HTMLElement {
   }
 
   updateFace () {
-    if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== undefined
-      || storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== 'EMPTY') {
-        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'BAD')
-          this.selectBad();
+    if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== undefined ||
+      storage[viewedDate.year][viewedDate.month][viewedDate.day].mood !== 'EMPTY') {
+      if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'BAD') { this.selectBad(); }
 
-        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'OKAY')
-          this.selectOkay();
+      if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'OKAY') { this.selectOkay(); }
 
-        if(storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'GREAT')
-          this.selectGreat();
+      if (storage[viewedDate.year][viewedDate.month][viewedDate.day].mood === 'GREAT') { this.selectGreat(); }
     }
   }
 
@@ -66,7 +63,7 @@ class MoodIndicator extends HTMLElement {
       desc.innerText = text;
       desc.classList.remove('fade');
     }, 150);
-  };
+  }
 
   selectBad () {
     const desc = this.shadowRoot.querySelector('#card > #desc');
