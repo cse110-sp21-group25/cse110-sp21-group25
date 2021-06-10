@@ -33,6 +33,7 @@
       "standard-jsx"
     ],
     "globals": {
+      "localStorage": "writable",
       "HTMLElement": "writable",
       "$": "writable",
       "customElements": "writable",
