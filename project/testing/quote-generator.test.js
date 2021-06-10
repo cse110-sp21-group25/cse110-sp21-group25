@@ -10,8 +10,6 @@ describe('Testing Quote Component', () => {
     });
   
     test('Test1: Check that the quote-generator component isn\'t empty', async () => {
-      
-      expStr = '';
 
       const quoteGenerator = await page.evaluate(() => {
 
