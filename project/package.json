@@ -58,7 +58,9 @@
       "saveStorage": "writable",
       "FullCalendar": "writable",
       "alert": "writable",
-      "prompt": "writable"
+      "prompt": "writable",
+      "journal": "writable",
+      "calendar": "writable"
     }
   },
   "eslintIgnore": [

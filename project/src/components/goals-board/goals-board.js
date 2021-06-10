@@ -351,13 +351,8 @@ class goalsBoard extends HTMLElement {
   }
 
   toggleCalendar () {
-    let mainFrameOne = document.getElementById("journal");
-        let mainFrameTwo = document.getElementById("calendar");
-
-        journal.style.display =
-          journal.style.display == "none" ? "block" : "none";
-        calendar.style.visibility =
-          calendar.style.visibility == "hidden" ? "visible" : "hidden";
+    journal.style.display = journal.style.display === "none" ? "block" : "none";
+    calendar.style.visibility = calendar.style.visibility === "hidden" ? "visible" : "hidden";
   }
 }
 

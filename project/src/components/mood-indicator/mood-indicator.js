@@ -41,7 +41,8 @@ class MoodIndicator extends HTMLElement {
       }
     });
 
-    this.updateFace();
+    if (entryExists(date) && viewedStorage.title !== undefined)
+      this.updateFace();
   }
 
   updateFace () {
