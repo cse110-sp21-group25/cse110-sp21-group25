@@ -1,6 +1,12 @@
-
+.tag-container {
+  display: flex;
+  flex-direction: column;
+}
 .tag {
-  border-color: none;
+  display: flex;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
   color: black;
   padding-top: 0.125%;
   padding-right: 0.25%;
@@ -8,28 +14,60 @@
   padding-left: 1%;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 0 0 8px 8px;
+  height: 25px;
 }
 
-
-.tag > button {
-border: none;
-color: black;
-border-radius: 10%;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 65%;
-cursor: pointer;
-background-color: transparent;
+.show-tag-creator-btn {
+  text-align: center;
+  width: 25px;
+  height: 25px;
 }
 
-.tag > button:hover{
-background-color: gray;
+.tag-color-picker {
+  padding: 0;
+  border-style: none;
+  width: 20px;
+  height: 20px;
 }
-.tag > button:focus{
-  background-color: red;
+
+.tag-editor,
+.tag-creator {
+  display: flex;
+  align-items: center;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-creator {
+  display: flex;
+}
+
+.close-editor-btn {
+  box-shadow: inset 0px 39px 0px -24px #e67a73;
+  background-color: #e4685d;
+  border-radius: 4px;
+  border: 1px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 6px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+
+.close-editor-btn:hover {
+  background-color: #eb675e;
+}
+
+.close-editor-btn:active {
+  position: relative;
+  top: 1px;
 }

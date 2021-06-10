@@ -1,156 +1,217 @@
-
-let sample = localStorage.getItem('sample');
-console.log(sample);
-if (sample === null) {
-  console.log('here');
-  sample = [];
-} else {
-  sample = JSON.parse(sample);
-}
-console.log(sample);
-class tagBujo extends HTMLElement {
+class TagBujo extends HTMLElement {
   constructor () {
     super();
 
     const template = document.createElement('template');
 
     template.innerHTML = `
-      <link rel="stylesheet" href="./components/tags/tags.css">
-        <div class="tag">
-          <span></span>
-          <button id = 'deleter' class="deleter">&#10005</button>
-        </div>
-      `;
-
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-
-    this.shadowRoot.querySelector('#deleter').addEventListener('click', function (event) {
-      this.parentNode.remove();
-      for (let i = 0; i < sample.length; i++) {
-        if (sample[i].text === this.parentNode.id) {
-          sample.splice(i, 1);
-          break;
-        }
-      }
-      localStorage.setItem('sample', JSON.stringify(sample));
-      console.log(sample);
-    });
-  }
-
-  /**
- * Returns the tag value
- * @returns {tag}
- */
-  get tag () {
-    return this.getAttribute('tag');
-  }
-
-  /**
- * This functions sets the value of the tag fields:
- *
- * As a result our HTML element will contain the text and color specified in the tag passed
- *
- *
- * @param {tag} tag: tag object that has values text and color
- */
-  set tag (tag) {
-    const currTag = this.shadowRoot;
-    const text = currTag.querySelector('span');
-    const tagid = currTag.querySelector('div');
-    tagid.setAttribute('id', tag.text);
-    tagid.style.backgroundColor = tag.color;
-    text.textContent = tag.text;
-    this.setAttribute('id', tag.text);
-    this.setAttribute('color', tag.color);
-    this.style.margin = 1;
-  }
-}
-
-window.customElements.define('tag-bujo', tagBujo);
-
-class addHolder extends HTMLElement {
-  constructor () {
-    super();
-    const template = document.createElement('template');
-    // Linter won't let me add it otherwise
-    template.innerHTML = `
-      <link rel="stylesheet" href="./components/tags/add.css">
-      <div class="row">
-      <input id= "color-picker" type="color"  value="#C0C0C0"> 
-      <input id="add-textfield" name="textfield" type="text" placeholder="Enter your tag">
-      <button id = "add-tag" type = "submit">+</button>
-      </div>
+      <link rel='stylesheet' href='./components/tags/tags.css'>
+      <div class='tag-container'>
+      <div class='tags'></div>
+       <button class='show-tag-creator-btn'>+</button>
+       </div>
       `;
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    this.shadowRoot.querySelector('#add-tag').addEventListener('click', function (event) {
-      console.log(this.parentNode.querySelector('#add-textfield').value);
-      if (this.parentNode.querySelector('#add-textfield').value !== '') {
-        const newTag = document.createElement('tag-bujo');
+    const parentContainer = this.shadowRoot.querySelector('.tag-container');
+    const tagsContainer = this.shadowRoot.querySelector('.tags');
+    const showTagCreatorBtn = this.shadowRoot.querySelector('.show-tag-creator-btn');
 
-        newTag.tag = { text: this.parentNode.querySelector('#add-textfield').value, color: this.parentNode.querySelector('#color-picker').value };
+    function deleteTag(e) {
+      tagsContainer.removeChild(e.currentTarget.parentNode);
+      saveTags();
+    }
 
-        this.parentNode.appendChild(newTag);
+    function showTagEditor(e) {
+      const tagCreator = parentContainer.querySelector('.tag-creator');
 
-        sample.push({ text: this.parentNode.querySelector('#add-textfield').value, color: this.parentNode.querySelector('#color-picker').value });
-        this.parentNode.querySelector('#add-textfield').value = '';
-        localStorage.setItem('sample', JSON.stringify(sample));
+      if(tagCreator !== null) {
+        parentContainer.removeChild(tagCreator);
       }
-    });
 
-    this.shadowRoot.querySelector('#add-textfield').addEventListener('keyup', function (event) {
-      if (event.keyCode === 13) {
-        event.preventDefault();
-        this.parentNode.querySelector('#add-tag').click();
-      }
-    });
+      showTagCreatorBtn.style.visibility = 'hidden';
+      const tag = e.currentTarget;
 
-    //   document.body.appendChild(tagholder);
-    //   const summon = document.querySelector('journal-entry').shadowRoot.getElementById('tag-holder');
-    //   console.log(sample.length);
-    window.setTimeout(() => {
-      for (let i = 0; i < sample.length; i++) {
-        console.log(i);
-        const newTag = document.createElement('tag-bujo');
-        newTag.tag = sample[i];
-        this.parentNode.appendChild(newTag);
-      }
-    }, 500);
+      let editorContainer = document.createElement('div');
+      editorContainer.classList.add('tag-editor');
+
+      let colorPicker = document.createElement('input');
+      colorPicker.classList.add('tag-color-picker');
+      colorPicker.type = 'color';
+      colorPicker.value = tag.getAttribute('tagColor');
+
+      let textbox = document.createElement('input');
+      textbox.classList.add('tag-editor-textbox');
+      textbox.type = 'text';
+      textbox.placeholder = 'Enter your tag';
+      textbox.value = tag.querySelector('.tag-text').innerHTML;
+
+      let confirmBtn = document.createElement('button');
+      confirmBtn.classList.add('tag-editor-confirm-btn');
+      confirmBtn.innerHTML = '✓';
+
+      confirmBtn.addEventListener('click', () => {
+        tag.querySelector('.tag-text').innerHTML = textbox.value;
+        tag.style.backgroundColor = colorPicker.value;
+        parentContainer.removeChild(editorContainer);
+        showTagCreatorBtn.style.visibility = 'visible';
+
+        saveTags();
+      });
+
+      let cancelBtn = document.createElement('button');
+      cancelBtn.classList.add('tag-editor-cancel-btn');
+      cancelBtn.innerHTML = 'X';
+
+      cancelBtn.addEventListener('click', () => {
+        parentContainer.removeChild(editorContainer);
+        showTagCreatorBtn.style.visibility = 'visible';
+      });
+
+      editorContainer.append(colorPicker);
+      editorContainer.append(textbox);
+      editorContainer.append(confirmBtn);
+      editorContainer.append(cancelBtn);
+      parentContainer.append(editorContainer);
+
+    }
+
+    function addTag(e) { 
+     const text = parentContainer.querySelector('.tag-textbox').value.trim();
+     const tagColor = parentContainer.querySelector('.tag-color-picker').value;
+
+
+     if(text !== '') {
+       let newTag = document.createElement('div');
+       newTag.classList.add('tag');
+       newTag.style.backgroundColor = tagColor;
+       newTag.setAttribute('tagColor', tagColor);
+
+       newTag.addEventListener('dblclick', showTagEditor);
+       
+       let tagText = document.createElement('span');
+       tagText.classList.add('tag-text');
+       tagText.innerHTML = text;
+
+       let deleteBtn = document.createElement('button');
+       deleteBtn.classList.add('tag-delete-btn');
+       deleteBtn.innerHTML = 'x';
+       deleteBtn.style.visibility = 'hidden';
+       deleteBtn.addEventListener('click', deleteTag);
+
+       newTag.appendChild(tagText);
+       newTag.append(deleteBtn);
+
+       newTag.addEventListener('mouseover', (e) => {
+        const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+
+        deleteBtn.style.visibility = 'visible';
+      });
+      newTag.addEventListener('mouseout', (e) => {
+         const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+        deleteBtn.style.visibility = 'hidden';
+      });
+       
+       tagsContainer.appendChild(newTag);
+       saveTags();
+
+     }
+    }
+
+    function closeCreator(e) {
+      const creator = parentContainer.querySelector('.tag-creator');
+      parentContainer.removeChild(creator);
+      showTagCreatorBtn.style.visibility = 'visible';
+    }
+
+    function showTagCreator() {
+      showTagCreatorBtn.style.visibility = 'hidden';
+      let container = document.createElement('div');
+      container.classList.add('tag-creator');
+
+      let colorPicker = document.createElement('input');
+      colorPicker.classList.add('tag-color-picker');
+      colorPicker.type = 'color';
+      colorPicker.value = '#C0C0C0';
+
+      let textbox = document.createElement('input');
+      textbox.classList.add('tag-textbox');
+      textbox.name = 'textbox';
+      textbox.type = 'text';
+      textbox.placeholder = 'Enter your tag';
+
+      let addBtn = document.createElement('button');
+      addBtn.classList.add('add-tag-btn');
+      addBtn.innerHTML = '+';
+      addBtn.addEventListener('click', addTag);
+
+      let closeBtn = document.createElement('button');
+      closeBtn.classList.add('close-editor-btn');
+      closeBtn.innerHTML = 'X';
+      closeBtn.addEventListener('click', closeCreator);
+
+      container.appendChild(colorPicker);
+      container.appendChild(textbox);
+      container.appendChild(addBtn);
+      container.appendChild(closeBtn);
+      parentContainer.appendChild(container);
+    }
+
+    function saveTags () {
+      const tags = tagsContainer.querySelectorAll('.tag');
+      const arrToPush = [];
+
+      tags.forEach( (element) => {
+        arrToPush.push({text: element.innerText, tagColor: element.getAttribute('tagColor')});
+      })
+
+      storage[viewedDate.year][viewedDate.month][viewedDate.day].tags = arrToPush;
+      saveStorage();
+    }
+
+    function loadTags () {
+      const tagList = storage[viewedDate.year][viewedDate.month][viewedDate.day].tags;
+
+      tagList.forEach( (element) => {
+        let newTag = document.createElement('div');
+        newTag.classList.add('tag');
+        newTag.style.backgroundColor = element.tagColor;
+        newTag.setAttribute('tagColor', element.tagColor);
+
+        newTag.addEventListener('dblclick', showTagEditor);
+        
+        let tagText = document.createElement('span');
+        tagText.classList.add('tag-text');
+        tagText.innerHTML = element.text;
+
+        let deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('tag-delete-btn');
+        deleteBtn.innerHTML = 'x';
+        deleteBtn.style.visibility = 'hidden';
+        deleteBtn.addEventListener('click', deleteTag);
+
+        newTag.appendChild(tagText);
+        newTag.append(deleteBtn);
+
+        newTag.addEventListener('mouseover', (e) => {
+          const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+
+          deleteBtn.style.visibility = 'visible';
+        });
+        newTag.addEventListener('mouseout', (e) => {
+          const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+          deleteBtn.style.visibility = 'hidden';
+        });
+        
+        tagsContainer.appendChild(newTag);
+      })
+
+    }
+
+    this.shadowRoot.querySelector('.show-tag-creator-btn').addEventListener('click', showTagCreator);
+    loadTags();
   }
 }
 
-window.customElements.define('add-holder', addHolder);
-
-// document.querySelector('journal-entry').shadowRoot.querySelector('#add-tag').addEventListener('click', function (event) {
-//   if (this.getRootNode().getElementById('add-textfield').value !== '') {
-//     const newTag = document.createElement('tag-bujo');
-//     newTag.tag = { text: document.querySelector('journal-entry').shadowRoot.querySelector('#add-textfield').value, color: document.querySelector('journal-entry').shadowRoot.querySelector('#color-picker').value };
-//     const summon = document.querySelector('journal-entry').shadowRoot.getElementById('tag-holder');
-//     summon.appendChild(newTag);
-//     sample.push({ text: this.getRootNode().getElementById('add-textfield').value, color: this.getRootNode().getElementById('color-picker').value });
-//     this.getRootNode().getElementById('add-textfield').value = '';
-//     localStorage.setItem('sample', JSON.stringify(sample));
-//     console.log(sample);
-//   }
-// });
-
-// const input = document.querySelector('journal-entry').shadowRoot.getElementById('add-textfield');
-// input.addEventListener('keyup', function (event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     document.getElementById('add-tag').click();
-//   }
-// });
-
-//   document.body.appendChild(tagholder);
-//   const summon = document.querySelector('journal-entry').shadowRoot.getElementById('tag-holder');
-//   console.log(sample.length);
-//   for (let i = 0; i < sample.length; i++) {
-//     console.log(i);
-//     const newTag = document.createElement('tag-bujo');
-//     newTag.tag = sample[i];
-//     summon.appendChild(newTag);
-//   }
-// }, 500);
+window.customElements.define('tag-bujo', TagBujo);

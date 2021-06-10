@@ -48,7 +48,6 @@
       "await": "writable",
       "before": "writable",
       "after": "writable",
-      "localStorage": "writable",
       "viewedDate": "writable",
       "decodeDateInfo": "writable",
       "storage": "writable",

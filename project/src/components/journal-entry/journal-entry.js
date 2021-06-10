@@ -14,15 +14,7 @@ class JournalEntry extends HTMLElement {
                     <button class="entry-forward-btn">></button>
                 </div>
                 <div class="entry-tags-container">
-                    
-      <script type="module" src="tags.js"></script>
-
-  
-  
-
-    
-      <add-holder></add-holder>
-                    <div class="search-icon">Search</div>
+                    <tag-bujo></tag-bujo>
                 </div>
                 
                 <div class="entry-body">

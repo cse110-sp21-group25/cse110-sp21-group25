@@ -108,6 +108,7 @@ function createEntry (date) {
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
+    storage[date.year][date.month][date.day].tags = [];
   } else if (!Object.hasOwnProperty.call(storage[date.year], date.month)) {
     console.log('From month');
     storage[date.year][date.month] = {};
@@ -120,6 +121,7 @@ function createEntry (date) {
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
+    storage[date.year][date.month][date.day].tags = [];
   } else if (!Object.hasOwnProperty.call(storage[date.year][date.month], date.day)) {
     console.log('From day');
     storage[date.year][date.month][date.day] = {};
@@ -128,6 +130,7 @@ function createEntry (date) {
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
     storage[date.year][date.month][date.day].mood = 'EMPTY';
+    storage[date.year][date.month][date.day].tags = [];
   }
 
   saveStorage();
