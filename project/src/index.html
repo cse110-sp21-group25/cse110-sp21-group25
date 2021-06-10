@@ -34,20 +34,7 @@
     <script src="./components/goals-board/goals-board.js"></script>
     <script src="./components/quote-generator/quote-generator.js"></script>
     <script src="./storage.js"></script>
-    <script src="./components/entry-editor/entry-item-creator/entry-item-creator.js"></script>
     <script src="./components/calendar/calendar.js"></script>
-
-    <script>
-      function myFunction() {
-        let mainFrameOne = document.getElementById("journal");
-        let mainFrameTwo = document.getElementById("calendar");
-
-        journal.style.display =
-          journal.style.display == "none" ? "block" : "none";
-        calendar.style.visibility =
-          calendar.style.visibility == "hidden" ? "visible" : "hidden";
-      }
-    </script>
 
     <div class="app-wrapper">
       <div class="column left-column">
@@ -66,19 +53,8 @@
       <div class="column right-column">
         <clock-time></clock-time>
         <goals-board></goals-board>
-
-        <button onclick="myFunction()">Calendar</button>
-
         <mood-ind name="Mood Indicator"></mood-ind>
-        <<<<<<< HEAD
         <quote-gen></quote-gen>
-        =======
-
-        <p>
-          "You miss 100% of the shots you don't take" <br />
-          - Wayne Gretzky
-        </p>
-        >>>>>>> calendar
       </div>
     </div>
   </body>

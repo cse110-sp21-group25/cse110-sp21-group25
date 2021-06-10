@@ -46,6 +46,7 @@ class goalsBoard extends HTMLElement {
     const weeklyBtn = this.shadowRoot.querySelector('.weeklyBtn');
     const monthlyBtn = this.shadowRoot.querySelector('.monthlyBtn');
     const editBtn = this.shadowRoot.querySelector('.edit-btn');
+    const calendarBtn = this.shadowRoot.querySelector('.calendar-btn');
     const applyChangesBtn = this.shadowRoot.querySelector('.apply-btn');
     const cancelChangesBtn = this.shadowRoot.querySelector('.cancel-btn');
     const editFooter = this.shadowRoot.querySelector('.goals-board-footer-edit');
@@ -88,6 +89,8 @@ class goalsBoard extends HTMLElement {
       this.shadowRoot.querySelector('.goals-checklist').lastChild.style.visibility = 'visible';
       this.saveGoals();
     });
+
+    calendarBtn.addEventListener('click', this.toggleCalendar);
 
     // Sets the goals board back to default without updating the content
     cancelChangesBtn.addEventListener('click', () => {
@@ -322,7 +325,7 @@ class goalsBoard extends HTMLElement {
   }
 
   /**
-   * Loads timing
+   * Loads weekly or monthly goals
    */
   loadGoals () {
     let weeklyGoals = [];
@@ -345,6 +348,16 @@ class goalsBoard extends HTMLElement {
     } else {
       this.addGoals(monthlyGoals);
     }
+  }
+
+  toggleCalendar () {
+    let mainFrameOne = document.getElementById("journal");
+        let mainFrameTwo = document.getElementById("calendar");
+
+        journal.style.display =
+          journal.style.display == "none" ? "block" : "none";
+        calendar.style.visibility =
+          calendar.style.visibility == "hidden" ? "visible" : "hidden";
   }
 }
 

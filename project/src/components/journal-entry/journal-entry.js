@@ -250,8 +250,6 @@ class JournalEntry extends HTMLElement {
       entryTitle.innerHTML = viewedStorage.title;
       entryDate.innerHTML = viewedStorage.date;
       entryContent.innerHTML = viewedStorage.content;
-
-      document.querySelector('mood-ind').updateFace();
     }
   }
 
