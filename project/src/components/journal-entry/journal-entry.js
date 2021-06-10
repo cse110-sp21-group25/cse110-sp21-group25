@@ -182,6 +182,8 @@ class JournalEntry extends HTMLElement {
       this.setAttribute('date', (viewedDate.year + '-' + viewedDate.month + '-' + viewedDate.day));
 
       document.querySelector('goals-board').loadGoals();
+      this.shadowRoot.querySelector('tag-bujo').loadTags();
+      document.querySelector('mood-ind').updateFace();
 
       this.validateEntry();
       this.loadEntry();
@@ -193,6 +195,8 @@ class JournalEntry extends HTMLElement {
       this.setAttribute('date', (viewedDate.year + '-' + viewedDate.month + '-' + viewedDate.day));
 
       document.querySelector('goals-board').loadGoals();
+      this.shadowRoot.querySelector('tag-bujo').loadTags();
+      document.querySelector('mood-ind').updateFace();
 
       this.validateEntry();
       this.loadEntry();
