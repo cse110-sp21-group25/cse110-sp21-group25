@@ -240,7 +240,6 @@ class TagBujo extends HTMLElement {
   }
 
   deleteTags() {
-    const tagsContainer = this.shadowRoot.querySelector('.tags');
     const tagList = this.shadowRoot.querySelector('.tags').querySelectorAll('div');
 
     tagList.forEach((element) => {
