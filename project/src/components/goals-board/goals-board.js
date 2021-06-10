@@ -55,9 +55,9 @@ class goalsBoard extends HTMLElement {
     editFooter.style.visibility = 'hidden';
 
     /**
-       * EventListener for the weekly button to toggle colors and update the goals-checklist div to feature
-       * all of the weekly goals.
-       */
+    * EventListener for the weekly button to toggle colors and update the goals-checklist div to feature
+    * all of the weekly goals.
+    */
     weeklyBtn.addEventListener('click', () => {
       if (editFooter.style.visibility === 'visible') {
         this.toggleFooterVisibility(true);
@@ -69,9 +69,9 @@ class goalsBoard extends HTMLElement {
     });
 
     /**
-       * EventListener for the monthly button to toggle colors and update the goals-checklist div to feature
-       * all of the monthly goals.
-       */
+    * EventListener for the monthly button to toggle colors and update the goals-checklist div to feature
+    * all of the monthly goals.
+    */
     monthlyBtn.addEventListener('click', () => {
       if (editFooter.style.visibility === 'visible') {
         this.toggleFooterVisibility(true);
@@ -154,24 +154,29 @@ class goalsBoard extends HTMLElement {
   }
 
   /**
-   * Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
-   */
+     * @function
+    *  @summary Untoggles the color change in the weekly and monthly buttons by removing the class 'selected'
+    *  @memberOf goalsBoard
+    *  @instance
+    */
   unSelect () {
     this.shadowRoot.querySelector('.monthlyBtn').classList.remove('selected');
     this.shadowRoot.querySelector('.weeklyBtn').classList.remove('selected');
   }
 
   /**
-   * Adds 1 goal to the goals-checklist div.
-   * @param {JSON} content - JSON that contains 3 properties (check below for more info)
-   * content's JSON format
-   * - text: the goal's message
-   * - checked: determines if checkbox should be checked
-   * - parent (constant) - direct link to goals-checklist div
-   *
-   * @example
-   * // addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
-   */
+    * @function
+    * @summary Adds 1 goal to the goals-checklist div.
+    * @param {JSON} content - JSON that contains 3 properties (check below for more info)
+    * content's JSON format
+    * - text: the goal's message
+    * - checked: determines if checkbox should be checked
+    * - parent (constant) - direct link to goals-checklist div
+    * @example
+    *  addGoals({ text: 'Update Skeleton', checked: true, parent: checkList });
+    * @memberOf goalsBoard
+    * @instance
+    */
   addGoal (content) {
     // Create all of the html elements
     const newContainer = document.createElement('div');
@@ -210,16 +215,19 @@ class goalsBoard extends HTMLElement {
   }
 
   /**
-     * Adds all the goals found in the goalList parameter into the goals-checklist div
-     * @param {JSON[]} goalList - array of JSON elements
-     * JSON format
-     * - text: the goal's message
-     * - checked: determines if checkbox should be checked
-     * - parent (constant) - direct link to goals-checklist div
-     *
-     * @example
-     * // addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
-     */
+    * @function
+    * @summary Adds all the goals found in the goalList parameter into the goals-checklist div
+    * @param {JSON[]} goalList - array of JSON elements
+    * JSON format
+    * - text: the goal's message
+    * - checked: determines if checkbox should be checked
+    * - parent (constant) - direct link to goals-checklist div
+    *
+    * @example
+    *  addGoals([{ text: 'Update Skeleton', checked: true, parent: checkList }, { text: 'Buy groceries', checked: false, parent: checkList }]);
+    * @memberOf goalsBoard
+    * @instance
+    */
   addGoals (goalList) {
     const checkList = this.shadowRoot.querySelector('.goals-checklist');
     checkList.innerHTML = '';
@@ -234,9 +242,12 @@ class goalsBoard extends HTMLElement {
   }
 
   /**
-   * Removes all the current goals being displayed in the goals-checkList div
-   * @param {div} checkList - link to the goals-checklist div
-   */
+    * @function
+    * @summary Removes all the current goals being displayed in the goals-checkList div
+    * @param {div} checkList - link to the goals-checklist div
+    * @memberOf goalsBoard
+    * @instance
+    */
   removeGoals (checkList) {
     // Loops through all of the goals in checkList and removes them all
     while (checkList.children.length > 0) {

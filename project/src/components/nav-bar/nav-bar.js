@@ -77,7 +77,9 @@ class navBar extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    // The DOM needs to be loaded before attempting to use querySelectors.
+    /**
+     * The DOM needs to be loaded before attempting to use querySelectors.
+     */
     const yearlyDrop = this.shadowRoot.querySelector('.yearly');
     const monthlyDrop = this.shadowRoot.querySelector('.monthly');
     const dailyDrop = this.shadowRoot.querySelector('.daily');
@@ -85,7 +87,9 @@ class navBar extends HTMLElement {
 
     let focusToggle = false;
 
-    // Toggle the image on the focus button.
+    /**
+     * Toggle the image on the focus button.
+     */
     focusIcon.addEventListener('click', () => {
       if (focusToggle) {
         focusIcon.src = '../imgs/eye-slash-solid.svg';
@@ -106,7 +110,13 @@ class navBar extends HTMLElement {
     dailyDrop.addEventListener('click', () => this.generateDailyDates());
   }
 
-  // Removes the highlight from the individual tabs
+  /**
+   * Removes the highlight from the individual tabs
+   * @name removeHighlight
+   * @function
+   * @memberOf navBar
+   * @instance
+   */
   removeHighlight () {
     const yearlyDrop = this.shadowRoot.querySelector('.yearly');
     const monthlyDrop = this.shadowRoot.querySelector('.monthly');

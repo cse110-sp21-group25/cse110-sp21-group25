@@ -38,7 +38,14 @@ class MenuSymbols extends HTMLElement {
 
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-
+  }
+  /**
+   * Gets the element with id 'menu' and toggles between the 'show' class.
+   * This enables the menu icon at the bottom to show and hide the key
+   * for the different types of bullets.
+   */
+  showMenu () {
+    document.getElementById('menu').classList.toggle('show');
     const menuButton = this.shadowRoot.querySelector('.q-mark > img');
     const menuDesc = this.shadowRoot.querySelector('#menu');
 
