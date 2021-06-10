@@ -21,7 +21,7 @@
     "coverage": "nyc report --reporter=text --cwd ./testing/coverage/ --report-dir ./coverage-html",
     "generate-docs": "jsdoc -c ./config/jsdoc-config.json",
     "hook-setup": "git config core.hooksPath ./project/config/.githooks",
-    "lint": "eslint ./src/**/*.js",
+    "lint": "eslint ./src/**/*.js --fix",
     "prepare": "npm run hook-setup",
     "prettier": "prettier --write .",
     "start-server": "npx http-server ./src",
@@ -46,7 +46,16 @@
       "it": "writable",
       "await": "writable",
       "before": "writable",
-      "after": "writable"
+      "after": "writable",
+      "localStorage": "writable",
+      "viewedDate": "writable",
+      "decodeDateInfo": "writable",
+      "storage": "writable",
+      "decodeDateInfoElement": "writable",
+      "createEntry": "writable",
+      "updateViewedDate": "writable",
+      "entryExists": "writable",
+      "saveStorage": "writable"
     }
   },
   "eslintIgnore": [

@@ -210,7 +210,6 @@ class JournalEntry extends HTMLElement {
   validateEntry () {
     if (!entryExists(viewedDate)) {
       const date = decodeDateInfoElement(this);
-      console.log(date);
       createEntry(date);
     }
   }

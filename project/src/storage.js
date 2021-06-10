@@ -96,28 +96,33 @@ function createEntry (date) {
 
   // Storage is a nested object using dynamic key values not a nested array
   if (!Object.hasOwnProperty.call(storage, date.year)) {
+    console.log('From year');
     storage[date.year] = {};
     storage[date.year][date.month] = {};
     storage[date.year].ISOWEEKS = {};
     storage[date.year].ISOWEEKS[getWeek(dateObj)] = [];
+    storage[date.year][date.month].GOALS = [];
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
   } else if (!Object.hasOwnProperty.call(storage[date.year], date.month)) {
+    console.log('From month');
     storage[date.year][date.month] = {};
     storage[date.year].ISOWEEKS = {};
     storage[date.year].ISOWEEKS[getWeek(dateObj)] = [];
+    storage[date.year][date.month].GOALS = [];
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
   } else if (!Object.hasOwnProperty.call(storage[date.year][date.month], date.day)) {
+    console.log('From day');
     storage[date.year][date.month][date.day] = {};
     storage[date.year][date.month][date.day].WEEK = getWeek(dateObj);
-    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate();
+    storage[date.year][date.month][date.day].date = abbDays[dateObj.getDay()] + ', ' + abbMonths[dateObj.getMonth()] + ' ' + dateObj.getDate() + ', ' + dateObj.getFullYear();
     storage[date.year][date.month][date.day].title = 'Title';
     storage[date.year][date.month][date.day].content = '<ul class="bujo"></ul>';
   }
