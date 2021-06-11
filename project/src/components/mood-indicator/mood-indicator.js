@@ -43,8 +43,7 @@ class MoodIndicator extends HTMLElement {
       }
     });
 
-    if (entryExists(viewedDate) && storage[viewedDate.year][viewedDate.month][viewedDate.day].title !== undefined)
-      this.updateFace();
+    if (entryExists(viewedDate) && storage[viewedDate.year][viewedDate.month][viewedDate.day].title !== undefined) { this.updateFace(); }
   }
 
   updateFace () {
