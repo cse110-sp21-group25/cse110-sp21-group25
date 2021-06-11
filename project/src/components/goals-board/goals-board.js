@@ -357,7 +357,7 @@ class goalsBoard extends HTMLElement {
     }
     const isoWeek = storage[viewedDate.year][viewedDate.month][viewedDate.day].WEEK;
 
-    if( isoWeek === undefined ) {
+    if (isoWeek === undefined) {
       document.querySelector('journal-entry').validateEntry();
     }
 
@@ -377,8 +377,8 @@ class goalsBoard extends HTMLElement {
   }
 
   toggleCalendar () {
-    journal.style.display = journal.style.display === "none" ? "block" : "none";
-    calendar.style.visibility = calendar.style.visibility === "hidden" ? "visible" : "hidden";
+    journal.style.display = journal.style.display === 'none' ? 'block' : 'none';
+    calendar.style.visibility = calendar.style.visibility === 'hidden' ? 'visible' : 'hidden';
   }
 }
 

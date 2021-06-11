@@ -21,7 +21,7 @@
     "coverage": "nyc report --reporter=text --cwd ./testing/coverage/ --report-dir ./coverage-html",
     "generate-docs": "jsdoc -c ./config/jsdoc-config.json",
     "hook-setup": "git config core.hooksPath ./project/config/.githooks",
-    "lint": "eslint ./src/**/*.js --fix",
+    "lint": "eslint ./src/**/*.js --fix && eslint ./testing/**/*.test.js",
     "prepare": "npm run hook-setup",
     "prettier": "prettier --write .",
     "start-server": "npx http-server ./src",

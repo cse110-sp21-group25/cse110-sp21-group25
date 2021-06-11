@@ -20,27 +20,27 @@ class TagBujo extends HTMLElement {
     this.loadTags();
   }
 
-  deleteTag(e) {
+  deleteTag (e) {
     const tagsContainer = this.shadowRoot.querySelector('.tags');
 
     tagsContainer.removeChild(e.currentTarget.parentNode);
     this.saveTags();
   }
 
-  showTagEditor(e) {
+  showTagEditor (e) {
     const parentContainer = this.shadowRoot.querySelector('.tag-container');
     const showTagCreatorBtn = this.shadowRoot.querySelector('.show-tag-creator-btn');
 
     const tagCreator = parentContainer.querySelector('.tag-creator');
 
-    if(tagCreator !== null) {
+    if (tagCreator !== null) {
       parentContainer.removeChild(tagCreator);
     }
 
     showTagCreatorBtn.style.visibility = 'hidden';
     const tag = e.currentTarget;
 
-    let editorContainer = document.createElement('div');
+    const editorContainer = document.createElement('div');
     editorContainer.classList.add('tag-editor');
 
     let colorText = document.createElement('span');
@@ -48,6 +48,7 @@ class TagBujo extends HTMLElement {
     colorText.innerHTML = 'Tag Color:';
 
     let colorPicker = document.createElement('input');
+
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = tag.getAttribute('tagColor');
@@ -57,12 +58,13 @@ class TagBujo extends HTMLElement {
     tagName.innerHTML = 'Tag Name:';
 
     let textbox = document.createElement('input');
+
     textbox.classList.add('tag-editor-textbox');
     textbox.type = 'text';
     textbox.placeholder = 'Enter your tag';
     textbox.value = tag.querySelector('.tag-text').innerHTML;
 
-    let confirmBtn = document.createElement('button');
+    const confirmBtn = document.createElement('button');
     confirmBtn.classList.add('tag-editor-confirm-btn');
     confirmBtn.innerHTML = '✓';
 
@@ -76,7 +78,7 @@ class TagBujo extends HTMLElement {
       this.saveTags();
     });
 
-    let cancelBtn = document.createElement('button');
+    const cancelBtn = document.createElement('button');
     cancelBtn.classList.add('tag-editor-cancel-btn');
     cancelBtn.innerHTML = 'X';
 
@@ -92,58 +94,55 @@ class TagBujo extends HTMLElement {
     editorContainer.append(confirmBtn);
     editorContainer.append(cancelBtn);
     parentContainer.append(editorContainer);
-
   }
 
-  addTag(e) { 
+  addTag (e) {
     const parentContainer = this.shadowRoot.querySelector('.tag-container');
     const tagsContainer = this.shadowRoot.querySelector('.tags');
     const text = parentContainer.querySelector('.tag-textbox').value.trim();
     const tagColor = parentContainer.querySelector('.tag-color-picker').value;
-   
 
-    if(text !== '') {
-     let newTag = document.createElement('div');
-     newTag.classList.add('tag');
-     newTag.style.backgroundColor = tagColor;
-     newTag.setAttribute('tagColor', tagColor);
+    if (text !== '') {
+      const newTag = document.createElement('div');
+      newTag.classList.add('tag');
+      newTag.style.backgroundColor = tagColor;
+      newTag.setAttribute('tagColor', tagColor);
 
-     newTag.addEventListener('dblclick', (e) => {
-       this.showTagEditor(e);
-     });
-     
-     let tagText = document.createElement('span');
-     tagText.classList.add('tag-text');
-     tagText.innerHTML = text;
+      newTag.addEventListener('dblclick', (e) => {
+        this.showTagEditor(e);
+      });
 
-     let deleteBtn = document.createElement('button');
-     deleteBtn.classList.add('tag-delete-btn');
-     deleteBtn.innerHTML = 'x';
-     deleteBtn.style.visibility = 'hidden';
-     deleteBtn.addEventListener('click', (e) => {
-       this.deleteTag(e);
-     });
+      const tagText = document.createElement('span');
+      tagText.classList.add('tag-text');
+      tagText.innerHTML = text;
 
-     newTag.appendChild(tagText);
-     newTag.append(deleteBtn);
-
-     newTag.addEventListener('mouseover', (e) => {
-      const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
-
-      deleteBtn.style.visibility = 'visible';
-    });
-    newTag.addEventListener('mouseout', (e) => {
-       const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+      const deleteBtn = document.createElement('button');
+      deleteBtn.classList.add('tag-delete-btn');
+      deleteBtn.innerHTML = 'x';
       deleteBtn.style.visibility = 'hidden';
-    });
-     
-     tagsContainer.appendChild(newTag);
-     this.saveTags();
+      deleteBtn.addEventListener('click', (e) => {
+        this.deleteTag(e);
+      });
 
-   }
+      newTag.appendChild(tagText);
+      newTag.append(deleteBtn);
+
+      newTag.addEventListener('mouseover', (e) => {
+        const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+
+        deleteBtn.style.visibility = 'visible';
+      });
+      newTag.addEventListener('mouseout', (e) => {
+        const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
+        deleteBtn.style.visibility = 'hidden';
+      });
+
+      tagsContainer.appendChild(newTag);
+      this.saveTags();
+    }
   }
 
-  closeCreator(e) {
+  closeCreator (e) {
     const parentContainer = this.shadowRoot.querySelector('.tag-container');
     const showTagCreatorBtn = this.shadowRoot.querySelector('.show-tag-creator-btn');
     const creator = parentContainer.querySelector('.tag-creator');
@@ -152,12 +151,12 @@ class TagBujo extends HTMLElement {
     showTagCreatorBtn.style.visibility = 'visible';
   }
 
-  showTagCreator() {
+  showTagCreator () {
     const parentContainer = this.shadowRoot.querySelector('.tag-container');
     const showTagCreatorBtn = this.shadowRoot.querySelector('.show-tag-creator-btn');
 
     showTagCreatorBtn.style.visibility = 'hidden';
-    let container = document.createElement('div');
+    const container = document.createElement('div');
     container.classList.add('tag-creator');
 
     let colorText = document.createElement('span');
@@ -165,6 +164,7 @@ class TagBujo extends HTMLElement {
     colorText.innerHTML = 'Tag Color:';
 
     let colorPicker = document.createElement('input');
+
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = '#C0C0C0';
@@ -174,19 +174,20 @@ class TagBujo extends HTMLElement {
     tagName.innerHTML = 'Tag Name:';
 
     let textbox = document.createElement('input');
+
     textbox.classList.add('tag-textbox');
     textbox.name = 'textbox';
     textbox.type = 'text';
     textbox.placeholder = 'Enter your tag';
 
-    let addBtn = document.createElement('button');
+    const addBtn = document.createElement('button');
     addBtn.classList.add('add-tag-btn');
     addBtn.innerHTML = '+';
     addBtn.addEventListener('click', (e) => {
       this.addTag(e);
     });
 
-    let closeBtn = document.createElement('button');
+    const closeBtn = document.createElement('button');
     closeBtn.classList.add('close-editor-btn');
     closeBtn.innerHTML = 'X';
     closeBtn.addEventListener('click', () => {
@@ -207,9 +208,9 @@ class TagBujo extends HTMLElement {
     const tags = tagsContainer.querySelectorAll('.tag');
     const arrToPush = [];
 
-    tags.forEach( (element) => {
-      arrToPush.push({text: element.innerText, tagColor: element.getAttribute('tagColor')});
-    })
+    tags.forEach((element) => {
+      arrToPush.push({ text: element.innerText, tagColor: element.getAttribute('tagColor') });
+    });
 
     storage[viewedDate.year][viewedDate.month][viewedDate.day].tags = arrToPush;
     saveStorage();
@@ -220,8 +221,8 @@ class TagBujo extends HTMLElement {
     const tagList = storage[viewedDate.year][viewedDate.month][viewedDate.day].tags;
     this.deleteTags();
 
-    tagList.forEach( (element) => {
-      let newTag = document.createElement('div');
+    tagList.forEach((element) => {
+      const newTag = document.createElement('div');
       newTag.classList.add('tag');
       newTag.style.backgroundColor = element.tagColor;
       newTag.setAttribute('tagColor', element.tagColor);
@@ -231,12 +232,12 @@ class TagBujo extends HTMLElement {
           this.closeEditor();
         this.showTagEditor(e);
       });
-      
-      let tagText = document.createElement('span');
+
+      const tagText = document.createElement('span');
       tagText.classList.add('tag-text');
       tagText.innerHTML = element.text;
 
-      let deleteBtn = document.createElement('button');
+      const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('tag-delete-btn');
       deleteBtn.innerHTML = 'x';
       deleteBtn.style.visibility = 'hidden';
@@ -256,18 +257,17 @@ class TagBujo extends HTMLElement {
         const deleteBtn = e.currentTarget.querySelector('.tag-delete-btn');
         deleteBtn.style.visibility = 'hidden';
       });
-      
-      tagsContainer.appendChild(newTag);
-    })
 
+      tagsContainer.appendChild(newTag);
+    });
   }
 
-  deleteTags() {
+  deleteTags () {
     const tagList = this.shadowRoot.querySelector('.tags').querySelectorAll('div');
 
     tagList.forEach((element) => {
       element.parentNode.removeChild(element);
-    })
+    });
   }
 
   closeEditor () {
