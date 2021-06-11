@@ -1,31 +1,122 @@
-# cse110-sp21-group25
+# Group 25 - Marinated Cuyitos
 
-[JSDocs Site](https://cujodocs.github.io/CuJoDocumentation/)
+- Team page can be found [here](admin/team.md)
 
-[Working Prototype](https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html)
+## CuJo
 
-[Team Page](admin/team.md)
+- You can access our CuJo (BuJo app) [here](https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html)
+
+- INSERT FINAL SCREENSHOT OF APP HERE
+
+- JsDocs documentation can be found at the following: [JSDocs Site](https://cujodocs.github.io/CuJoDocumentation/)
+
+- All of our team documentation including team rules, meeting notes, standup checkins, and any other documents we created during this quarter can be found within our wiki [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki) or within the admin directory of our repo [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/onboarding-guide/admin)
+
+## Final Project Videos
+
+- [final video public version](https://vimeo.com/561689531/e3f6dbed8a)
+- [final video private version](https://drive.google.com/file/d/1nhBVjM6JZ1q3y0IlgX-Gn6JIth2JJExc/view?usp=drivesdk)
 
 ---
 
-## GitHub Information
+## Wiki
+
+- We decided to write this readme as the first thing most people see when visiting the repo and as such it includes guidelines on how to access all of our important files. However, all of our important documents have also been organized nicely in the wiki found [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki) in case you would rather navigate through everything there.
+
+---
+
+## Onboarding
+
+- Please visit the wiki for the full onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding)
+
+---
+
+## Overall GitHub Structure
 
 ![Our GitHub Structure](./admin/cipipeline/github-flow.png)
 
-Important GitHub Rules: (For helpful screenshots see [GitHub Guide (Coming Soon)]() )
+---
 
-1. Always make a branch off of the main ones (staging, pipeline-testing, and documentation) before doing anything else.
-2. Write JSDoc comments in your code. [Handy Guide](https://devhints.io/jsdoc) See JSDocs Site at top for example of what this will look like once it is generated as a webpage.
-3. If you have worked on the project that day please push to your respective branch before the end of the night and update the respective issue with details of your progress.
-4. When creating a pull request please be careful that you are merging to the correct branch, consult above image if you are not completely sure. Also see the GitHub Guide for some helpful screenshots on how to initiate a pull request.
+## How to Contribute
+
+- Step 0) Make sure you have followed the onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding) to get your local machine setup properly.
+
+- Step 1) Take a look at any issues that are open and if you are working on something that isn't there yet please add that as an issue then assign yourself before starting.
+
+- Step 2) Do not ever work directly within the Staging, Pipeline-Testing, or Main branch since you will not be able to push directly to any of those branches. Please make a branch off of one of the prior listed before starting your work.
+
+- Step 3) Write JSDoc comments in your code. [Handy Guide](https://devhints.io/jsdoc) See our JSDocs Site [here](https://cujodocs.github.io/CuJoDocumentation/) for example of what this will look like once it is generated as a webpage.
+
+- Step 4) If you have worked on the project that day please update the respective issue with details of your progress. This will help not only you keep track of what you've worked on but also the team to be aware of anything that is currently in work and what progress has been made.
+
+- Step 5) When creating a pull request please be careful that you are merging to the correct branch, consult above image if you are not completely sure. Also see the GitHub Guide for some helpful screenshots on how to initiate a pull request.
+
+- Step 6) Once you have created the pull request please make sure that your issue has been updated and that it closes once the merge is completed.
+
+**Example Workflow:** Let's say I wanted to add a feature to the Mood-Indicator component that animates the faces for added depth. I would create an issue with a brief description of the feature and assign it to myself. Then I would create a branch labeled `mood-indicator-animation` from Staging. At the end of the day I would update the issue with comments of how things are going. Once I was done implementing that new feature I would create a pull request to merge the changes into Staging and make sure to link the issue so that it will be closed once the pull request is merged.
 
 ---
 
-## Folder Structure (Given to us via Canvas)
+## CI/CD Pipeline Information and Documentation:
 
-- Overarching Decisions - we will eventually capture these as an ADR in markdown (Links to an external site.)(/specs/adrs will contain an individual document per major decision. There will be some initial ones that have to do with general project plan and approach, but more may be added as the project goes on. The main point of this capture is to explain why choices are made. As brainstorming may have your team settle on choices quickly capturing them in a document may be better than just mental consensus)
-- User Centered Thinking Documents - we will produce personas (Links to an external site.), user stories (Links to an external site.), and potentially use cases. (Links to an external site.) (/specs/users will contain this but user stories chosen will also be represented as issues to work on)
-- Interface Design Documents - we will initially capture "fat marker design" later extended with wireframes and high fidelity prototypes (/specs/interface/rough, /specs/interface/wireframes, /specs/interface/highfidelity These directories may contain single or multitude of documents)
-- Project Roadmap - we will capture a roadmap of how the product will evolve both here in the quarter as well as ideas of how it might grow beyond the time we have with (/specs/roadmap.md)
-- /specs/brainstorm/ will continue the distilled documents and diagrams you produced of the ideas you want to capture from your meetings. If you used Miro or another tool export the contents as an image, PDF, or markdown file to capture your appropriate assets.
-- /admin/meetings/mmddyy-brainstorm.md (there may be multiple of these) - these are the general meeting notes of the brainstorming summarized including attendance, etc. Note this may be more exhaustive and procedural as opposed to what will be found in the planning document
+- All of the CI/CD Pipeline checkpoints and other documentation can be found under `./admin/cipipeline`
+
+- The JsDocs is generated and pushed to a seperate repo to host the page (all within a GitHub action). This page can be found [here](https://cujodocs.github.io/CuJoDocumentation/)
+
+---
+
+## Design
+
+The full design documentation can be found under the `./specs` folder. The contents of our specs folder are as follows:
+
+- All of our [ADRS](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/main/specs/adrs) within the `./specs/adrs`
+
+- Our Pitch document [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/specs/pitch/pitch.md) within the `./specs/pitch`
+
+- All of our brainstorming documentation [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/main/specs/brainstorm) within the `./specs/brainstorm`
+
+- All of our interface documents including our lowfidelity ,highfidelity, and rough fat marker sketches are [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/main/specs/interface)
+
+---
+
+## Sprints
+
+- Sprint 1:
+  - [Review](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/051621-sprint-1-review.md)
+  - [Retrospective](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/051621-sprint-1-retrospective.md)
+- Sprint 2:
+  - [Review](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/053121-sprint-2-review.md)
+  - [Retrospective](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/053121-sprint-2-retrospective.md)
+
+---
+
+## Administrative Documents
+
+- Our meeting notes are located nicely organized within our wiki [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Meeting-Notes)
+
+- Our contract is found in the wiki as well [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Established-Rules) with the signed versions in our repo [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/main/admin/misc)
+
+- Our Daily Standups are organized in the wiki [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Daily-Standups)
+
+- Any other admin type document can be found within the `admin` directory of our repo.
+
+---
+
+## Project Source
+
+- All of the actual code and all project related files including configs can be found within the `project` directory of our repo.
+
+- The project source code is found within `project/src` [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/tree/main/project/src) with each component having it's own folder containing it's respective css and js files.
+
+- Most of the configuration files have been integrated into the `package.json` file found [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/project/package.json)
+
+- Any files that could not be added into the `package.json` can be found within the `project/config` directory. This is also the location of our pre-commit hook that is found within `project/.githooks/` directory.
+
+---
+
+## Testing
+
+- Due to our decision to use web components and ShadowRoot we were unable to really find an effective way to run unit tests in the time we had. Instead we opted to create exhaustive E2E tests in order to cover as much of our code as possible. These tests can be found within the `project/testing` directory.
+- In order to properly account for coverage all tests were written in seperate files per component and were then integrated into our single `end-to-end.test.js` file found [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/project/testing/end-to-end.test.js). Integrated them all into the one file allowed us to test the coverage of our E2E tests.
+- We used Puppeteer and Jest for our testing. The tool `nyc` was then used to generate the coverage reports via the npm script labeled `test` found within `package.json`
+- The coverage can be seen via the GithHub action anytime a push action happens. In order to cut down on the number of files in our repo however, we opted to gitignore this folder since it is mostly situational and changes each time a new test is added. Our most current coverage report can be seen below: ![coverage-report](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/staging/project/testing/coverage-report.png)

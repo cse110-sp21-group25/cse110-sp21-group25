@@ -1,0 +1,12 @@
+#quoteContainer {
+  background-color: white;
+  padding: 0px 50px 0px 50px;
+  text-align: center;
+}
+
+.quoteGenius {
+  color: black(12, 10, 10);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}

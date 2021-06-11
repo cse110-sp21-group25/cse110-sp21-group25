@@ -1,74 +1,62 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
-    <head> 
-        <meta charset="UTF-8">
-        <title>Bullet Journal</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bullet Journal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"> 
-    </head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.7.0/main.css"
+    />
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.7.0/main.min.js"></script>
+    <script src="./components/journal-entry/bullet/bullet.js"></script>
+    <script src="./components/nav-bar/nav-bar.js"></script>
+    <script src="./components/mood-indicator/mood-indicator.js"></script>
+    <script src="./components/journal-entry/journal-entry.js"></script>
+    <script src="./components/menu-symbols/menu-symbols.js"></script>
+    <script src="./components/clock/clock.js"></script>
+    <script src="./components/goals-board/goals-board.js"></script>
+    <script src="./components/quote-generator/quote-generator.js"></script>
+    <script src="./storage.js"></script>
+    <script src="./components/calendar/calendar.js"></script>
+    <script src="./components/tags/tags.js"></script>
 
-    <body>
-
-        <div class="wrapper">
-            <nav-bar></nav-bar>
-            <script src="./components/nav-bar/nav-bar.js"></script>
-        </div>  
-            
-        <div class="container">
-            <div id="title">
-                <h2> Title </h2>
-            </div>
+    <div class="app-wrapper">
+      <div class="column left-column">
+        <nav-bar></nav-bar>
+      </div>
+      <div class="column middle-column">
+        <div class="entry-container">
+          <div id="journal"><journal-entry></journal-entry></div>
+          <div id="calendar" style="visibility: hidden">
+            <my-calendar></my-calendar>
+          </div>
         </div>
-
-        <div class="container">
-            <div class="bottom-right" id="mood-ind">
-                <!-- <h2>Mood</h2> -->
-                <mood-ind name="Mood Indicator"></mood-ind>
-                <script src="./components/mood-indicator/mood-indicator.js"></script>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="bottom-right" id="quote">
-                <p>"You miss 100% of the shots you dont't take" <br> - Wayne Gretzky</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="goals">
-                <h2> goals </h2>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="entry">
-                <h2> Today</h2>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="symbols">
-                <!-- <h2>Symbols</h2> -->
-                <menu-symbols></menu-symbols>
-                <script src="./components/menu-symbols/menu-symbols.js"></script>
-            </div>
-        </div>
-
-        <div class="container">
-            <div id="clock">
-                <!-- <h2>Clock</h2>  -->
-                <clock-time></clock-time>
-                <script src="./components/clock/clock.js"></script>
-            </div>
-        </div>
-
-    </body>
+        <div class="middle-space"></div>
+        <menu-symbols></menu-symbols>
+      </div>
+      <div class="column right-column">
+        <clock-time></clock-time>
+        <goals-board></goals-board>
+        <mood-ind name="Mood Indicator"></mood-ind>
+        <quote-gen></quote-gen>
+      </div>
+    </div>
+  </body>
 </html>

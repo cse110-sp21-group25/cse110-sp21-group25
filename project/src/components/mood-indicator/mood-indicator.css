@@ -1,78 +1,55 @@
 #card {
   font-family: Poppins;
-  /* position: relative; */
   width: 350px;
   height: 200px;
   border-radius: 12px;
+  border-color: #126e82;
   box-shadow: 0px 5px 8px #ccc;
+  background-color: white;
   overflow: hidden;
-  /* margin: 100px auto; */
   color: #333;
 }
+
+img {
+  width: 15%;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  color: black;
+}
+
 #icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 70%;
 }
+
 #icons > * {
   font-size: 2em;
   cursor: pointer;
   transition: all 0.1s ease-out;
   transform-origin: center;
 }
-#icons > *.active[data-emo="bad"] {
-  color: tomato;
+
+img:hover {
   transform: scale(1.5);
 }
-#icons > *.active[data-emo="okay"] {
-  color: #979797;
-  transform: scale(1.5);
-}
-#icons > *.active[data-emo="great"] {
-  color: #2eff2e;
-  transform: scale(1.5);
-}
-/* #goober {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  background-color: violet;
-  border-radius: 6px;
-  transform: rotateZ(45deg);
-  top: 90%;
-  transition: all 0.1s ease-in;
-  left: -72px;
-}
-#goober.bad {
-  left: 7.5%;
-  background-color: tomato;
-}
-#goober.okay {
-  left: 40.5%;
-  background-color: #979797;
-}
-#goober.great {
-  left: 74.5%;
-  background-color: #2eff2e; 
-} */
+
 #desc {
   transition: all 0.1s ease-in;
   padding: 22px 0 22px 0;
   font-size: 20px;
   text-align: center;
-  background-color: #c5c5c5;
-  color: black;
+  color: white;
+  background-color: #126e82;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
 }
-#desc.bad {
-  background-color: tomato;
-}
-#desc.okay {
-  background-color: #979797;
-}
-#desc.great {
-  background-color: #2eff2e;
-}
+
 #desc.fade {
   transform: translateY(-80px);
 }
