@@ -20,7 +20,6 @@
   text-transform: uppercase;
   font-size: 0.8rem;
   font-weight: 100;
-  list-style-position: inside;
 }
 .bujo .important span {
   background: yellow !important;
@@ -115,4 +114,26 @@ Right Click Menu
   left: 0;
   z-index: 1;
   display: none;
+}
+
+.entry-back-btn {
+  margin-right: 8px;
+  background: #d8e3e7;
+  border-radius: 12px 0px 0px 12px;
+  padding: 4px;
+}
+
+.entry-forward-btn {
+  margin-left: 8px;
+  background: #d8e3e7;
+  border-radius: 0px 12px 12px 0px;
+  padding: 4px;
+}
+
+.entry-date {
+  font-weight: 700;
+}
+
+tag-bujo {
+  width: 100%;
 }

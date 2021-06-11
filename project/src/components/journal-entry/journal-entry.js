@@ -9,9 +9,9 @@ class JournalEntry extends HTMLElement {
   
             <div class="entry-container">
                 <div class="entry-header">
-                    <button class="entry-back-btn"><</button>
+                    <img src="../imgs/chevron-left.svg" class="entry-back-btn" width="20px" height="20px" />
                     <h2 class="entry-title" contenteditable>My Eventful Sunday</h2>
-                    <button class="entry-forward-btn">></button>
+                    <img src="../imgs/chevron-right.svg" class="entry-forward-btn" width="20px" height="20px" />
                 </div>
                 <div class="entry-tags-container">
                     <tag-bujo></tag-bujo>
@@ -119,6 +119,8 @@ class JournalEntry extends HTMLElement {
 
               element.classList.add('selected');
             });
+
+
           }
         });
 
@@ -141,7 +143,7 @@ class JournalEntry extends HTMLElement {
             }
           });
 
-          document.querySelector('journal-entry').shadowRoot.querySelector('.menu').style.visibility = 'hidden';
+          menu.classList.remove('show');
           document.querySelector('journal-entry').saveEntry();
         });
       }

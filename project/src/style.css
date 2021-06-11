@@ -65,7 +65,7 @@ entry-editor {
   visibility: hidden;
 }
 
-body > div > div.column.right-column > button{
+body > div > div.column.right-column > button {
   position: relative;
   left: 50px;
   top: -50px;
@@ -78,7 +78,9 @@ body > div > div.column.right-column > button{
   cursor: pointer; /* Mouse pointer on hover */
 }
 
-
-
-
-
+journal-entry {
+  display: block;
+  padding-left: 2%;
+  width: 100%;
+  margin: 22px auto;
+}

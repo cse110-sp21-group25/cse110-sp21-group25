@@ -30,6 +30,7 @@
   border-style: none;
   width: 20px;
   height: 20px;
+  margin-left: 10px;
 }
 
 .tag-editor,
@@ -70,4 +71,51 @@
 .close-editor-btn:active {
   position: relative;
   top: 1px;
+}
+
+.tag-textbox,
+.tag-editor-textbox {
+  width: 90%;
+  padding: 4px;
+  border: solid 1px #78909c;
+  border-radius: 12px 0px 0px 12px;
+  height: 100%;
+  margin-left: 10px;
+  max-width: 175px;
+}
+
+.tag-textbox:focus-visible,
+.tag-editor-textbox:focus-visible {
+  border: 0;
+}
+
+.add-tag-btn,
+.tag-editor-confirm-btn {
+  width: 10%;
+  border: solid 1px #78909c;
+  background-color: #78909c;
+  color: white;
+  font-weight: 600;
+  padding: 4px 20px 4px 4px;
+  border-radius: 0px 12px 12px 0px;
+  height: 100%;
+  max-width: 20px;
+}
+
+.tag-editor-confirm-btn {
+  font-size: 12px;
+}
+
+.tag-creator-tag-name,
+.tag-editor-tag-name {
+  margin: 0px 0px 0px 36px;
+}
+
+.tag-delete-btn {
+  background: none;
+  border: none;
+}
+
+.tag-delete-btn:hover {
+  color: red;
 }
