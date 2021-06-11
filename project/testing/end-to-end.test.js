@@ -527,9 +527,60 @@ describe('Testing Goals Board Component', () => {
     await page.waitForTimeout(500);
   });
 
-  test('Test1: ENTER DESCRIPTION HERE', async () => {
+  test('Test1: Create one weekly goal', async () => {
     // Add some test within here. For further examples see end-to-end.test.js file.
     // expect(navBarTitle).toBe('CuJo');
+
+    await page.evaluate(() => {
+      const edit = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-default > img.edit-btn');
+      edit.click();
+      document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-checklist > div:nth-child(1) > label').innerHTML = 'Feed cuyo';
+      const apply = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-edit > button.apply-btn');
+      apply.click();
+    });
+
+    const goal = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-checklist > div:nth-child(1) > label').innerHTML;
+    });
+
+    expect(goal).toBe('Feed cuyo');
+  });
+
+  test('Test2: Create one monthly goal', async () => {
+    // Add some test within here. For further examples see end-to-end.test.js file.
+    // expect(navBarTitle).toBe('CuJo');
+
+    await page.evaluate(() => {
+      const monthly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.monthlyBtn');
+      monthly.click();
+      const edit = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-default > img.edit-btn');
+      edit.click();
+      document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-checklist > div:nth-child(1) > label').innerHTML = 'Pay bills';
+      const apply = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-edit > button.apply-btn');
+      apply.click();
+    });
+
+    const goal = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-checklist > div:nth-child(1) > label').innerHTML;
+    });
+
+    expect(goal).toBe('Pay bills');
+  });
+
+  test('Test3: Switch back to weekly goal', async () => {
+    // Add some test within here. For further examples see end-to-end.test.js file.
+    // expect(navBarTitle).toBe('CuJo');
+
+    await page.evaluate(() => {
+      const weekly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.weeklyBtn');
+      weekly.click();
+    });
+
+    const goal = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-checklist > div:nth-child(1) > label').innerHTML;
+    });
+
+    expect(goal).toBe('Feed cuyo');
   });
 });
 
@@ -548,9 +599,36 @@ describe('Testing Journal Entry Component', () => {
     await page.waitForTimeout(500);
   });
 
-  test('Test1: ENTER DESCRIPTION HERE', async () => {
-    // Add some test within here. For further examples see end-to-end.test.js file.
-    // expect(navBarTitle).toBe('CuJo');
+  test('Test1: Verify that the Title Editor changes after editing it', async () => {
+    const journalTitle = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-header > h2').innerHTML;
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-header > h2').innerHTML = 'Testing';
+    });
+
+    const newJournalTitle = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-header > h2').innerHTML;
+    });
+
+    expect(journalTitle === newJournalTitle).toBe(false);
+  });
+
+  test('Test2: Verify that the Journal Entry Editor changes after editing it', async () => {
+    const journalEntry = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-body > article > ul > li > span').innerHTML;
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-body > article > ul > li > span').innerHTML = 'Today was a great day';
+    });
+
+    const newJournalEntry = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-body > article > ul > li > span').innerHTML;
+    });
+
+    expect(journalEntry === newJournalEntry).toBe(false);
   });
 });
 
