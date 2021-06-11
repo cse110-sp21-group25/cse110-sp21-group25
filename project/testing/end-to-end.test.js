@@ -22,6 +22,8 @@ afterAll(async () => {
 // -------------------------------------------DO NOT ALTER ABOVE-------------------------------------------------------
 // Please do not alter any of the code above. Is required to generate test coverage.
 
+// -------------------------------------------BEGINNING OF TESTS FOR NAV-BAR COMPONENT---------------------------------------------------------
+
 describe('Testing Nav Bar Component', () => {
   beforeAll(async () => {
     // Added the waitUntil to be sure the page is loaded before we begin.
@@ -34,8 +36,6 @@ describe('Testing Nav Bar Component', () => {
      */
     await page.waitForTimeout(500);
   });
-
-  // -------------------------------------------BEGIN OF TESTS FOR NAV-BAR COMPONENT-------------------------------------------------------------
 
   test('Test1: Check Nav-Bar Title to be CuJo', async () => {
     // This is what needs to be done in order to navigate through a #shadow-root.
@@ -225,7 +225,7 @@ describe('Testing Nav Bar Component', () => {
     expect(childrenAfterClick).toBeGreaterThan(0);
   });
 
-  test('Test8: Check Nav-Bar Focus button holds the correct image/icon', async () => {
+  test('Test8: Check Nav-Bar Focus button holds the correct image', async () => {
     // Test the img before clicking.
     const focusIconBeforeClick = await page.evaluate(() => {
       return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.header > img.focus-btn').src;
@@ -234,7 +234,7 @@ describe('Testing Nav Bar Component', () => {
     expect(focusIconBeforeClick).toMatch(/eye.svg/);
   });
 
-  test('Test9: Check Nav-Bar Information button holds the correct image/icon', async () => {
+  test('Test9: Check Nav-Bar Information button holds the correct image', async () => {
     // Test the img before clicking.
     const informationButton = await page.evaluate(() => {
       return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.navbar-symbols-container > a.navbar-info > img').src;
@@ -243,7 +243,7 @@ describe('Testing Nav Bar Component', () => {
     expect(informationButton).toMatch(/help-icon.svg/);
   });
 
-  test('Test10: Check Nav-Bar Settings button holds the correct image/icon', async () => {
+  test('Test10: Check Nav-Bar Settings button holds the correct image', async () => {
     // Test the img before clicking.
     const informationButton = await page.evaluate(() => {
       return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.navbar-symbols-container > a.navbar-settings > img').src;
@@ -251,216 +251,352 @@ describe('Testing Nav Bar Component', () => {
 
     expect(informationButton).toMatch(/cog-solid.svg/);
   });
+});
 
-  // -------------------------------------------END OF TESTS FOR NAV-BAR COMPONENT---------------------------------------------------------------------
+// -------------------------------------------END OF TESTS FOR NAV-BAR COMPONENT---------------------------------------------------------------------
 
-  // -------------------------------------------BEGINNING OF TESTS FOR MOOD INDICATOR COMPONENT--------------------------------------------------------
-  describe('Testing Mood Indicator Component', () => {
-    beforeAll(async () => {
-      await page.goto('http://127.0.0.1:8080');
-      await page.waitForTimeout(500);
-    });
+// -------------------------------------------BEGINNING OF TESTS FOR MOOD INDICATOR COMPONENT--------------------------------------------------------
 
-    test('Test1: Verify the initial Mood Indicator has proper title and class', async () => {
-      const cardText = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').innerText;
-      });
-
-      const cardClass = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').classList[0];
-      });
-
-      expect(cardText).toBe('How Are You Feeling Today?');
-
-      expect(cardClass).toBe('neutral');
-    });
-
-    test('Test2: Verify the initial Mood Indicator has all three icons.', async () => {
-      const badIconClass = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').className;
-      });
-
-      const badIconSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').src;
-      });
-
-      const mehIconClass = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').className;
-      });
-
-      const mehIconSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').src;
-      });
-
-      const greatIconClass = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').className;
-      });
-
-      const greatIconSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').src;
-      });
-
-      expect(badIconClass).toBe('bad');
-
-      expect(badIconSrc).toMatch(/sad-emo.png/);
-
-      expect(mehIconClass).toBe('meh');
-
-      expect(mehIconSrc).toMatch(/meh-emo.png/);
-
-      expect(greatIconClass).toBe('great');
-
-      expect(greatIconSrc).toMatch(/great-emo.png/);
-    });
-
-    test('Test3: Make sure indicator is updated when clicking on red face', async () => {
-      await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('.bad').click();
-      });
-
-      const cardText = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
-      });
-
-      const cardColor = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
-      });
-
-      const imageSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').src;
-      });
-
-      expect(cardText).toBe('BAD');
-
-      expect(cardColor).toBe('rgb(231, 76, 60)');
-
-      expect(imageSrc).toMatch(/sad-emo.png/);
-    });
-
-    test('Test4: Make sure indicator is updated when clicking on neutral face', async () => {
-      // Need to refresh the page in order to reset the mood indicator.
-      await page.reload();
-
-      await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('.meh').click();
-      });
-
-      const cardText = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
-      });
-
-      const cardColor = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
-      });
-
-      const imageSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').src;
-      });
-
-      expect(cardText).toBe('OKAY');
-
-      expect(cardColor).toBe('rgb(204, 204, 204)');
-
-      expect(imageSrc).toMatch(/meh-emo.png/);
-    });
-
-    test('Test5: Make sure indicator is updated when clicking on great face', async () => {
-      // Need to refresh the page in order to reset the mood indicator.
-      await page.reload();
-
-      await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('.great').click();
-      });
-
-      const cardText = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
-      });
-
-      const cardColor = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
-      });
-
-      const imageSrc = await page.evaluate(() => {
-        return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').src;
-      });
-
-      expect(cardText).toBe('GREAT');
-
-      expect(cardColor).toBe('rgb(68, 239, 137)');
-
-      expect(imageSrc).toMatch(/great-emo.png/);
-    });
+describe('Testing Mood Indicator Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    await page.waitForTimeout(500);
   });
 
-  // -------------------------------------------END OF TESTS FOR MOOD INDICATOR COMPONENT---------------------------------------------------------------------
+  test('Test1: Verify the initial Mood Indicator has proper title and class', async () => {
+    const cardText = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').innerText;
+    });
 
-  // -------------------------------------------BEGINNING OF TESTS FOR MENU SYMBOLS COMPONENT-----------------------------------------------------------------
+    const cardClass = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').classList[0];
+    });
 
-  describe('Testing Menu Symbols Component', () => {
-    beforeAll(async () => {
-      await page.goto('http://127.0.0.1:8080');
-      /**
+    expect(cardText).toBe('How Are You Feeling Today?');
+
+    expect(cardClass).toBe('neutral');
+  });
+
+  test('Test2: Verify the initial Mood Indicator has all three icons.', async () => {
+    const badIconClass = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').className;
+    });
+
+    const badIconSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').src;
+    });
+
+    const mehIconClass = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').className;
+    });
+
+    const mehIconSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').src;
+    });
+
+    const greatIconClass = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').className;
+    });
+
+    const greatIconSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').src;
+    });
+
+    expect(badIconClass).toBe('bad');
+
+    expect(badIconSrc).toMatch(/sad-emo.png/);
+
+    expect(mehIconClass).toBe('meh');
+
+    expect(mehIconSrc).toMatch(/meh-emo.png/);
+
+    expect(greatIconClass).toBe('great');
+
+    expect(greatIconSrc).toMatch(/great-emo.png/);
+  });
+
+  test('Test3: Make sure indicator is updated when clicking on red face', async () => {
+    await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('.bad').click();
+    });
+
+    await page.waitForTimeout(500);
+
+    const cardText = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
+    });
+
+    const cardColor = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
+    });
+
+    const imageSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.bad').src;
+    });
+
+    expect(cardText).toBe('BAD');
+
+    expect(cardColor).toBe('rgb(231, 76, 60)');
+
+    expect(imageSrc).toMatch(/sad-emo.png/);
+  });
+
+  test('Test4: Make sure indicator is updated when clicking on neutral face', async () => {
+    // Need to refresh the page in order to reset the mood indicator.
+    await page.reload();
+
+    await page.waitForTimeout(500);
+
+    await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('.meh').click();
+    });
+
+    await page.waitForTimeout(500);
+
+    const cardText = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
+    });
+
+    const cardColor = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
+    });
+
+    const imageSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.meh').src;
+    });
+
+    expect(cardText).toBe('OKAY');
+
+    expect(cardColor).toBe('rgb(204, 204, 204)');
+
+    expect(imageSrc).toMatch(/meh-emo.png/);
+  });
+
+  test('Test5: Make sure indicator is updated when clicking on great face', async () => {
+    // Need to refresh the page in order to reset the mood indicator.
+    await page.reload();
+
+    await page.waitForTimeout(500);
+
+    await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('.great').click();
+    });
+
+    await page.waitForTimeout(500);
+
+    const cardText = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').textContent;
+    });
+
+    const cardColor = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#desc').style.backgroundColor;
+    });
+
+    const imageSrc = await page.evaluate(() => {
+      return document.querySelector('mood-ind').shadowRoot.querySelector('#icons').querySelector('.great').src;
+    });
+
+    expect(cardText).toBe('GREAT');
+
+    expect(cardColor).toBe('rgb(68, 239, 137)');
+
+    expect(imageSrc).toMatch(/great-emo.png/);
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR MOOD INDICATOR COMPONENT---------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR MENU SYMBOLS COMPONENT-----------------------------------------------------------------
+
+describe('Testing Menu Symbols Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
+     * Below is the line you can use if you want to test it against the current working prototype:
+     * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
+     * For testing purposes though need to get the local copy working properly.
+     */
+    await page.waitForTimeout(500);
+  });
+
+  test('Test1: Validating that the Task Incomplete icon/symbol is correct', async () => {
+    const taskIncompleteIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(1) > img').src;
+    });
+
+    expect(taskIncompleteIcon).toMatch(/task-incompl.svg/);
+  });
+
+  test('Test2: Validating that the Task Scheduled icon/symbol is correct', async () => {
+    const taskScheduledIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(2) > img').src;
+    });
+
+    expect(taskScheduledIcon).toMatch(/task-scheduled.svg/);
+  });
+
+  test('Test3: Validating that the Inspiration icon/symbol is correct', async () => {
+    const inspirationIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(3) > img').src;
+    });
+
+    expect(inspirationIcon).toMatch(/inspiration.svg/);
+  });
+
+  test('Test4: Validating that the Task Complete icon/symbol is correct', async () => {
+    const taskCompleteIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(1) > img').src;
+    });
+
+    expect(taskCompleteIcon).toMatch(/task-compl.svg/);
+  });
+
+  test('Test5: Validating that the Event icon/symbol is correct', async () => {
+    const taskCompleteIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(2) > img').src;
+    });
+
+    expect(taskCompleteIcon).toMatch(/event.svg/);
+  });
+
+  test('Test6: Validating that the Notes icon/symbol is correct', async () => {
+    const notesIcon = await page.evaluate(() => {
+      const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(3) > img').src;
+    });
+
+    expect(notesIcon).toMatch(/notes.svg/);
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR MENU SYMBOLS COMPONENT-----------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR QUOTE COMPONENT-----------------------------------------------------------------------
+
+describe('Testing Quote Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
        * Below is the line you can use if you want to test it against the current working prototype:
        * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
        * For testing purposes though need to get the local copy working properly.
        */
-      await page.waitForTimeout(500);
-    });
-
-    test('Test1: Validating that the Task Incomplete icon/symbol is correct', async () => {
-      const taskIncompleteIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(1) > img').src;
-      });
-
-      expect(taskIncompleteIcon).toMatch(/task-incompl.svg/);
-    });
-
-    test('Test2: Validating that the Task Scheduled icon/symbol is correct', async () => {
-      const taskScheduledIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(2) > img').src;
-      });
-
-      expect(taskScheduledIcon).toMatch(/task-scheduled.svg/);
-    });
-
-    test('Test3: Validating that the Inspiration icon/symbol is correct', async () => {
-      const inspirationIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(3) > img').src;
-      });
-
-      expect(inspirationIcon).toMatch(/inspiration.svg/);
-    });
-
-    test('Test4: Validating that the Task Complete icon/symbol is correct', async () => {
-      const taskCompleteIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(1) > img').src;
-      });
-
-      expect(taskCompleteIcon).toMatch(/task-compl.svg/);
-    });
-
-    test('Test5: Validating that the Event icon/symbol is correct', async () => {
-      const taskCompleteIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(2) > img').src;
-      });
-
-      expect(taskCompleteIcon).toMatch(/event.svg/);
-    });
-
-    test('Test6: Validating that the Notes icon/symbol is correct', async () => {
-      const notesIcon = await page.evaluate(() => {
-        const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-        return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(3) > img').src;
-      });
-
-      expect(notesIcon).toMatch(/notes.svg/);
-    });
+    await page.waitForTimeout(500);
   });
 
-  // -------------------------------------------END OF TESTS FOR MENU SYMBOLS COMPONENT-----------------------------------------------------------------------
+  test('Test1: Check that the quote-generator component isn\'t empty', async () => {
+    const quoteGenerator = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > quote-gen').shadowRoot.querySelector('#quoteContainer > span').innerHTML;
+    });
+
+    expect(quoteGenerator.length).toBeGreaterThan(0);
+  });
+
+  test('Test2: Check that refresh generates a new quote', async () => {
+    const oldQuote = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > quote-gen').shadowRoot.querySelector('#quoteContainer > span').innerHTML;
+    });
+
+    await page.reload();
+
+    const newQuote = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > quote-gen').shadowRoot.querySelector('#quoteContainer > span').innerHTML;
+    });
+
+    expect(newQuote === oldQuote).toBe(false);
+  });
 });
+
+// -------------------------------------------END OF TESTS FOR QUOTE COMPONENT-----------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR GOALS BOARD COMPONENT-----------------------------------------------------------------------
+
+describe('Testing Goals Board Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
+     * Below is the line you can use if you want to test it against the current working prototype:
+     * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
+     * For testing purposes though need to get the local copy working properly.
+     */
+    await page.waitForTimeout(500);
+  });
+
+  test('Test1: ENTER DESCRIPTION HERE', async () => {
+    // Add some test within here. For further examples see end-to-end.test.js file.
+    // expect(navBarTitle).toBe('CuJo');
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR GOALS BOARD COMPONENT-----------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR JOURNAL ENTRY COMPONENT----------------------------------------------------------------------
+
+describe('Testing Journal Entry Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
+     * Below is the line you can use if you want to test it against the current working prototype:
+     * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
+     * For testing purposes though need to get the local copy working properly.
+     */
+    await page.waitForTimeout(500);
+  });
+
+  test('Test1: ENTER DESCRIPTION HERE', async () => {
+    // Add some test within here. For further examples see end-to-end.test.js file.
+    // expect(navBarTitle).toBe('CuJo');
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR JOURNAL ENTRY COMPONENT-----------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR CLOCK COMPONENT----------------------------------------------------------------------
+
+describe('Testing Clock Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
+     * Below is the line you can use if you want to test it against the current working prototype:
+     * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
+     * For testing purposes though need to get the local copy working properly.
+     */
+    await page.waitForTimeout(500);
+  });
+
+  test('Test1: Check that the clock component component isn\'t empty', async () => {
+    const clock = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > clock-time').shadowRoot.querySelector('div > span').innerHTML;
+    });
+
+    expect(clock.length).toBeGreaterThan(0);
+  });
+
+  test('Test2: Check that the clock display is truly day of the week, month, and date of today', async () => {
+    const todayDate = new Date();
+
+    const abbMonths = ['Jan', 'Feb', 'Mar', 'Apr',
+      'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct',
+      'Nov', 'Dec'
+    ];
+
+    const abbDays = ['Sun', 'Mon', 'Tues',
+      'Wed', 'Thurs', 'Fri', 'Sat'
+    ];
+
+    const idealClock = abbDays[todayDate.getDay()] + ', ' + abbMonths[todayDate.getMonth()] + ' ' + todayDate.getDate();
+
+    const clock = await page.evaluate(() => {
+      return document.querySelector('body > div > div.column.right-column > clock-time').shadowRoot.querySelector('div > span').innerHTML;
+    });
+
+    expect(clock === idealClock).toBe(true);
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR CLOCK COMPONENT-----------------------------------------------------------------------
