@@ -14,8 +14,8 @@
 
 ## Final Project Videos
 
-- [final video public version]
-- [final video private version]
+- [final video public version](https://vimeo.com/561689531/e3f6dbed8a)
+- [final video private version](https://drive.google.com/file/d/1nhBVjM6JZ1q3y0IlgX-Gn6JIth2JJExc/view?usp=drivesdk)
 
 ---
 
@@ -39,7 +39,7 @@
 
 ## How to Contribute
 
-- Step 0) Make sure you have followed the onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding-Setup) to get your local machine setup properly.
+- Step 0) Make sure you have followed the onboarding guide [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/wiki/Onboarding) to get your local machine setup properly.
 
 - Step 1) Take a look at any issues that are open and if you are working on something that isn't there yet please add that as an issue then assign yourself before starting.
 
@@ -82,13 +82,11 @@ The full design documentation can be found under the `./specs` folder. The conte
 ## Sprints
 
 - Sprint 1:
-  - [Planning]()
-  - [Review]()
-  - [Retrospective]()
+  - [Review](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/051621-sprint-1-review.md)
+  - [Retrospective](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/051621-sprint-1-retrospective.md)
 - Sprint 2:
-  - [Planning]()
-  - [Review]()
-  - [Retrospective]()
+  - [Review](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/053121-sprint-2-review.md)
+  - [Retrospective](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/admin/meetings/053121-sprint-2-retrospective.md)
 
 ---
 
