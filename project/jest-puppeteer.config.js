@@ -1,6 +1,6 @@
 module.exports = {
   launch: {
-    headless: true,
+    headless: false,
     slowMo: 500 // Change this to false if you want it to be faster. Currently slows it down so that you can see what it's doing.
   },
   server: {
