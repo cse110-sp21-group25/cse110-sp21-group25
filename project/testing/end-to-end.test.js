@@ -501,7 +501,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test1: Create one weekly goal', async () => {
-
     await page.evaluate(() => {
       const edit = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-default > img.edit-btn');
       edit.click();
@@ -518,7 +517,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test2: Create one monthly goal', async () => {
-
     await page.evaluate(() => {
       const monthly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.monthlyBtn');
       monthly.click();
@@ -537,7 +535,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test3: Switch back to weekly goal', async () => {
-
     await page.evaluate(() => {
       const weekly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.weeklyBtn');
       weekly.click();
