@@ -273,6 +273,7 @@ class goalsBoard extends HTMLElement {
     newDelBtn.type = 'button';
     newDelBtn.innerHTML = 'X';
     newDelBtn.disabled = true;
+    newDelBtn.classList.add('del-btn');
     newLabel.classList.add('checkbox-desc');
     newLabel.classList.add('editable');
     newLabel.contentEditable = true;
@@ -289,6 +290,16 @@ class goalsBoard extends HTMLElement {
     // Event listener that deletes the goal it is a part of
     newDelBtn.addEventListener('click', () => {
       checkList.removeChild(newDelBtn.parentElement);
+    });
+    
+    newDelBtn.addEventListener('mouseover', () => {
+      if(newDelBtn.disabled === false)
+        newDelBtn.classList.add('hovered');
+    });
+
+    newDelBtn.addEventListener('mouseout', () => {
+      if(newDelBtn.disabled === false)
+        newDelBtn.classList.remove('hovered');
     });
 
     // Append the checkbox and label into the new container and append the container to the

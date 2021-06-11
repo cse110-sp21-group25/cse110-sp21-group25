@@ -15,19 +15,19 @@ class MenuSymbols extends HTMLElement {
       <ul id="menu">
         <table>
         <tr>
-          <th><img src="../imgs/task-incompl.svg">Task Incomplete</th>
-          <th><img src="../imgs/task-scheduled.svg">Task Scheduled</th>
-          <th><img src="../imgs/inspiration.svg">Inspiration</th>
+          <th><li><img src="../imgs/task-incompl.svg">To Do</li></th>
+          <th><img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-05-16.png">Scheduled</th>
+          <th><img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-16.png">Cancelled</th>
         </tr>
         <tr>
-          <th><img src="../imgs/task-compl.svg">Task Complete</th>
-          <th><img src="../imgs/event.svg">Event</th>
+          <th><img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-21-16.png">Complete</th>
+          <th><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-16.png">Event</th>
           <th><img src="../imgs/notes.svg">Notes</th>
         </tr>
         <tr>
-          <th><img src="../imgs/task-migrated.svg">Task Migrated</th>
-          <th><img src="../imgs/priority.svg">Priority</th>
-          <th><img src="../imgs/exploration.svg">Exploration</th>
+          <th><img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-06-16.png">Migrated</th>
+          <th><img src="https://cdn2.iconfinder.com/data/icons/mini-icon-set-map-location/91/Location_05-16.png">Appointment</th>
+          <th><img src="https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_eye_vision-16.png">Exploration</th>
         </tr>
         </table>
       </ul>
@@ -39,13 +39,22 @@ class MenuSymbols extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
+
+  connectedCallback () {
+    const menuBtn = this.shadowRoot.querySelector('#toggle');
+    
+    menuBtn.addEventListener('click', () => {
+      this.showMenu();
+    })
+  }
+
   /**
    * Gets the element with id 'menu' and toggles between the 'show' class.
    * This enables the menu icon at the bottom to show and hide the key
    * for the different types of bullets.
    */
   showMenu () {
-    document.getElementById('menu').classList.toggle('show');
+    this.shadowRoot.getElementById('menu').classList.toggle('show');
     const menuButton = this.shadowRoot.querySelector('.q-mark > img');
     const menuDesc = this.shadowRoot.querySelector('#menu');
 

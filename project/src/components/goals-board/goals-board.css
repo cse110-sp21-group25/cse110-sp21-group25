@@ -115,3 +115,13 @@ input[type="checkbox"]:checked:after {
 input[type="checkbox"]:disabled:after {
   border-color: #78909c;
 }
+
+.del-btn {
+  background: none;
+  font-weight: 700;
+  border-style: none;
+}
+
+.hovered {
+  background: lightgrey;
+}

@@ -110,6 +110,16 @@ class navBar extends HTMLElement {
     dailyDrop.addEventListener('click', () => this.generateDailyDates());
   }
 
+  connectedCallback () {
+    const focusBtn = this.shadowRoot.querySelector('.focus-btn');
+    const settingsBtn = this.shadowRoot.querySelector('.navbar-settings-icon');
+    const infoBtn = this.shadowRoot.querySelector('.navbar-info-icon');
+
+    focusBtn.style.display = "none";
+    settingsBtn.style.display = "none";
+    infoBtn.style.display = "none";
+  }
+
   /**
    * Removes the highlight from the individual tabs
    * @name removeHighlight

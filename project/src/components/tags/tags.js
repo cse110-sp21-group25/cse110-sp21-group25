@@ -43,10 +43,18 @@ class TagBujo extends HTMLElement {
     let editorContainer = document.createElement('div');
     editorContainer.classList.add('tag-editor');
 
+    let colorText = document.createElement('span');
+    colorText.classList.add('tag-editor-color-text');
+    colorText.innerHTML = 'Tag Color:';
+
     let colorPicker = document.createElement('input');
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = tag.getAttribute('tagColor');
+
+    let tagName = document.createElement('span');
+    tagName.classList.add('tag-creator-tag-name');
+    tagName.innerHTML = 'Tag Name:';
 
     let textbox = document.createElement('input');
     textbox.classList.add('tag-editor-textbox');
@@ -61,6 +69,7 @@ class TagBujo extends HTMLElement {
     confirmBtn.addEventListener('click', () => {
       tag.querySelector('.tag-text').innerHTML = textbox.value;
       tag.style.backgroundColor = colorPicker.value;
+      tag.setAttribute('tagColor', colorPicker.value);
       parentContainer.removeChild(editorContainer);
       showTagCreatorBtn.style.visibility = 'visible';
 
@@ -76,7 +85,9 @@ class TagBujo extends HTMLElement {
       showTagCreatorBtn.style.visibility = 'visible';
     });
 
+    editorContainer.append(colorText);
     editorContainer.append(colorPicker);
+    editorContainer.append(tagName);
     editorContainer.append(textbox);
     editorContainer.append(confirmBtn);
     editorContainer.append(cancelBtn);
@@ -149,10 +160,18 @@ class TagBujo extends HTMLElement {
     let container = document.createElement('div');
     container.classList.add('tag-creator');
 
+    let colorText = document.createElement('span');
+    colorText.classList.add('tag-creator-color-text');
+    colorText.innerHTML = 'Tag Color:';
+
     let colorPicker = document.createElement('input');
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = '#C0C0C0';
+
+    let tagName = document.createElement('span');
+    tagName.classList.add('tag-creator-tag-name');
+    tagName.innerHTML = 'Tag Name:';
 
     let textbox = document.createElement('input');
     textbox.classList.add('tag-textbox');
@@ -174,7 +193,9 @@ class TagBujo extends HTMLElement {
       this.closeCreator();
     });
 
+    container.appendChild(colorText);
     container.appendChild(colorPicker);
+    container.appendChild(tagName);
     container.appendChild(textbox);
     container.appendChild(addBtn);
     container.appendChild(closeBtn);
@@ -206,6 +227,8 @@ class TagBujo extends HTMLElement {
       newTag.setAttribute('tagColor', element.tagColor);
 
       newTag.addEventListener('dblclick', (e) => {
+        if( this.shadowRoot.querySelector('.tag-container').querySelectorAll('.tag-editor').length !== 0 )
+          this.closeEditor();
         this.showTagEditor(e);
       });
       
@@ -245,6 +268,15 @@ class TagBujo extends HTMLElement {
     tagList.forEach((element) => {
       element.parentNode.removeChild(element);
     })
+  }
+
+  closeEditor () {
+    const parentContainer = this.shadowRoot.querySelector('.tag-container');
+    const showTagCreatorBtn = this.shadowRoot.querySelector('.show-tag-creator-btn');
+    const creator = parentContainer.querySelector('.tag-editor');
+
+    parentContainer.removeChild(creator);
+    showTagCreatorBtn.style.visibility = 'visible';
   }
 }
 
