@@ -43,21 +43,21 @@ class TagBujo extends HTMLElement {
     const editorContainer = document.createElement('div');
     editorContainer.classList.add('tag-editor');
 
-    let colorText = document.createElement('span');
+    const colorText = document.createElement('span');
     colorText.classList.add('tag-editor-color-text');
     colorText.innerHTML = 'Tag Color:';
 
-    let colorPicker = document.createElement('input');
+    const colorPicker = document.createElement('input');
 
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = tag.getAttribute('tagColor');
 
-    let tagName = document.createElement('span');
+    const tagName = document.createElement('span');
     tagName.classList.add('tag-creator-tag-name');
     tagName.innerHTML = 'Tag Name:';
 
-    let textbox = document.createElement('input');
+    const textbox = document.createElement('input');
 
     textbox.classList.add('tag-editor-textbox');
     textbox.type = 'text';
@@ -159,21 +159,21 @@ class TagBujo extends HTMLElement {
     const container = document.createElement('div');
     container.classList.add('tag-creator');
 
-    let colorText = document.createElement('span');
+    const colorText = document.createElement('span');
     colorText.classList.add('tag-creator-color-text');
     colorText.innerHTML = 'Tag Color:';
 
-    let colorPicker = document.createElement('input');
+    const colorPicker = document.createElement('input');
 
     colorPicker.classList.add('tag-color-picker');
     colorPicker.type = 'color';
     colorPicker.value = '#C0C0C0';
 
-    let tagName = document.createElement('span');
+    const tagName = document.createElement('span');
     tagName.classList.add('tag-creator-tag-name');
     tagName.innerHTML = 'Tag Name:';
 
-    let textbox = document.createElement('input');
+    const textbox = document.createElement('input');
 
     textbox.classList.add('tag-textbox');
     textbox.name = 'textbox';
@@ -228,8 +228,7 @@ class TagBujo extends HTMLElement {
       newTag.setAttribute('tagColor', element.tagColor);
 
       newTag.addEventListener('dblclick', (e) => {
-        if( this.shadowRoot.querySelector('.tag-container').querySelectorAll('.tag-editor').length !== 0 )
-          this.closeEditor();
+        if (this.shadowRoot.querySelector('.tag-container').querySelectorAll('.tag-editor').length !== 0) { this.closeEditor(); }
         this.showTagEditor(e);
       });
 

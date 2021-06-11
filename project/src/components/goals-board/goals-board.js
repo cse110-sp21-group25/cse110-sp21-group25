@@ -291,15 +291,13 @@ class goalsBoard extends HTMLElement {
     newDelBtn.addEventListener('click', () => {
       checkList.removeChild(newDelBtn.parentElement);
     });
-    
+
     newDelBtn.addEventListener('mouseover', () => {
-      if(newDelBtn.disabled === false)
-        newDelBtn.classList.add('hovered');
+      if (newDelBtn.disabled === false) { newDelBtn.classList.add('hovered'); }
     });
 
     newDelBtn.addEventListener('mouseout', () => {
-      if(newDelBtn.disabled === false)
-        newDelBtn.classList.remove('hovered');
+      if (newDelBtn.disabled === false) { newDelBtn.classList.remove('hovered'); }
     });
 
     // Append the checkbox and label into the new container and append the container to the

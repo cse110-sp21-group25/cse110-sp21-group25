@@ -224,33 +224,6 @@ describe('Testing Nav Bar Component', () => {
     // We expect the number of children to be greater than 0 since it will have been expanded.
     expect(childrenAfterClick).toBeGreaterThan(0);
   });
-
-  test('Test8: Check Nav-Bar Focus button holds the correct image', async () => {
-    // Test the img before clicking.
-    const focusIconBeforeClick = await page.evaluate(() => {
-      return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.header > img.focus-btn').src;
-    });
-
-    expect(focusIconBeforeClick).toMatch(/eye.svg/);
-  });
-
-  test('Test9: Check Nav-Bar Information button holds the correct image', async () => {
-    // Test the img before clicking.
-    const informationButton = await page.evaluate(() => {
-      return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.navbar-symbols-container > a.navbar-info > img').src;
-    });
-
-    expect(informationButton).toMatch(/help-icon.svg/);
-  });
-
-  test('Test10: Check Nav-Bar Settings button holds the correct image', async () => {
-    // Test the img before clicking.
-    const informationButton = await page.evaluate(() => {
-      return document.querySelector('body > div > div.column.left-column > nav-bar').shadowRoot.querySelector('navbar > div.navbar-symbols-container > a.navbar-settings > img').src;
-    });
-
-    expect(informationButton).toMatch(/cog-solid.svg/);
-  });
 });
 
 // -------------------------------------------END OF TESTS FOR NAV-BAR COMPONENT---------------------------------------------------------------------
@@ -422,7 +395,7 @@ describe('Testing Menu Symbols Component', () => {
   test('Test1: Validating that the Task Incomplete icon/symbol is correct', async () => {
     const taskIncompleteIcon = await page.evaluate(() => {
       const symbolMenu = document.querySelector('body > div > div.column.middle-column > menu-symbols');
-      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(1) > img').src;
+      return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(1) > li > img').src;
     });
 
     expect(taskIncompleteIcon).toMatch(/task-incompl.svg/);
@@ -434,7 +407,7 @@ describe('Testing Menu Symbols Component', () => {
       return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(2) > img').src;
     });
 
-    expect(taskScheduledIcon).toMatch(/task-scheduled.svg/);
+    expect(taskScheduledIcon).toMatch(/basics-05-16.png/);
   });
 
   test('Test3: Validating that the Inspiration icon/symbol is correct', async () => {
@@ -443,7 +416,7 @@ describe('Testing Menu Symbols Component', () => {
       return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(1) > th:nth-child(3) > img').src;
     });
 
-    expect(inspirationIcon).toMatch(/inspiration.svg/);
+    expect(inspirationIcon).toMatch(/basics-22-16.png/);
   });
 
   test('Test4: Validating that the Task Complete icon/symbol is correct', async () => {
@@ -452,7 +425,7 @@ describe('Testing Menu Symbols Component', () => {
       return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(1) > img').src;
     });
 
-    expect(taskCompleteIcon).toMatch(/task-compl.svg/);
+    expect(taskCompleteIcon).toMatch(/basics-21-16.png/);
   });
 
   test('Test5: Validating that the Event icon/symbol is correct', async () => {
@@ -461,7 +434,7 @@ describe('Testing Menu Symbols Component', () => {
       return symbolMenu.shadowRoot.querySelector('#menu > table > tbody > tr:nth-child(2) > th:nth-child(2) > img').src;
     });
 
-    expect(taskCompleteIcon).toMatch(/event.svg/);
+    expect(taskCompleteIcon).toMatch(/icon-ios7-circle-outline-16.png/);
   });
 
   test('Test6: Validating that the Notes icon/symbol is correct', async () => {
@@ -600,3 +573,120 @@ describe('Testing Clock Component', () => {
 });
 
 // -------------------------------------------END OF TESTS FOR CLOCK COMPONENT-----------------------------------------------------------------------
+
+// -------------------------------------------BEGINNING OF TESTS FOR TAGS COMPONENT-----------------------------------------------------------------------
+
+describe('Testing Tags Component', () => {
+  beforeAll(async () => {
+    await page.goto('http://127.0.0.1:8080');
+    /**
+       * Below is the line you can use if you want to test it against the current working prototype:
+       * await page.goto('https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html');
+       * For testing purposes though need to get the local copy working properly.
+       */
+    await page.waitForTimeout(500);
+  });
+
+  test('Test1: Add creates a tag creator', async () => {
+    await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
+    });
+
+    const classListAfterClick = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator').classList[0];
+    });
+
+    expect(classListAfterClick).toBe('tag-creator');
+  });
+
+  test('Test2: Add tag button adds a tag', async () => {
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > input.tag-textbox').value = 'Test Tag';
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > button.add-tag-btn').click();
+    });
+
+    const tagContentAfterAdd = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tags > div > span').textContent;
+    });
+
+    expect(tagContentAfterAdd).toBe('Test Tag');
+  });
+
+  test('Test3: Add tag with color', async () => {
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > input.tag-textbox').value = 'Test Tag';
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > input.tag-color-picker').value = '#c70505';
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > button.add-tag-btn').click();
+    });
+
+    const tagContentAfterAdd = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tags > div > span').textContent;
+    });
+
+    expect(tagContentAfterAdd).toBe('Test Tag');
+  });
+
+  test('Test4: Add tag button and delete', async () => {
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > input.tag-textbox').value = 'Test Tag';
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > button.add-tag-btn').click();
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div > div > button').click();
+    });
+
+    const tagNumber = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div').children.length;
+    });
+
+    expect(tagNumber).toBe(0);
+  });
+
+  test('Test5: On reload tag still there', async () => {
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > input.tag-textbox').value = 'Test Tag';
+    });
+
+    await page.evaluate(() => {
+      document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tag-creator > button.add-tag-btn').click();
+    });
+
+    await page.reload(() => {});
+    const tagNumber = await page.evaluate(() => {
+      return document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > div.tags').children.length;
+    });
+
+    expect(tagNumber).toBe(1);
+  });
+});
+
+// -------------------------------------------END OF TESTS FOR TAGS COMPONENT----------------------------------------------------------------------
