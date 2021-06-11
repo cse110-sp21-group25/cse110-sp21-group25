@@ -21,7 +21,7 @@
     "coverage": "nyc report --reporter=text --cwd ./testing/coverage/ --report-dir ./coverage-html",
     "generate-docs": "jsdoc -c ./config/jsdoc-config.json",
     "hook-setup": "git config core.hooksPath ./project/config/.githooks",
-    "lint": "eslint ./src/**/*.js --fix",
+    "lint": "eslint ./src/**/*.js --fix && eslint ./testing/**/*.test.js",
     "prepare": "npm run hook-setup",
     "prettier": "prettier --write .",
     "start-server": "npx http-server ./src",
@@ -33,6 +33,7 @@
       "standard-jsx"
     ],
     "globals": {
+      "localStorage": "writable",
       "HTMLElement": "writable",
       "$": "writable",
       "customElements": "writable",
@@ -48,7 +49,19 @@
       "await": "writable",
       "before": "writable",
       "after": "writable",
-      "localStorage": "writable"
+      "viewedDate": "writable",
+      "decodeDateInfo": "writable",
+      "storage": "writable",
+      "decodeDateInfoElement": "writable",
+      "createEntry": "writable",
+      "updateViewedDate": "writable",
+      "entryExists": "writable",
+      "saveStorage": "writable",
+      "FullCalendar": "writable",
+      "alert": "writable",
+      "prompt": "writable",
+      "journal": "writable",
+      "calendar": "writable"
     }
   },
   "eslintIgnore": [
@@ -62,5 +75,8 @@
     ],
     "coverageDirectory": "./testing/coverage/jest-coverage",
     "verbose": true
+  },
+  "dependencies": {
+    "fullcalendar": "^5.7.0"
   }
 }

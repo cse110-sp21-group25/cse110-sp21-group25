@@ -64,3 +64,23 @@ entry-editor {
   top: 0;
   visibility: hidden;
 }
+
+body > div > div.column.right-column > button {
+  position: relative;
+  left: 50px;
+  top: -50px;
+  border-radius: 12px;
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+journal-entry {
+  display: block;
+  padding-left: 2%;
+  width: 100%;
+  margin: 22px auto;
+}

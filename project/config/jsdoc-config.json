@@ -8,5 +8,6 @@
   "opts": {
     "destination": "./jsdocs/",
     "recurse": true
-  }
+  },
+  "plugins": ["plugins/markdown"]
 }

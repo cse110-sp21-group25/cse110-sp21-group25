@@ -23,12 +23,12 @@ table tr th {
   cursor: pointer;
 }
 
-img{
+img {
   width: 15px;
   padding-right: 5px;
 }
 
-.q-mark > img{
+.q-mark > img {
   position: absolute;
   bottom: 1%;
   left: 15%;
@@ -37,7 +37,7 @@ img{
   margin: 0% 0% 0% 1%;
 }
 
-.q-mark:hover{
+.q-mark:hover {
   cursor: pointer;
   left: 335px;
   bottom: 8px;

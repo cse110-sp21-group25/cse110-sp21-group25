@@ -29,54 +29,51 @@
   background: lightgreen !important;
   color: black !important;
 }
-.bujo li {
-  font-family: 'Source Code Pro', monospace;
-}
-.bullet-design{
+.bullet-design {
   display: inline-block;
 }
 .bujo li.done {
-  color: #CDEB8B;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Check-16.png');
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-21-16.png');
+  color: #cdeb8b;
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Check-16.png");
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-21-16.png");
 }
 .bujo li.event {
   list-style-type: circle;
-  list-style-image: url('https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_heart_-16.png');
-  list-style-image: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-16.png');
+  list-style-image: url("https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_heart_-16.png");
+  list-style-image: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-circle-outline-16.png");
 }
 .bujo li.migrated {
   color: silver;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Forward-16.png');
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-02-16.png');
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-06-16.png');
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Forward-16.png");
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-02-16.png");
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-06-16.png");
 }
 .bujo li.scheduled {
   color: silver;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Back-16.png');
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-05-16.png');
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Back-16.png");
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-05-16.png");
 }
 .bujo li.appointment {
   color: red;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Luxury_Right-16.png');
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/mini-icon-set-map-location/91/Location_05-16.png');
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/navigation-set-arrows-part-two/32/Arrow_Luxury_Right-16.png");
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/mini-icon-set-map-location/91/Location_05-16.png");
 }
 .bujo li.in-progress {
-  color: #FFDC00;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/more-16.png');
+  color: #ffdc00;
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/more-16.png");
 }
 .bujo li.cancelled {
   color: silver;
   text-decoration: line-through;
-  list-style-image: url('https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/cancel-16.png');
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-16.png');
+  list-style-image: url("https://cdn2.iconfinder.com/data/icons/arrows-and-universal-actions-icon-set/256/cancel-16.png");
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-16.png");
 }
 .bujo li.research {
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-16.png');
-  list-style-image: url('https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_eye_vision-16.png');
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-16.png");
+  list-style-image: url("https://cdn1.iconfinder.com/data/icons/random-crafticons/48/misc-_eye_vision-16.png");
 }
 .bujo li.note {
-  list-style-image: url('https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-16-16.png');
+  list-style-image: url("https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-16-16.png");
 }
 /*
 Right Click Menu
@@ -97,7 +94,7 @@ Right Click Menu
   opacity: 1;
   transform: scale(1);
 }
-.menu > option{
+.menu > option {
   display: block;
   padding: 10px 30px;
   transition: 0.1s;
@@ -105,9 +102,9 @@ Right Click Menu
   width: 50px;
 }
 .menu > option:hover {
-  background-color: #126E82;
+  background-color: #126e82;
   cursor: pointer;
-  color:white;
+  color: white;
 }
 .out-click {
   height: 100vh;
@@ -117,4 +114,26 @@ Right Click Menu
   left: 0;
   z-index: 1;
   display: none;
+}
+
+.entry-back-btn {
+  margin-right: 8px;
+  background: #d8e3e7;
+  border-radius: 12px 0px 0px 12px;
+  padding: 4px;
+}
+
+.entry-forward-btn {
+  margin-left: 8px;
+  background: #d8e3e7;
+  border-radius: 0px 12px 12px 0px;
+  padding: 4px;
+}
+
+.entry-date {
+  font-weight: 700;
+}
+
+tag-bujo {
+  width: 100%;
 }
