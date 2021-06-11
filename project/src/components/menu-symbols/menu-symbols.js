@@ -42,10 +42,10 @@ class MenuSymbols extends HTMLElement {
 
   connectedCallback () {
     const menuBtn = this.shadowRoot.querySelector('#toggle');
-    
+
     menuBtn.addEventListener('click', () => {
       this.showMenu();
-    })
+    });
   }
 
   /**

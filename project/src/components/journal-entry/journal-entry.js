@@ -119,8 +119,6 @@ class JournalEntry extends HTMLElement {
 
               element.classList.add('selected');
             });
-
-
           }
         });
 
