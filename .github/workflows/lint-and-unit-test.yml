@@ -1,4 +1,4 @@
-name: Lint and Unit Test
+name: Lint and Testing
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   integration-testing:
-    name: Run ESLint and Unit Tests
+    name: Run ESLint and Tests
     runs-on: ubuntu-latest
 
     steps:

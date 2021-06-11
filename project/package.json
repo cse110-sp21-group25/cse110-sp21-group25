@@ -71,7 +71,7 @@
   "jest": {
     "preset": "jest-puppeteer",
     "testMatch": [
-      "**/testing/**/*.test.js"
+      "**/testing/**/end-to-end.test.js"
     ],
     "coverageDirectory": "./testing/coverage/jest-coverage",
     "verbose": true
