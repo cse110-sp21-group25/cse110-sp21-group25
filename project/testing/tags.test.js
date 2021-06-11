@@ -41,7 +41,7 @@ describe('Testing Menu Symbols Component', () => {
     expect(tagContentAfterAdd).toBe('Test Tag');
   });
 
-  test('Test3: Add tag wiht color', async () => {
+  test('Test3: Add tag with color', async () => {
     await page.evaluate(() => {
       document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
     });
@@ -89,7 +89,7 @@ describe('Testing Menu Symbols Component', () => {
     expect(tagNumber).toBe(0);
   });
 
-  test('Test5: On reload tag stil there', async () => {
+  test('Test5: On reload tag still there', async () => {
     await page.evaluate(() => {
       document.querySelector('#journal > journal-entry').shadowRoot.querySelector('div > div.entry-tags-container > tag-bujo').shadowRoot.querySelector('div > button').click();
     });
