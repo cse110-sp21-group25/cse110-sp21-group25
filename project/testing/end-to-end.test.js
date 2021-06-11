@@ -528,8 +528,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test1: Create one weekly goal', async () => {
-    // Add some test within here. For further examples see end-to-end.test.js file.
-    // expect(navBarTitle).toBe('CuJo');
 
     await page.evaluate(() => {
       const edit = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-board-footer > div.goals-board-footer-default > img.edit-btn');
@@ -547,8 +545,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test2: Create one monthly goal', async () => {
-    // Add some test within here. For further examples see end-to-end.test.js file.
-    // expect(navBarTitle).toBe('CuJo');
 
     await page.evaluate(() => {
       const monthly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.monthlyBtn');
@@ -568,8 +564,6 @@ describe('Testing Goals Board Component', () => {
   });
 
   test('Test3: Switch back to weekly goal', async () => {
-    // Add some test within here. For further examples see end-to-end.test.js file.
-    // expect(navBarTitle).toBe('CuJo');
 
     await page.evaluate(() => {
       const weekly = document.querySelector('body > div > div.column.right-column > goals-board').shadowRoot.querySelector('div > div.goals-button-container > input.goalBtn.weeklyBtn');
