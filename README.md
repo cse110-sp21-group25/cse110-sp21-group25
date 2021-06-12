@@ -6,7 +6,7 @@
 
 - You can access our CuJo (BuJo app) [here](https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html)
 
-- INSERT FINAL SCREENSHOT OF APP HERE
+- ![Final Project Screenshot](./admin/final-project-screenshot.JPG)
 
 - JsDocs documentation can be found at the following: [JSDocs Site](https://cujodocs.github.io/CuJoDocumentation/)
 
@@ -119,4 +119,4 @@ The full design documentation can be found under the `./specs` folder. The conte
 - Due to our decision to use web components and ShadowRoot we were unable to really find an effective way to run unit tests in the time we had. Instead we opted to create exhaustive E2E tests in order to cover as much of our code as possible. These tests can be found within the `project/testing` directory.
 - In order to properly account for coverage all tests were written in seperate files per component and were then integrated into our single `end-to-end.test.js` file found [here](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/main/project/testing/end-to-end.test.js). Integrated them all into the one file allowed us to test the coverage of our E2E tests.
 - We used Puppeteer and Jest for our testing. The tool `nyc` was then used to generate the coverage reports via the npm script labeled `test` found within `package.json`
-- The coverage can be seen via the GithHub action anytime a push action happens. In order to cut down on the number of files in our repo however, we opted to gitignore this folder since it is mostly situational and changes each time a new test is added. Our most current coverage report can be seen below: ![coverage-report](https://github.com/cse110-sp21-group25/cse110-sp21-group25/blob/staging/project/testing/coverage-report.png)
+- The coverage can be seen via the GithHub action anytime a push action happens. In order to cut down on the number of files in our repo however, we opted to gitignore this folder since it is mostly situational and changes each time a new test is added. Our most current coverage report can be seen below: ![coverage-report](./project//testing/coverage.png)
