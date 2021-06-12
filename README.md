@@ -6,7 +6,7 @@
 
 - You can access our CuJo (BuJo app) [here](https://cse110-sp21-group25.github.io/cse110-sp21-group25/project/src/index.html)
 
-- INSERT FINAL SCREENSHOT OF APP HERE
+- ![Final Project Screenshot](./admin/final-project-screenshot.JPG)
 
 - JsDocs documentation can be found at the following: [JSDocs Site](https://cujodocs.github.io/CuJoDocumentation/)
 
